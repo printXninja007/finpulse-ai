@@ -1092,7 +1092,7 @@ def _render_about_company_card(ticker: str | None) -> None:
     st.markdown(card_html, unsafe_allow_html=True)
 
 
-def render_controls() -> tuple[str | None, str | None, int]:
+def render_controls() -> tuple[str | None, str | None]:
     """Render the top control and company information section matching the reference design."""
     left_col, right_col = st.columns([1, 1.25], vertical_alignment="top")
 
@@ -1108,25 +1108,6 @@ def render_controls() -> tuple[str | None, str | None, int]:
             key="header_stock_search",
         )
         active_ticker = NSE_COMPANIES.get(active_company) if active_company else None
-
-        current_val = st.session_state.get("articles_slider", DEFAULT_MAX_ARTICLES)
-        slider_label_html = (
-            '<div class="fp-slider-label-row">'
-            '<span class="fp-tool-label" style="margin-bottom: 0;">Articles to analyze</span>'
-            f'<span class="fp-slider-val-box">{current_val}</span>'
-            '</div>'
-        )
-        st.markdown(slider_label_html, unsafe_allow_html=True)
-        max_articles = st.slider(
-            "Articles to analyze",
-            min_value=5,
-            max_value=25,
-            value=DEFAULT_MAX_ARTICLES,
-            step=1,
-            label_visibility="collapsed",
-            key="articles_slider",
-            help="Number of recent articles to fetch and score per stock.",
-        )
 
         market_snapshot = fetch_market_snapshot(active_ticker)
         mcap_col, price_col = st.columns([1, 1])
@@ -1153,7 +1134,7 @@ def render_controls() -> tuple[str | None, str | None, int]:
     with right_col:
         _render_about_company_card(active_ticker)
 
-    return active_company, active_ticker, max_articles
+    return active_company, active_ticker
 
 
 @st.cache_resource(show_spinner=False)
@@ -1599,7 +1580,7 @@ st.set_page_config(
 )
 inject_wireframe_css()
 
-selected_company, stock, max_articles = render_controls()
+selected_company, stock = render_controls()
 
 if not selected_company or not stock:
     empty_prompt_html = (
@@ -1620,7 +1601,7 @@ else:
     status_html = (
         '<div class="fp-status-strip">'
         f'<span class="fp-chip">{escape(str(selected_company))} · {escape(str(stock))}</span>'
-        f'<span class="fp-chip">{max_articles} article window</span>'
+        f'<span class="fp-chip">{DEFAULT_MAX_ARTICLES} article window</span>'
         '<span class="fp-chip">Decision-support only</span>'
         '</div>'
     )
@@ -1629,7 +1610,7 @@ else:
 
     articles_df, signals_df, backtest_summary_df, backtest_events_df = cached_pipeline(
         tuple(selected_tickers),
-        max_articles,
+        DEFAULT_MAX_ARTICLES,
     )
 
     if articles_df.empty:

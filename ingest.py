@@ -158,8 +158,9 @@ def fetch_yfinance_news(
     ticker: str,
     max_articles: int = 15,
     timeout_seconds: int = 12,
+    recency_days: int = 30,
 ) -> pd.DataFrame:
-    """Fetch recent news for one ticker through yfinance with candidate fallbacks.
+    """Fetch recent news for one ticker through yfinance with candidate fallbacks and recency filtering.
 
     Fetch failures are logged and returned as an empty DataFrame so the full
     multi-ticker pipeline can continue running. ``timeout_seconds`` is kept for
@@ -170,32 +171,39 @@ def fetch_yfinance_news(
     import yfinance as yf
 
     candidates = _get_ticker_candidates(ticker)
-    raw_news = None
+    all_raw_rows: list[dict[str, object]] = []
+    seen_headlines: set[str] = set()
 
     for candidate in candidates:
         try:
             items = yf.Ticker(candidate).news
             if items:
-                raw_news = items
-                break
+                for article in _coerce_news_items(items):
+                    mapped = _map_yfinance_article(ticker, article)
+                    if mapped:
+                        norm_hl = str(mapped.get("headline", "")).strip().lower()
+                        if norm_hl and norm_hl not in seen_headlines:
+                            seen_headlines.add(norm_hl)
+                            all_raw_rows.append(mapped)
         except Exception as exc:
             LOGGER.warning("yfinance news fetch failed for candidate %s: %s", candidate, exc)
 
-    if not raw_news:
+    if not all_raw_rows:
         LOGGER.warning("No usable yfinance news articles found for %s across candidates %s.", ticker, candidates)
         return empty_news_frame()
 
-    rows: list[dict[str, object]] = []
-    for article in _coerce_news_items(raw_news)[:max_articles]:
-        mapped_article = _map_yfinance_article(ticker, article)
-        if mapped_article:
-            rows.append(mapped_article)
+    # Explicit sort by published_date descending (newest first)
+    df = pd.DataFrame(all_raw_rows).sort_values("published_date", ascending=False).reset_index(drop=True)
 
-    if not rows:
-        LOGGER.warning("Could not map any yfinance news articles for %s.", ticker)
-        return empty_news_frame()
+    # Recency filtering: prioritize articles within the last `recency_days` (default 30 days)
+    now_utc = pd.Timestamp.now(tz="UTC")
+    recent_cutoff = now_utc - pd.Timedelta(days=recency_days)
+    recent_df = df[df["published_date"] >= recent_cutoff]
+    if not recent_df.empty:
+        df = recent_df.reset_index(drop=True)
 
-    return pd.DataFrame(rows).sort_values("published_date", ascending=False).reset_index(drop=True)
+    # Limit to requested max articles
+    return df.head(max_articles).reset_index(drop=True)
 
 
 fetch_yahoo_finance_news = fetch_yfinance_news
