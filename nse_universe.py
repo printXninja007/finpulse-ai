@@ -515,6 +515,8 @@ NSE_COMPANIES: dict[str, str] = {
     "Tata Elxsi": "TATAELXSI.NS",
     "Tata Investment Corporation": "TATAINVEST.NS",
     "Tata Motors": "TATAMOTORS.NS",
+    "Tata Motors (Commercial Vehicles)": "TMCV.NS",
+    "Tata Motors (Passenger Vehicles)": "TMPV.NS",
     "Tata Power Company": "TATAPOWER.NS",
     "Tata Steel": "TATASTEEL.NS",
     "Tata Technologies": "TATATECH.NS",

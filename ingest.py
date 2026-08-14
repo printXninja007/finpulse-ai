@@ -121,12 +121,45 @@ def _map_yfinance_article(ticker: str, article: Mapping[str, Any]) -> dict[str, 
     }
 
 
+TICKER_ALIASES: dict[str, list[str]] = {
+    "TATAMOTORS.NS": ["TMCV.NS", "TMPV.NS", "TATAMOTORS.BO", "TMCV.BO"],
+    "TMPV.NS": ["TMPV.NS", "TMCV.NS", "TATAMOTORS.NS"],
+    "TMCV.NS": ["TMCV.NS", "TMPV.NS", "TATAMOTORS.NS"],
+    "M&M.NS": ["MM.NS", "M&M.BO", "MM.BO"],
+    "LTI.NS": ["LTIM.NS", "LTI.BO", "LTIM.BO", "540005.BO"],
+    "MINDTREE.NS": ["LTIM.NS", "LTIM.BO", "540005.BO"],
+    "LTIM.NS": ["LTIM.NS", "LTIM.BO", "540005.BO", "LTI.NS"],
+    "HDFC.NS": ["HDFCBANK.NS", "HDFCBANK.BO"],
+    "IDFCFIRSTB.NS": ["IDFCFIRSTB.NS", "IDFCBK.BO", "IDFCFIRSTB.BO"],
+    "BAJAJ-AUTO.NS": ["BAJAJ-AUTO.NS", "BAJAJ_AUTO.NS", "BAJAJ-AUTO.BO"],
+    "MCDOWELL-N.NS": ["UNITDSPR.NS", "MCDOWELL-N.BO"],
+}
+
+
+def _get_ticker_candidates(ticker: str) -> list[str]:
+    clean = ticker.strip().upper()
+    candidates = [clean]
+    if clean in TICKER_ALIASES:
+        for alias in TICKER_ALIASES[clean]:
+            if alias not in candidates:
+                candidates.append(alias)
+    if clean.endswith(".NS"):
+        bo_sym = clean[:-3] + ".BO"
+        if bo_sym not in candidates:
+            candidates.append(bo_sym)
+    elif clean.endswith(".BO"):
+        ns_sym = clean[:-3] + ".NS"
+        if ns_sym not in candidates:
+            candidates.append(ns_sym)
+    return candidates
+
+
 def fetch_yfinance_news(
     ticker: str,
     max_articles: int = 15,
     timeout_seconds: int = 12,
 ) -> pd.DataFrame:
-    """Fetch recent news for one ticker through yfinance.
+    """Fetch recent news for one ticker through yfinance with candidate fallbacks.
 
     Fetch failures are logged and returned as an empty DataFrame so the full
     multi-ticker pipeline can continue running. ``timeout_seconds`` is kept for
@@ -134,13 +167,22 @@ def fetch_yfinance_news(
     """
     ticker = ticker.upper().strip()
     _ = timeout_seconds
+    import yfinance as yf
 
-    try:
-        import yfinance as yf
+    candidates = _get_ticker_candidates(ticker)
+    raw_news = None
 
-        raw_news = yf.Ticker(ticker).news
-    except Exception as exc:
-        LOGGER.warning("Skipping %s: yfinance news fetch failed: %s", ticker, exc)
+    for candidate in candidates:
+        try:
+            items = yf.Ticker(candidate).news
+            if items:
+                raw_news = items
+                break
+        except Exception as exc:
+            LOGGER.warning("yfinance news fetch failed for candidate %s: %s", candidate, exc)
+
+    if not raw_news:
+        LOGGER.warning("No usable yfinance news articles found for %s across candidates %s.", ticker, candidates)
         return empty_news_frame()
 
     rows: list[dict[str, object]] = []
@@ -150,7 +192,7 @@ def fetch_yfinance_news(
             rows.append(mapped_article)
 
     if not rows:
-        LOGGER.warning("No usable yfinance news articles found for %s.", ticker)
+        LOGGER.warning("Could not map any yfinance news articles for %s.", ticker)
         return empty_news_frame()
 
     return pd.DataFrame(rows).sort_values("published_date", ascending=False).reset_index(drop=True)

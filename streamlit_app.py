@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import logging
+import time
 from datetime import datetime
 from html import escape
 
@@ -750,22 +752,95 @@ def inject_wireframe_css() -> None:
     )
 
 
-@st.cache_data(ttl=1800, show_spinner=False)
-def fetch_market_snapshot(ticker: str) -> dict[str, object]:
-    """Fetch lightweight market snapshot fields with graceful fallbacks."""
-    try:
-        import yfinance as yf
+LOGGER = logging.getLogger("finpulse")
 
-        info = yf.Ticker(ticker).info or {}
-    except Exception:
-        return {"market_cap": "---", "current_price": "---"}
+TICKER_ALIASES: dict[str, list[str]] = {
+    "TATAMOTORS.NS": ["TMCV.NS", "TMPV.NS", "TATAMOTORS.BO", "TMCV.BO"],
+    "TMPV.NS": ["TMPV.NS", "TMCV.NS", "TATAMOTORS.NS"],
+    "TMCV.NS": ["TMCV.NS", "TMPV.NS", "TATAMOTORS.NS"],
+    "M&M.NS": ["MM.NS", "M&M.BO", "MM.BO"],
+    "LTI.NS": ["LTIM.NS", "LTI.BO", "LTIM.BO", "540005.BO"],
+    "MINDTREE.NS": ["LTIM.NS", "LTIM.BO", "540005.BO"],
+    "LTIM.NS": ["LTIM.NS", "LTIM.BO", "540005.BO", "LTI.NS"],
+    "HDFC.NS": ["HDFCBANK.NS", "HDFCBANK.BO"],
+    "IDFCFIRSTB.NS": ["IDFCFIRSTB.NS", "IDFCBK.BO", "IDFCFIRSTB.BO"],
+    "BAJAJ-AUTO.NS": ["BAJAJ-AUTO.NS", "BAJAJ_AUTO.NS", "BAJAJ-AUTO.BO"],
+    "MCDOWELL-N.NS": ["UNITDSPR.NS", "MCDOWELL-N.BO"],
+}
 
-    market_cap = info.get("marketCap")
-    current_price = info.get("currentPrice") or info.get("regularMarketPrice")
-    return {
-        "market_cap": _format_market_cap(market_cap),
-        "current_price": _format_price(current_price),
-    }
+
+def _get_ticker_candidates(ticker: str) -> list[str]:
+    """Generate prioritized candidate tickers for corporate demergers, renames, and exchange fallbacks."""
+    clean = ticker.strip().upper()
+    candidates = [clean]
+    if clean in TICKER_ALIASES:
+        for alias in TICKER_ALIASES[clean]:
+            if alias not in candidates:
+                candidates.append(alias)
+    if clean.endswith(".NS"):
+        bo_sym = clean[:-3] + ".BO"
+        if bo_sym not in candidates:
+            candidates.append(bo_sym)
+    elif clean.endswith(".BO"):
+        ns_sym = clean[:-3] + ".NS"
+        if ns_sym not in candidates:
+            candidates.append(ns_sym)
+    return candidates
+
+
+def _fetch_raw_ticker_info(ticker: str, retries: int = 2) -> tuple[dict, object]:
+    """Fetch raw ticker metadata and fast_info with candidate resolution, retries, and logging."""
+    import time
+    import yfinance as yf
+
+    candidates = _get_ticker_candidates(ticker)
+    last_error: Exception | None = None
+
+    for candidate in candidates:
+        for attempt in range(retries + 1):
+            try:
+                t = yf.Ticker(candidate)
+                info = t.info
+                if isinstance(info, dict) and (
+                    info.get("longBusinessSummary")
+                    or info.get("marketCap")
+                    or info.get("currentPrice")
+                    or info.get("regularMarketPrice")
+                    or info.get("shortName")
+                    or info.get("sector")
+                ):
+                    return info, t.fast_info
+
+                try:
+                    fi = t.fast_info
+                    if fi and getattr(fi, "last_price", None) is not None:
+                        return (info if isinstance(info, dict) else {}), fi
+                except Exception:
+                    pass
+
+                # If info is empty without error, move immediately to next candidate
+                break
+            except Exception as exc:
+                last_error = exc
+                err_msg = str(exc).lower()
+                is_not_found = any(k in err_msg for k in ("404", "not found", "delisted", "currenttradingperiod"))
+                LOGGER.warning(
+                    "yfinance lookup for %s (attempt %d/%d) failed: %s",
+                    candidate,
+                    attempt + 1,
+                    retries + 1,
+                    exc,
+                )
+                if is_not_found or attempt >= retries:
+                    break
+                time.sleep(0.3 * (attempt + 1))
+
+    if last_error:
+        LOGGER.error("All candidate lookups failed for %s (tried %s): %s", ticker, candidates, last_error)
+    else:
+        LOGGER.warning("No rich yfinance data returned for %s across candidates %s", ticker, candidates)
+
+    return {}, None
 
 
 def _format_market_cap(value: object) -> str:
@@ -796,9 +871,9 @@ def _format_price(value: object) -> str:
     return f"₹{value:,.2f}"
 
 
-@st.cache_data(ttl=1800, show_spinner=False)
+@st.cache_data(ttl=3600, show_spinner=False)
 def fetch_market_snapshot(ticker: str | None) -> dict[str, object]:
-    """Fetch lightweight market snapshot fields with graceful fallbacks."""
+    """Fetch lightweight market snapshot fields with multi-layer key fallbacks and fast_info."""
     if not ticker:
         return {
             "market_cap": "---",
@@ -806,16 +881,38 @@ def fetch_market_snapshot(ticker: str | None) -> dict[str, object]:
             "current_price": "---",
             "ticker_label": "---",
         }
-    try:
-        import yfinance as yf
 
-        info = yf.Ticker(ticker).info or {}
-    except Exception:
-        info = {}
+    info, fast_info = _fetch_raw_ticker_info(ticker)
+    raw_symbol = ticker.replace(".NS", "").replace(".BO", "").strip()
 
+    # 1. Market cap resolution: info.marketCap -> fast_info.market_cap -> info.enterpriseValue
     market_cap = info.get("marketCap")
-    current_price = info.get("currentPrice") or info.get("regularMarketPrice")
-    raw_symbol = ticker.replace(".NS", "").strip()
+    if (not market_cap or pd.isna(market_cap)) and fast_info is not None:
+        try:
+            market_cap = fast_info.market_cap
+        except Exception:
+            pass
+    if not market_cap or pd.isna(market_cap):
+        market_cap = info.get("enterpriseValue")
+
+    # 2. Current price resolution: currentPrice -> regularMarketPrice -> fast_info.last_price -> previousClose -> fast_info.previous_close -> open -> dayHigh
+    current_price = info.get("currentPrice")
+    if not current_price or pd.isna(current_price):
+        current_price = info.get("regularMarketPrice")
+    if (not current_price or pd.isna(current_price)) and fast_info is not None:
+        try:
+            current_price = fast_info.last_price
+        except Exception:
+            pass
+    if not current_price or pd.isna(current_price):
+        current_price = info.get("previousClose")
+    if (not current_price or pd.isna(current_price)) and fast_info is not None:
+        try:
+            current_price = fast_info.previous_close or getattr(fast_info, "regular_market_previous_close", None)
+        except Exception:
+            pass
+    if not current_price or pd.isna(current_price):
+        current_price = info.get("open") or info.get("dayHigh") or info.get("bid") or info.get("ask")
 
     return {
         "market_cap": _format_market_cap(market_cap),
@@ -863,34 +960,63 @@ def _truncate_company_summary(text: str, max_chars: int = 450, max_sentences: in
 
 @st.cache_data(ttl=3600, show_spinner=False)
 def fetch_company_profile(ticker: str) -> dict[str, str]:
-    """Fetch company profile and metadata from yfinance with graceful fallbacks."""
-    try:
-        import yfinance as yf
+    """Fetch company profile and metadata from yfinance with graceful multi-key fallbacks."""
+    info, _ = _fetch_raw_ticker_info(ticker)
 
-        info = yf.Ticker(ticker).info or {}
-    except Exception:
-        info = {}
+    # 1. Summary fallbacks
+    raw_summary = (
+        info.get("longBusinessSummary")
+        or info.get("description")
+        or info.get("summaryProfile")
+        or info.get("shortDescription")
+        or ""
+    )
+    if not str(raw_summary).strip():
+        comp_name = info.get("longName") or info.get("shortName") or ticker.replace(".NS", "").replace(".BO", "")
+        sector = info.get("sector") or info.get("industry")
+        if sector:
+            raw_summary = f"{comp_name} is a leading publicly listed company operating in the {sector} sector in India."
+        else:
+            raw_summary = f"{comp_name} is a publicly listed enterprise on the National Stock Exchange of India (NSE)."
+    summary = _truncate_company_summary(str(raw_summary).strip())
 
-    raw_summary = str(info.get("longBusinessSummary") or info.get("description") or "").strip()
-    summary = _truncate_company_summary(raw_summary)
+    # 2. Industry fallbacks: industry -> sector -> industryDisp -> industryKey -> category
+    industry = (
+        info.get("industry")
+        or info.get("sector")
+        or info.get("industryDisp")
+        or info.get("industryKey")
+        or info.get("category")
+        or "Not available"
+    )
+    industry = str(industry).strip()
 
-    industry = str(info.get("industry") or info.get("sector") or "Not available").strip()
-
+    # 3. Founded fallbacks: founded -> yearFounded -> startDate
     founded = info.get("founded") or info.get("yearFounded") or info.get("startDate")
-    founded_str = str(founded).strip() if founded and str(founded).strip() else "Not available"
+    if founded and str(founded).strip() and str(founded).strip() != "None":
+        founded_str = str(founded).strip()
+    else:
+        founded_str = "Not available"
 
+    # 4. Headquarters fallbacks: city, country, state, address1
     city = info.get("city")
     country = info.get("country")
+    state = info.get("state")
     if city and country:
         headquarters = f"{city}, {country}"
+    elif city and state:
+        headquarters = f"{city}, {state}"
     elif city:
         headquarters = str(city)
     elif country:
         headquarters = str(country)
+    elif info.get("address1"):
+        headquarters = str(info.get("address1"))
     else:
         headquarters = "Not available"
 
-    employees = info.get("fullTimeEmployees")
+    # 5. Employees fallbacks: fullTimeEmployees -> employees -> totalEmployees
+    employees = info.get("fullTimeEmployees") or info.get("employees") or info.get("totalEmployees")
     if isinstance(employees, (int, float)) and not pd.isna(employees) and employees > 0:
         employees_str = f"{int(employees):,}"
     else:
