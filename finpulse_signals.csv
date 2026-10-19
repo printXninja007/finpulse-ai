@@ -1,4 +1,0 @@
-ticker,article_count,aggregate_score,signal,confidence,agreement_count,directional_article_count
-AAPL,10,-0.0189,Neutral,6/10 articles neutral = Medium Confidence,6,10
-NVDA,10,-0.2413,Neutral,4/10 articles neutral = Low Confidence,4,10
-TSLA,10,-0.4602,Bearish,4/10 articles negative = Low Confidence,4,10
