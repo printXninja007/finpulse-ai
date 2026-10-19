@@ -189,7 +189,11 @@ def fetch_yfinance_news(
             LOGGER.warning("yfinance news fetch failed for candidate %s: %s", candidate, exc)
 
     if not all_raw_rows:
-        LOGGER.warning("No usable yfinance news articles found for %s across candidates %s.", ticker, candidates)
+        LOGGER.info("yfinance news returned empty for %s; attempting live financial RSS fallback...", ticker)
+        all_raw_rows = _fetch_rss_news_fallback(ticker, max_articles=max_articles)
+
+    if not all_raw_rows:
+        LOGGER.warning("No usable news articles found for %s across candidates and RSS.", ticker)
         return empty_news_frame()
 
     # Explicit sort by published_date descending (newest first)
@@ -206,6 +210,44 @@ def fetch_yfinance_news(
     return df.head(max_articles).reset_index(drop=True)
 
 
+def _fetch_rss_news_fallback(ticker: str, max_articles: int = 15) -> list[dict[str, object]]:
+    """Fetch live Indian financial news articles via Google News RSS as resilient fallback."""
+    import urllib.parse
+    import urllib.request
+    import xml.etree.ElementTree as ET
+
+    raw_symbol = ticker.replace(".NS", "").replace(".BO", "").strip()
+    query = f"{raw_symbol} share OR {raw_symbol} stock when:30d"
+    url = f"https://news.google.com/rss/search?q={urllib.parse.quote(query)}&hl=en-IN&gl=IN&ceid=IN:en"
+    req = urllib.request.Request(
+        url,
+        headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"},
+    )
+
+    rows: list[dict[str, object]] = []
+    try:
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            tree = ET.fromstring(resp.read())
+            items = tree.findall(".//item")
+            for item in items[:max_articles]:
+                title = item.find("title").text if item.find("title") is not None else ""
+                link = item.find("link").text if item.find("link") is not None else ""
+                pub_date = item.find("pubDate").text if item.find("pubDate") is not None else ""
+                if title:
+                    rows.append(
+                        {
+                            "ticker": ticker,
+                            "headline": title,
+                            "snippet": title,
+                            "published_date": _parse_published_date(pub_date),
+                            "source_url": link,
+                        }
+                    )
+    except Exception as exc:
+        LOGGER.warning("Google News RSS fallback failed for %s: %s", ticker, exc)
+    return rows
+
+
 fetch_yahoo_finance_news = fetch_yfinance_news
 
 
@@ -214,15 +256,25 @@ def fetch_news_for_tickers(
     max_articles_per_ticker: int = 15,
     timeout_seconds: int = 12,
 ) -> pd.DataFrame:
-    """Fetch and combine yfinance news for multiple tickers."""
-    frames = [
-        fetch_yfinance_news(
-            ticker=ticker,
-            max_articles=max_articles_per_ticker,
-            timeout_seconds=timeout_seconds,
+    """Fetch and combine yfinance news for multiple tickers in parallel."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    tickers_list = list(tickers)
+    if not tickers_list:
+        return empty_news_frame()
+
+    with ThreadPoolExecutor(max_workers=min(10, len(tickers_list))) as executor:
+        frames = list(
+            executor.map(
+                lambda ticker: fetch_yfinance_news(
+                    ticker=ticker,
+                    max_articles=max_articles_per_ticker,
+                    timeout_seconds=timeout_seconds,
+                ),
+                tickers_list,
+            )
         )
-        for ticker in tickers
-    ]
+
     non_empty_frames = [frame for frame in frames if not frame.empty]
     if not non_empty_frames:
         return empty_news_frame()

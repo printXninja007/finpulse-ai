@@ -16,6 +16,7 @@ EVENT_COLUMNS = [
     "event_date",
     "headline",
     "sentiment_score",
+    "confluence_hit",
     "signal_hit",
     "random_hit",
     "naive_hit",
@@ -30,18 +31,30 @@ class BacktestConfig:
 
 
 def fetch_price_history(ticker: str, lookback_days: int = 90) -> pd.DataFrame:
-    """Fetch daily OHLCV price history for one ticker."""
+    """Fetch daily OHLCV price history for one ticker with alias resolution."""
     try:
         import yfinance as yf
+        from signals import _resolve_ticker_candidates
 
-        price_df = yf.download(
-            ticker,
-            period=f"{lookback_days + 20}d",
-            interval="1d",
-            progress=False,
-            auto_adjust=True,
-            threads=False,
-        )
+        candidates = _resolve_ticker_candidates(ticker)
+        price_df = pd.DataFrame()
+        for cand in candidates:
+            try:
+                cand_df = yf.download(
+                    cand,
+                    period=f"{lookback_days + 20}d",
+                    interval="1d",
+                    progress=False,
+                    auto_adjust=True,
+                    threads=False,
+                )
+                if cand_df is not None and not cand_df.empty:
+                    cols = cand_df.columns.get_level_values(0) if isinstance(cand_df.columns, pd.MultiIndex) else cand_df.columns
+                    if "Close" in cols:
+                        price_df = cand_df
+                        break
+            except Exception:
+                continue
     except Exception as exc:
         LOGGER.warning("Skipping backtest for %s: yfinance download failed: %s", ticker, exc)
         return pd.DataFrame()
@@ -105,12 +118,27 @@ def _yesterday_direction(price_df: pd.DataFrame, event_date: pd.Timestamp) -> in
     return 0
 
 
+def _trend_direction_at_event(price_df: pd.DataFrame, event_date: pd.Timestamp) -> int:
+    """Calculate the Trading Room EMA trend direction up to the event date."""
+    prior = price_df[price_df["Date"] < event_date.normalize()]
+    if len(prior) < 10:
+        return 0
+    close = prior["Close"]
+    ema9 = close.ewm(span=9, adjust=False).mean().iloc[-1]
+    ema21 = close.ewm(span=21, adjust=False).mean().iloc[-1]
+    if ema9 > ema21:
+        return 1
+    elif ema9 < ema21:
+        return -1
+    return 0
+
+
 def build_backtest_events(
     scored_news_df: pd.DataFrame,
     tickers: Iterable[str],
     config: BacktestConfig | None = None,
 ) -> pd.DataFrame:
-    """Create per-news-event directional outcomes for the last 90 days."""
+    """Create per-news-event directional outcomes for the last 90 days with Trading Room confluence."""
     config = config or BacktestConfig()
     if scored_news_df.empty:
         return pd.DataFrame(columns=EVENT_COLUMNS)
@@ -143,6 +171,15 @@ def build_backtest_events(
             if actual_direction is None or naive_direction is None or actual_direction == 0:
                 continue
 
+            trend_direction = _trend_direction_at_event(price_df, event_date)
+            # Trading Room Confluence Logic:
+            # 1. If trend confirms news: trade executed -> hit if signal was correct
+            # 2. If trend opposes news: trade filtered out -> hit if filter successfully avoided a counter-trend trap
+            if trend_direction == signal_direction or trend_direction == 0:
+                confluence_hit = int(signal_direction == actual_direction)
+            else:
+                confluence_hit = int(signal_direction != actual_direction)
+
             random_direction = int(rng.choice([-1, 1]))
             events.append(
                 {
@@ -150,6 +187,7 @@ def build_backtest_events(
                     "event_date": event_date.date().isoformat(),
                     "headline": article.get("headline", ""),
                     "sentiment_score": float(article.get("sentiment_score", 0.0)),
+                    "confluence_hit": confluence_hit,
                     "signal_hit": int(signal_direction == actual_direction),
                     "random_hit": int(random_direction == actual_direction),
                     "naive_hit": int(naive_direction == actual_direction),
@@ -164,6 +202,7 @@ def summarize_backtest_events(events_df: pd.DataFrame) -> pd.DataFrame:
     columns = [
         "ticker",
         "events",
+        "confluence_signal_hit_rate",
         "sentiment_signal_hit_rate",
         "random_baseline_hit_rate",
         "naive_baseline_hit_rate",
@@ -175,6 +214,7 @@ def summarize_backtest_events(events_df: pd.DataFrame) -> pd.DataFrame:
         events_df.groupby("ticker")
         .agg(
             events=("ticker", "size"),
+            confluence_signal_hit_rate=("confluence_hit", "mean"),
             sentiment_signal_hit_rate=("signal_hit", "mean"),
             random_baseline_hit_rate=("random_hit", "mean"),
             naive_baseline_hit_rate=("naive_hit", "mean"),

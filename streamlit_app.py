@@ -12,7 +12,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-from backtest import BacktestConfig, run_backtest
 from ingest import fetch_news_for_tickers
 from nse_universe import NSE_COMPANIES
 from sentiment import add_explainability, add_sentiment_scores, load_finbert
@@ -282,6 +281,17 @@ def inject_wireframe_css() -> None:
             color: var(--fp-navy);
         }}
 
+        .fp-screener-label {{
+            margin-top: 10px;
+            margin-bottom: 4px;
+            font-family: var(--fp-mono);
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: var(--fp-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }}
+
         .fp-placeholder-row {{
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -429,9 +439,56 @@ def inject_wireframe_css() -> None:
 
         .fp-backtest-metrics {{
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             border-top: var(--fp-border);
             margin-top: 14px;
+        }}
+
+        .fp-confluence-badge {{
+            display: inline-block;
+            font-family: var(--fp-mono);
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }}
+
+        .fp-badge-confirmed {{
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }}
+
+        .fp-badge-divergence {{
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }}
+
+        .fp-badge-neutral, .fp-badge-partial {{
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+        }}
+
+        .fp-confluence-strip {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 10px 0;
+            padding: 8px 10px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+        }}
+
+        .fp-confluence-tag {{
+            font-family: var(--fp-mono);
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: #1e293b;
         }}
 
         .fp-backtest-metric {{
@@ -772,11 +829,13 @@ TICKER_ALIASES: dict[str, list[str]] = {
 def _get_ticker_candidates(ticker: str) -> list[str]:
     """Generate prioritized candidate tickers for corporate demergers, renames, and exchange fallbacks."""
     clean = ticker.strip().upper()
-    candidates = [clean]
+    candidates: list[str] = []
     if clean in TICKER_ALIASES:
         for alias in TICKER_ALIASES[clean]:
             if alias not in candidates:
                 candidates.append(alias)
+    if clean not in candidates:
+        candidates.append(clean)
     if clean.endswith(".NS"):
         bo_sym = clean[:-3] + ".BO"
         if bo_sym not in candidates:
@@ -846,13 +905,8 @@ def _fetch_raw_ticker_info(ticker: str, retries: int = 2) -> tuple[dict, object]
 def _format_market_cap(value: object) -> str:
     if not isinstance(value, (int, float)) or pd.isna(value) or value <= 0:
         return "---"
-    if value >= 1_000_000_000_000:
-        return f"₹{value / 1_000_000_000_000:.2f}T"
-    if value >= 10_000_000_000:
-        return f"₹{value / 10_000_000_000:.2f}B"
-    if value >= 10_000_000:
-        return f"₹{value / 10_000_000:.2f}Cr"
-    return f"₹{value:,.0f}"
+    crores = value / 10_000_000
+    return f"₹{crores:,.2f} Cr"
 
 
 def _market_cap_category(value: object) -> str:
@@ -1092,6 +1146,167 @@ def _render_about_company_card(ticker: str | None) -> None:
     st.markdown(card_html, unsafe_allow_html=True)
 
 
+WEEKLY_SCREENER_TICKERS: tuple[str, ...] = (
+    "RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "INFY.NS", "ICICIBANK.NS", "BHARTIARTL.NS",
+    "SBIN.NS", "ITC.NS", "HINDUNILVR.NS", "LT.NS", "TATAMOTORS.NS", "BAJFINANCE.NS",
+    "MARUTI.NS", "AXISBANK.NS", "SUNPHARMA.NS", "TITAN.NS", "KOTAKBANK.NS", "ADANIENT.NS",
+    "TATASTEEL.NS", "M&M.NS", "WIPRO.NS", "ZOMATO.NS", "TRENT.NS", "NTPC.NS", "POWERGRID.NS",
+    "BEL.NS", "HAL.NS", "COALINDIA.NS", "ONGC.NS", "IOC.NS", "VEDL.NS", "JIOFIN.NS",
+    "HCLTECH.NS", "TECHM.NS", "NESTLEIND.NS", "ASIANPAINT.NS", "ULTRACEMCO.NS", "GRASIM.NS",
+    "HINDALCO.NS", "SHRIRAMFIN.NS", "CIPLA.NS", "DRREDDY.NS", "APOLLOHOSP.NS", "EICHERMOT.NS",
+    "DIVISLAB.NS", "BPCL.NS", "BAJAJ-AUTO.NS", "HEROMOTOCO.NS", "BRITANNIA.NS", "INDUSINDBK.NS",
+    "PERSISTENT.NS", "VBL.NS", "COFORGE.NS", "MPHASIS.NS",
+)
+
+
+@st.cache_data(ttl=1800, show_spinner=False)
+def fetch_weekly_news_rankings() -> dict[str, list[dict[str, object]]]:
+    """Evaluate weekly news sentiment and confluence signals across top NSE stocks."""
+    from nse_universe import NSE_COMPANIES
+    from sentiment import add_sentiment_scores
+    from signals import generate_stock_signals
+
+    ticker_to_company = {v: k for k, v in NSE_COMPANIES.items()}
+    news_df = fetch_news_for_tickers(WEEKLY_SCREENER_TICKERS, max_articles_per_ticker=DEFAULT_MAX_ARTICLES)
+    if news_df.empty:
+        return {"bullish": [], "bearish": []}
+
+    scored = add_sentiment_scores(news_df)
+    signals_df = generate_stock_signals(scored)
+    if signals_df.empty:
+        return {"bullish": [], "bearish": []}
+
+    # Extract top headline per ticker
+    top_headlines: dict[str, str] = {}
+    for ticker, group in scored.groupby("ticker"):
+        sorted_grp = group.sort_values("published_date", ascending=False)
+        top_headlines[str(ticker)] = str(sorted_grp.iloc[0].get("headline", "Latest market update"))
+
+    # Strict Bullish filtering:
+    # 1. Recommendation must NOT be Bearish, confluence_score must be positive (>= 0.0)
+    # 2. News score must be positive (> 0.0)
+    bull_df = signals_df[
+        (signals_df["signal"] != "Bearish") &
+        (signals_df["confluence_score"] >= 0.0) &
+        (signals_df["aggregate_score"] > 0.0)
+    ].copy()
+
+    bull_df["is_pure_bull"] = bull_df["signal"] == "Bullish"
+    bullish_sorted = bull_df.sort_values(
+        ["is_pure_bull", "confluence_score", "aggregate_score"],
+        ascending=[False, False, False]
+    ).head(5)
+
+    # Strict Bearish filtering:
+    # 1. Recommendation must NOT be Bullish, confluence_score must be negative (<= 0.0)
+    # 2. News score must be negative (< 0.0)
+    bear_df = signals_df[
+        (signals_df["signal"] != "Bullish") &
+        (signals_df["confluence_score"] <= 0.0) &
+        (signals_df["aggregate_score"] < 0.0)
+    ].copy()
+
+    bear_df["is_pure_bear"] = bear_df["signal"] == "Bearish"
+    bearish_sorted = bear_df.sort_values(
+        ["is_pure_bear", "confluence_score", "aggregate_score"],
+        ascending=[False, True, True]
+    ).head(5)
+
+    def _to_record_list(df: pd.DataFrame) -> list[dict[str, object]]:
+        res = []
+        for _, row in df.iterrows():
+            t = str(row["ticker"])
+            res.append({
+                "ticker": t,
+                "company": ticker_to_company.get(t, t),
+                "score": round(float(row.get("aggregate_score", 0.0)), 2),
+                "confluence_score": round(float(row.get("confluence_score", 0.0)), 2),
+                "signal": str(row.get("signal", "Neutral")),
+                "articles": int(row.get("article_count", 0)),
+                "top_headline": top_headlines.get(t, "Latest market update"),
+            })
+        return res
+
+    return {
+        "bullish": _to_record_list(bullish_sorted),
+        "bearish": _to_record_list(bearish_sorted),
+    }
+
+
+@st.dialog("🟢 Top 5 Weekly Bullish Stocks", width="small")
+def show_weekly_bullish_popup() -> None:
+    with st.spinner("Scanning for top weekly bullish stocks..."):
+        rankings = fetch_weekly_news_rankings()
+    stock_list = rankings.get("bullish", [])
+    if not stock_list:
+        st.info("No bullish weekly stocks found.")
+        return
+
+    st.markdown(
+        '<div style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">'
+        'Ranked by weekly news sentiment + confluence alpha (past 7 days):'
+        '</div>',
+        unsafe_allow_html=True,
+    )
+    for idx, s in enumerate(stock_list):
+        c_info, c_btn = st.columns([2.8, 1.2], vertical_alignment="center")
+        with c_info:
+            score_str = f"{s['score']:+.2f}"
+            sig_str = str(s.get("signal", "Bullish")).upper()
+            st.markdown(
+                f'<div style="line-height: 1.35; margin: 2px 0;">'
+                f'<span style="font-weight: 700; font-size: 0.9rem; color: #14183f;">#{idx+1} {escape(s["company"])}</span> '
+                f'<span style="font-family: monospace; font-size: 0.72rem; color: #64748b;">({escape(s["ticker"])})</span><br>'
+                f'<span style="font-family: monospace; font-size: 0.72rem; font-weight: 700; color: #15803d; background: #dcfce7; border: 1px solid #86efac; border-radius: 3px; padding: 1px 5px;">News: {score_str}</span> '
+                f'<span style="font-family: monospace; font-size: 0.72rem; font-weight: 700; color: #15803d; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 3px; padding: 1px 5px;">{sig_str}</span> '
+                f'<span style="font-size: 0.72rem; color: #64748b;">{s["articles"]} articles</span>'
+                f'</div>',
+                unsafe_allow_html=True,
+            )
+        with c_btn:
+            if st.button("Open ↗", key=f"popup_open_bull_{s['ticker']}", width="stretch", type="primary"):
+                st.session_state["header_stock_search"] = s["company"]
+                st.rerun()
+        st.markdown('<div style="height: 1px; background: #f1f5f9; margin: 4px 0 6px;"></div>', unsafe_allow_html=True)
+
+
+@st.dialog("🔴 Top 5 Weekly Bearish Stocks", width="small")
+def show_weekly_bearish_popup() -> None:
+    with st.spinner("Scanning for top weekly bearish stocks..."):
+        rankings = fetch_weekly_news_rankings()
+    stock_list = rankings.get("bearish", [])
+    if not stock_list:
+        st.info("No bearish weekly stocks found.")
+        return
+
+    st.markdown(
+        '<div style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">'
+        'Ranked by weekly news sentiment + confluence alpha (past 7 days):'
+        '</div>',
+        unsafe_allow_html=True,
+    )
+    for idx, s in enumerate(stock_list):
+        c_info, c_btn = st.columns([2.8, 1.2], vertical_alignment="center")
+        with c_info:
+            score_str = f"{s['score']:+.2f}"
+            sig_str = str(s.get("signal", "Bearish")).upper()
+            st.markdown(
+                f'<div style="line-height: 1.35; margin: 2px 0;">'
+                f'<span style="font-weight: 700; font-size: 0.9rem; color: #14183f;">#{idx+1} {escape(s["company"])}</span> '
+                f'<span style="font-family: monospace; font-size: 0.72rem; color: #64748b;">({escape(s["ticker"])})</span><br>'
+                f'<span style="font-family: monospace; font-size: 0.72rem; font-weight: 700; color: #b91c1c; background: #fee2e2; border: 1px solid #fca5a5; border-radius: 3px; padding: 1px 5px;">News: {score_str}</span> '
+                f'<span style="font-family: monospace; font-size: 0.72rem; font-weight: 700; color: #b91c1c; background: #fff1f2; border: 1px solid #fecdd3; border-radius: 3px; padding: 1px 5px;">{sig_str}</span> '
+                f'<span style="font-size: 0.72rem; color: #64748b;">{s["articles"]} articles</span>'
+                f'</div>',
+                unsafe_allow_html=True,
+            )
+        with c_btn:
+            if st.button("Open ↗", key=f"popup_open_bear_{s['ticker']}", width="stretch", type="primary"):
+                st.session_state["header_stock_search"] = s["company"]
+                st.rerun()
+        st.markdown('<div style="height: 1px; background: #f1f5f9; margin: 4px 0 6px;"></div>', unsafe_allow_html=True)
+
+
 def render_controls() -> tuple[str | None, str | None]:
     """Render the top control and company information section matching the reference design."""
     left_col, right_col = st.columns([1, 1.25], vertical_alignment="top")
@@ -1131,6 +1346,18 @@ def render_controls() -> tuple[str | None, str | None]:
             )
             st.markdown(price_html, unsafe_allow_html=True)
 
+        st.markdown(
+            '<div class="fp-screener-label">Filter by Weekly News Sentiment (News Only)</div>',
+            unsafe_allow_html=True,
+        )
+        col_bull, col_bear = st.columns(2)
+        with col_bull:
+            if st.button("🟢 Top 5 Weekly Bullish", key="btn_trigger_bullish_popup", width="stretch"):
+                show_weekly_bullish_popup()
+        with col_bear:
+            if st.button("🔴 Top 5 Weekly Bearish", key="btn_trigger_bearish_popup", width="stretch"):
+                show_weekly_bearish_popup()
+
     with right_col:
         _render_about_company_card(active_ticker)
 
@@ -1157,12 +1384,7 @@ def cached_pipeline(tickers: tuple[str, ...], max_articles: int):
     scored_df = add_sentiment_scores(summarized_df)
     explained_df = add_explainability(scored_df)
     signals_df = generate_stock_signals(explained_df)
-    backtest_summary_df, backtest_events_df = run_backtest(
-        explained_df,
-        tickers,
-        BacktestConfig(),
-    )
-    return explained_df, signals_df, backtest_summary_df, backtest_events_df
+    return explained_df, signals_df
 
 
 def _format_phrases(phrases: object) -> str:
@@ -1217,10 +1439,16 @@ def _confidence_percent(signal_row: pd.Series | None) -> int:
     agreement_count = int(signal_row.get("agreement_count", 0) or 0)
     if article_count <= 0:
         return 0
-    return round((agreement_count / article_count) * 100)
+    base_pct = round((agreement_count / article_count) * 100)
+    # Trading Room Confluence delta adjustment
+    delta = int(signal_row.get("confidence_delta", 0) or 0)
+    return max(35, min(95, base_pct + delta))
 
 
 def _recommendation_reasons(signal_row: pd.Series, stock_articles: pd.DataFrame) -> list[str]:
+    confluence_reasons = signal_row.get("confluence_reasons")
+    if isinstance(confluence_reasons, list) and confluence_reasons:
+        return [str(r) for r in confluence_reasons]
     article_count = int(signal_row.get("article_count", len(stock_articles)) or 0)
     agreement_count = int(signal_row.get("agreement_count", 0) or 0)
     aggregate_score = float(signal_row.get("aggregate_score", 0.0) or 0.0)
@@ -1271,17 +1499,40 @@ def _render_recommendation_card(signal_row: pd.Series | None, stock_articles: pd
         return
 
     signal = str(signal_row.get("signal", "Neutral")).upper()
-    score = float(signal_row.get("aggregate_score", 0.0) or 0.0)
+    score = float(signal_row.get("confluence_score", signal_row.get("aggregate_score", 0.0)) or 0.0)
+    raw_sentiment = str(signal_row.get("raw_sentiment_signal", signal)).upper()
+    confluence_status = str(signal_row.get("confluence_status", "CONFLUENCE CONFIRMED"))
+    confluence_class = str(signal_row.get("confluence_class", "fp-badge-confirmed"))
     reasons = _recommendation_reasons(signal_row, stock_articles)
     reason_items = "".join(f"<li>{escape(reason)}</li>" for reason in reasons)
     color_class = _signal_class(signal)
+
+    trend_dir = str(signal_row.get("trend_direction", "NEUTRAL")).title()
+    trend_z = float(signal_row.get("trend_z", 0.0) or 0.0)
+    rsi = float(signal_row.get("rsi_14", 50.0) or 50.0)
+    vol_ratio = float(signal_row.get("volume_ratio", 1.0) or 1.0)
+    nifty_pct = float(signal_row.get("nifty_pct", 0.0) or 0.0)
+    vix = float(signal_row.get("vix_level", 15.0) or 15.0)
+
+    tags_html = (
+        '<div class="fp-confluence-strip">'
+        f'<span class="fp-confluence-tag">📰 News: <b>{escape(raw_sentiment)}</b></span>'
+        f'<span class="fp-confluence-tag">📈 Trend: <b>{escape(trend_dir)} ({trend_z:+.2f}z)</b> · RSI {rsi:.0f} · Vol {vol_ratio:.1f}x</span>'
+        f'<span class="fp-confluence-tag">🏛 Market: <b>Nifty {nifty_pct:+.2f}%</b> · VIX {vix:.1f}</span>'
+        '</div>'
+    )
+
     rec_html = (
         '<div class="fp-card">'
-        '<div class="fp-card-title">RECOMMENDATION</div>'
+        '<div class="fp-card-header-row" style="margin-bottom: 8px;">'
+        '<div class="fp-card-title" style="margin: 0;">RECOMMENDATION</div>'
+        f'<span class="fp-confluence-badge {confluence_class}">{escape(confluence_status)}</span>'
+        '</div>'
         '<div class="fp-signal-row">'
         f'<span class="fp-signal-word {color_class}">{escape(signal)}</span>'
-        f'<span class="fp-signal-score {color_class}">Score {score:+.2f}</span>'
+        f'<span class="fp-signal-score {color_class}">Confluence Alpha {score:+.2f}</span>'
         '</div>'
+        f'{tags_html}'
         '<div class="fp-why-section">'
         '<div class="fp-why-title">WHY?</div>'
         f'<ul class="fp-list">{reason_items}</ul>'
@@ -1325,6 +1576,8 @@ def _confidence_gauge(percent: int, color: str) -> go.Figure:
 def _render_confidence_card(signal_row: pd.Series | None) -> None:
     percent = _confidence_percent(signal_row)
     confidence_label = _confidence_level(signal_row.get("confidence", "") if signal_row is not None else "")
+    confluence_status = str(signal_row.get("confluence_status", "CONFLUENCE CONFIRMED")) if signal_row is not None else "NEUTRAL"
+    confluence_class = str(signal_row.get("confluence_class", "fp-badge-confirmed")) if signal_row is not None else "fp-badge-neutral"
     color = GREEN if "High" in confidence_label else NAVY if "Medium" in confidence_label else GRAY
 
     with st.container(border=True):
@@ -1335,7 +1588,8 @@ def _render_confidence_card(signal_row: pd.Series | None) -> None:
         with number_col:
             num_html = (
                 f'<div class="fp-confidence-number" style="color:{color};">{percent}%</div>'
-                f'<div class="fp-confidence-label" style="color:{color};">{escape(confidence_label)}</div>'
+                f'<div class="fp-confidence-label" style="color:{color}; margin-bottom: 6px;">{escape(confidence_label)}</div>'
+                f'<span class="fp-confluence-badge {confluence_class}" style="font-size: 0.62rem;">{escape(confluence_status)}</span>'
             )
             st.markdown(num_html, unsafe_allow_html=True)
 
@@ -1356,80 +1610,189 @@ def _render_key_factors_card(stock_articles: pd.DataFrame) -> None:
     st.markdown(factors_html, unsafe_allow_html=True)
 
 
-def _backtest_chart(stock_backtest: pd.DataFrame) -> go.Figure:
-    chart_df = stock_backtest.melt(
-        id_vars=["ticker", "events"],
-        value_vars=[
-            "sentiment_signal_hit_rate",
-            "random_baseline_hit_rate",
-            "naive_baseline_hit_rate",
-        ],
-        var_name="method",
-        value_name="hit_rate",
+@st.cache_data(ttl=3600, show_spinner=False)
+def fetch_benchmark_comparison_data(ticker: str, period: str) -> pd.DataFrame:
+    """Fetch daily price history for the stock and Nifty 50 (^NSEI) and return aligned % returns."""
+    import yfinance as yf
+    from signals import _resolve_ticker_candidates
+
+    candidates = _resolve_ticker_candidates(ticker)
+    stock_df = pd.DataFrame()
+    for cand in candidates:
+        try:
+            df = yf.download(cand, period=period, interval="1d", progress=False, auto_adjust=True)
+            if df is not None and not df.empty:
+                cols = df.columns.get_level_values(0) if isinstance(df.columns, pd.MultiIndex) else df.columns
+                if "Close" in cols:
+                    stock_df = df
+                    break
+        except Exception:
+            continue
+
+    nifty_df = yf.download("^NSEI", period=period, interval="1d", progress=False, auto_adjust=True)
+    if stock_df.empty or nifty_df.empty:
+        return pd.DataFrame()
+
+    if isinstance(stock_df.columns, pd.MultiIndex):
+        stock_df.columns = stock_df.columns.get_level_values(0)
+    if isinstance(nifty_df.columns, pd.MultiIndex):
+        nifty_df.columns = nifty_df.columns.get_level_values(0)
+
+    s_series = stock_df["Close"].dropna()
+    n_series = nifty_df["Close"].dropna()
+
+    merged = pd.DataFrame({"stock_close": s_series, "nifty_close": n_series}).dropna()
+    if merged.empty or len(merged) < 2:
+        return pd.DataFrame()
+
+    merged = merged.reset_index()
+    merged["Date"] = pd.to_datetime(merged["Date"], utc=True, errors="coerce").dt.tz_convert(None)
+    merged = merged.sort_values("Date").reset_index(drop=True)
+
+    base_stock = float(merged["stock_close"].iloc[0])
+    base_nifty = float(merged["nifty_close"].iloc[0])
+
+    if base_stock <= 0 or base_nifty <= 0:
+        return pd.DataFrame()
+
+    merged["stock_return_pct"] = (merged["stock_close"] / base_stock - 1.0) * 100.0
+    merged["nifty_return_pct"] = (merged["nifty_close"] / base_nifty - 1.0) * 100.0
+    return merged
+
+
+def _comparison_line_chart(comp_df: pd.DataFrame, ticker: str, display_name: str) -> go.Figure:
+    fig = go.Figure()
+
+    stock_last_return = float(comp_df["stock_return_pct"].iloc[-1])
+    stock_color = "#11854a" if stock_last_return >= 0 else "#2563eb"
+
+    short_stock_label = display_name.split("(")[0].strip() if "(" in display_name else display_name
+    if len(short_stock_label) > 16:
+        short_stock_label = ticker
+
+    fig.add_trace(
+        go.Scatter(
+            x=comp_df["Date"],
+            y=comp_df["stock_return_pct"],
+            mode="lines",
+            name=short_stock_label,
+            line=dict(color=stock_color, width=2.4),
+            customdata=comp_df[["stock_close"]],
+            hovertemplate=f"<b>{escape(short_stock_label)}</b>: %{{y:+.2f}}% (₹%{{customdata[0]:,.2f}})<extra></extra>",
+        )
     )
-    chart_df["method"] = chart_df["method"].map(
-        {
-            "sentiment_signal_hit_rate": "Sentiment Signal",
-            "random_baseline_hit_rate": "Random Baseline",
-            "naive_baseline_hit_rate": "Naive Baseline",
-        }
+
+    fig.add_trace(
+        go.Scatter(
+            x=comp_df["Date"],
+            y=comp_df["nifty_return_pct"],
+            mode="lines",
+            name="NIFTY 50",
+            line=dict(color="#14183f", width=1.8, dash="dot"),
+            customdata=comp_df[["nifty_close"]],
+            hovertemplate="<b>NIFTY 50</b>: %{y:+.2f}% (%{customdata[0]:,.1f})<extra></extra>",
+        )
     )
-    fig = px.bar(
-        chart_df,
-        x="method",
-        y="hit_rate",
-        text="hit_rate",
-        range_y=[0, 100],
-        labels={"hit_rate": "Hit rate (%)", "method": ""},
-        color="method",
-        color_discrete_map={
-            "Sentiment Signal": GREEN,
-            "Random Baseline": GRAY,
-            "Naive Baseline": NAVY,
-        },
-    )
-    fig.update_traces(texttemplate="%{text:.1f}%", textposition="outside", marker_line_color=NAVY, marker_line_width=1)
+
     fig.update_layout(
-        showlegend=False,
-        margin=dict(l=10, r=10, t=14, b=6),
+        height=270,
+        margin=dict(l=10, r=10, t=28, b=6),
         paper_bgcolor="white",
         plot_bgcolor="white",
         font=dict(color=NAVY, family="Menlo, Consolas, monospace"),
-        xaxis=dict(showgrid=False, zeroline=False, linecolor=NAVY),
-        yaxis=dict(gridcolor="#e6e8ef", zeroline=False, ticksuffix="%"),
+        xaxis=dict(
+            showgrid=True,
+            gridcolor="#f1f3f8",
+            zeroline=False,
+            linecolor=NAVY,
+            tickformat="%b %y",
+        ),
+        yaxis=dict(
+            gridcolor="#e6e8ef",
+            zeroline=True,
+            zerolinecolor="rgba(20, 24, 63, 0.35)",
+            zerolinewidth=1.2,
+            ticksuffix="%",
+        ),
+        legend=dict(
+            orientation="h",
+            y=1.14,
+            x=1,
+            xanchor="right",
+            font=dict(size=11),
+            bgcolor="rgba(255, 255, 255, 0.8)",
+        ),
+        hovermode="x unified",
     )
     return fig
 
 
-def _render_backtest_card(stock_backtest: pd.DataFrame) -> None:
+def _render_price_comparison_card(stock: str, display_name: str = "") -> None:
     with st.container(border=True):
-        st.markdown('<div class="fp-card-title">BACKTEST PERFORMANCE</div>', unsafe_allow_html=True)
-        if stock_backtest.empty:
+        title_col, tf_col = st.columns([1.15, 0.95], vertical_alignment="center")
+        with title_col:
+            st.markdown('<div class="fp-card-title" style="margin-bottom:0;">PRICE VS NIFTY 50</div>', unsafe_allow_html=True)
+        with tf_col:
+            tf_choice = st.segmented_control(
+                "Timeframe",
+                options=["1Y", "3Y", "5Y", "ALL"],
+                default="1Y",
+                label_visibility="collapsed",
+                key=f"benchmark_tf_{stock}",
+            )
+            if not tf_choice:
+                tf_choice = "1Y"
+
+        period_map = {"1Y": "1y", "3Y": "3y", "5Y": "5y", "ALL": "max"}
+        selected_period = period_map.get(tf_choice, "1y")
+
+        comp_df = fetch_benchmark_comparison_data(stock, selected_period)
+        if comp_df.empty or len(comp_df) < 2:
             st.markdown(
-                '<div class="fp-backtest-note">No eligible 90-day news events with 3-day forward prices. This is common with fresh news feeds, and no backtest numbers are fabricated.</div>',
+                '<div class="fp-backtest-note">Historical comparison data currently unavailable for this ticker or timeframe.</div>',
                 unsafe_allow_html=True,
             )
-        else:
-            row = stock_backtest.iloc[0]
-            st.plotly_chart(_backtest_chart(stock_backtest), width="stretch", config={"displayModeBar": False})
-            metrics_html = (
-                '<div class="fp-backtest-metrics">'
-                '<div class="fp-backtest-metric">'
-                '<div class="fp-metric-label">Signal Hit Rate</div>'
-                f'<div class="fp-metric-value fp-green">{float(row["sentiment_signal_hit_rate"]):.1f}%</div>'
-                '</div>'
-                '<div class="fp-backtest-metric">'
-                '<div class="fp-metric-label">Random Baseline</div>'
-                f'<div class="fp-metric-value">{float(row["random_baseline_hit_rate"]):.1f}%</div>'
-                '</div>'
-                '<div class="fp-backtest-metric">'
-                '<div class="fp-metric-label">Naive Baseline</div>'
-                f'<div class="fp-metric-value">{float(row["naive_baseline_hit_rate"]):.1f}%</div>'
-                '</div>'
-                '</div>'
-                f'<div class="fp-backtest-note">Events tested: {int(row["events"])}. Directional hit-rate only; no P&amp;L or portfolio simulation.</div>'
-            )
-            st.markdown(metrics_html, unsafe_allow_html=True)
+            return
+
+        fig = _comparison_line_chart(comp_df, stock, display_name or stock)
+        st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
+
+        stock_ret = float(comp_df["stock_return_pct"].iloc[-1])
+        nifty_ret = float(comp_df["nifty_return_pct"].iloc[-1])
+        alpha = stock_ret - nifty_ret
+
+        stock_color = "#11854a" if stock_ret >= 0 else "#d9383a"
+        nifty_color = "#11854a" if nifty_ret >= 0 else "#d9383a"
+        alpha_color = "#11854a" if alpha >= 0 else "#d9383a"
+        alpha_label = "Outperformed" if alpha >= 0 else "Underperformed"
+
+        clean_name = display_name.split("(")[0].strip() if "(" in display_name else display_name
+        if len(clean_name) > 12:
+            clean_name = stock.replace(".NS", "")
+
+        start_date_str = comp_df["Date"].iloc[0].strftime("%d %b %Y")
+        metrics_html = (
+            '<div class="fp-backtest-metrics">'
+            '<div class="fp-backtest-metric">'
+            f'<div class="fp-metric-label">{escape(clean_name)} Return</div>'
+            f'<div class="fp-metric-value" style="color: {stock_color};">{stock_ret:+.1f}%</div>'
+            '</div>'
+            '<div class="fp-backtest-metric">'
+            '<div class="fp-metric-label">Nifty 50 Return</div>'
+            f'<div class="fp-metric-value" style="color: {nifty_color};">{nifty_ret:+.1f}%</div>'
+            '</div>'
+            '<div class="fp-backtest-metric">'
+            '<div class="fp-metric-label">Alpha (vs Nifty)</div>'
+            f'<div class="fp-metric-value" style="color: {alpha_color};">{alpha:+.1f}%</div>'
+            '</div>'
+            '<div class="fp-backtest-metric">'
+            '<div class="fp-metric-label">Relative Result</div>'
+            f'<div class="fp-metric-value" style="font-size: 0.88rem; color: {alpha_color};">{alpha_label}</div>'
+            '</div>'
+            '</div>'
+            f'<div class="fp-backtest-note">Normalized performance ({tf_choice}) indexed from 0.0% at start ({start_date_str}).</div>'
+        )
+        st.markdown(metrics_html, unsafe_allow_html=True)
 
 
 def _format_relative_time(value: object) -> str:
@@ -1584,34 +1947,46 @@ selected_company, stock = render_controls()
 
 if not selected_company or not stock:
     empty_prompt_html = (
-        '<div class="fp-card" style="text-align: center; padding: 48px 24px; margin-top: 16px;">'
+        '<div class="fp-card" style="text-align: center; padding: 40px 24px 20px; margin-top: 16px;">'
         '<div style="font-family: var(--fp-mono); font-size: 1.3rem; font-weight: 700; color: var(--fp-navy); margin-bottom: 8px;">'
         'Search and select a stock to begin'
         '</div>'
-        '<div class="fp-small" style="font-size: 0.95rem; max-width: 620px; margin: 0 auto;">'
-        'Choose any NSE company from the search dropdown above to analyze real-time financial news, generate FinBERT sentiment signals, and view backtest performance.'
+        '<div class="fp-small" style="font-size: 0.95rem; max-width: 620px; margin: 0 auto 16px;">'
+        'Choose any NSE company from the search dropdown above, or click below to view the weekly news sentiment rankings.'
         '</div>'
         '</div>'
     )
     st.markdown(empty_prompt_html, unsafe_allow_html=True)
+    e_col1, e_col2 = st.columns(2)
+    with e_col1:
+        if st.button("🟢 Top 5 Weekly Bullish Pop-up", key="btn_empty_bullish_popup", width="stretch"):
+            show_weekly_bullish_popup()
+    with e_col2:
+        if st.button("🔴 Top 5 Weekly Bearish Pop-up", key="btn_empty_bearish_popup", width="stretch"):
+            show_weekly_bearish_popup()
     st.caption(DISCLAIMER)
     st.stop()
 else:
     selected_tickers = [stock]
+    articles_df, signals_df = cached_pipeline(
+        tuple(selected_tickers),
+        DEFAULT_MAX_ARTICLES,
+    )
+
+    macro_info = signals_df.iloc[0] if not signals_df.empty else {}
+    n_pct = float(macro_info.get("nifty_pct", 0.0) or 0.0)
+    vix = float(macro_info.get("vix_level", 15.0) or 15.0)
+    v_reg = str(macro_info.get("vix_regime", "Normal"))
     status_html = (
         '<div class="fp-status-strip">'
         f'<span class="fp-chip">{escape(str(selected_company))} · {escape(str(stock))}</span>'
-        f'<span class="fp-chip">{DEFAULT_MAX_ARTICLES} article window</span>'
-        '<span class="fp-chip">Decision-support only</span>'
+        f'<span class="fp-chip">NIFTY 50: {n_pct:+.2f}%</span>'
+        f'<span class="fp-chip">INDIA VIX: {vix:.1f} ({escape(v_reg)})</span>'
+        '<span class="fp-chip">Trading Room Confluence Active</span>'
         '</div>'
     )
     st.markdown(status_html, unsafe_allow_html=True)
     st.caption(DISCLAIMER)
-
-    articles_df, signals_df, backtest_summary_df, backtest_events_df = cached_pipeline(
-        tuple(selected_tickers),
-        DEFAULT_MAX_ARTICLES,
-    )
 
     if articles_df.empty:
         st.error("No yfinance news articles were available for the selected stocks.")
@@ -1619,7 +1994,6 @@ else:
 
     stock_articles = articles_df[articles_df["ticker"] == stock].sort_values("published_date", ascending=False)
     stock_signal = signals_df[signals_df["ticker"] == stock]
-    stock_backtest = backtest_summary_df[backtest_summary_df["ticker"] == stock]
     signal_row = None if stock_signal.empty else stock_signal.iloc[0]
 
     left, middle, right = st.columns([0.95, 1.08, 1.05], vertical_alignment="top")
@@ -1631,7 +2005,7 @@ else:
 
     with middle:
         _render_real_time_news_summary_card(stock_articles, signal_row)
-        _render_backtest_card(stock_backtest)
+        _render_price_comparison_card(stock, str(selected_company or stock))
         export_df = _export_frame(articles_df, signals_df)
         st.download_button(
             "Export summaries + signals CSV",
