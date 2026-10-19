@@ -12,11 +12,13 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
+from company_profiles import NSE_COMPANY_PROFILES, fetch_fallback_wikipedia_profile
 from ingest import fetch_news_for_tickers
 from nse_universe import NSE_COMPANIES
 from sentiment import add_explainability, add_sentiment_scores, load_finbert
 from signals import generate_stock_signals
 from summarize import add_summaries, load_summarizer
+
 
 DISCLAIMER = "Decision-support only, not investment advice. No price targets, stop-losses, or buy/sell recommendations."
 
@@ -1014,10 +1016,33 @@ def _truncate_company_summary(text: str, max_chars: int = 450, max_sentences: in
 
 @st.cache_data(ttl=3600, show_spinner=False)
 def fetch_company_profile(ticker: str) -> dict[str, str]:
-    """Fetch company profile and metadata from yfinance with graceful multi-key fallbacks."""
-    info, _ = _fetch_raw_ticker_info(ticker)
+    """Fetch company profile and metadata with curated NSE profiles, yfinance, and Wikipedia fallbacks."""
+    clean_ticker = (ticker or "").strip().upper()
 
-    # 1. Summary fallbacks
+    # 1. Curated corporate profile knowledge base (instant, complete, resilient against cloud datacenter blocks)
+    curated = NSE_COMPANY_PROFILES.get(clean_ticker)
+    if not curated:
+        alt_key = clean_ticker.replace(".NS", "") if clean_ticker.endswith(".NS") else f"{clean_ticker}.NS"
+        curated = NSE_COMPANY_PROFILES.get(alt_key)
+
+    if curated:
+        return {
+            "summary": curated["summary"],
+            "industry": curated["industry"],
+            "founded": curated["founded"],
+            "headquarters": curated["headquarters"],
+            "employees": curated["employees"],
+        }
+
+    # 2. Dynamic lookup for non-curated / midcap stocks
+    ticker_to_company = {v.upper(): k for k, v in NSE_COMPANIES.items()}
+    company_name = ticker_to_company.get(clean_ticker)
+    if not company_name and clean_ticker.endswith(".NS"):
+        company_name = ticker_to_company.get(clean_ticker.replace(".NS", ""))
+
+    info, _ = _fetch_raw_ticker_info(clean_ticker)
+
+    # Summary fallbacks
     raw_summary = (
         info.get("longBusinessSummary")
         or info.get("description")
@@ -1025,16 +1050,8 @@ def fetch_company_profile(ticker: str) -> dict[str, str]:
         or info.get("shortDescription")
         or ""
     )
-    if not str(raw_summary).strip():
-        comp_name = info.get("longName") or info.get("shortName") or ticker.replace(".NS", "").replace(".BO", "")
-        sector = info.get("sector") or info.get("industry")
-        if sector:
-            raw_summary = f"{comp_name} is a leading publicly listed company operating in the {sector} sector in India."
-        else:
-            raw_summary = f"{comp_name} is a publicly listed enterprise on the National Stock Exchange of India (NSE)."
-    summary = _truncate_company_summary(str(raw_summary).strip())
 
-    # 2. Industry fallbacks: industry -> sector -> industryDisp -> industryKey -> category
+    # Industry fallbacks
     industry = (
         info.get("industry")
         or info.get("sector")
@@ -1045,14 +1062,14 @@ def fetch_company_profile(ticker: str) -> dict[str, str]:
     )
     industry = str(industry).strip()
 
-    # 3. Founded fallbacks: founded -> yearFounded -> startDate
+    # Founded fallbacks
     founded = info.get("founded") or info.get("yearFounded") or info.get("startDate")
     if founded and str(founded).strip() and str(founded).strip() != "None":
         founded_str = str(founded).strip()
     else:
         founded_str = "Not available"
 
-    # 4. Headquarters fallbacks: city, country, state, address1
+    # Headquarters fallbacks
     city = info.get("city")
     country = info.get("country")
     state = info.get("state")
@@ -1069,12 +1086,62 @@ def fetch_company_profile(ticker: str) -> dict[str, str]:
     else:
         headquarters = "Not available"
 
-    # 5. Employees fallbacks: fullTimeEmployees -> employees -> totalEmployees
+    # Employees fallbacks
     employees = info.get("fullTimeEmployees") or info.get("employees") or info.get("totalEmployees")
     if isinstance(employees, (int, float)) and not pd.isna(employees) and employees > 0:
         employees_str = f"{int(employees):,}"
     else:
         employees_str = "Not available"
+
+    # 3. Wikipedia Fallback: if Yahoo is rate-limited / blocked on cloud
+    comp_display_name = (
+        company_name
+        or info.get("longName")
+        or info.get("shortName")
+        or clean_ticker.replace(".NS", "").replace(".BO", "")
+    )
+
+    if not str(raw_summary).strip() or industry == "Not available":
+        wiki_data = fetch_fallback_wikipedia_profile(comp_display_name)
+        if wiki_data:
+            if not str(raw_summary).strip() and wiki_data.get("summary"):
+                raw_summary = wiki_data["summary"]
+            if industry == "Not available" and wiki_data.get("industry"):
+                industry = wiki_data["industry"]
+            if headquarters == "Not available" and wiki_data.get("headquarters"):
+                headquarters = wiki_data["headquarters"]
+
+    # 4. Final heuristic fallbacks
+    if not str(raw_summary).strip():
+        sector = info.get("sector") or (industry if industry != "Not available" else None)
+        if sector:
+            raw_summary = f"{comp_display_name} is a leading publicly listed company operating in the {sector} sector in India."
+        else:
+            raw_summary = f"{comp_display_name} is a publicly listed enterprise on the National Stock Exchange of India (NSE)."
+
+    summary = _truncate_company_summary(str(raw_summary).strip())
+
+    if industry == "Not available":
+        nm_lower = comp_display_name.lower()
+        if any(w in nm_lower for w in ("bank", "banking")):
+            industry = "Private Sector Banking"
+        elif any(w in nm_lower for w in ("finance", "capital", "securities", "fintech", "wealth")):
+            industry = "Financial Services & Investment"
+        elif any(w in nm_lower for w in ("pharma", "laboratories", "health", "biotech")):
+            industry = "Pharmaceuticals & Healthcare"
+        elif any(w in nm_lower for w in ("cement", "construction", "infra")):
+            industry = "Cement & Infrastructure"
+        elif any(w in nm_lower for w in ("tech", "technology", "software", "infotech", "systems")):
+            industry = "Information Technology Services"
+        elif any(w in nm_lower for w in ("motors", "auto", "tyres", "automotive")):
+            industry = "Automotive & Transportation"
+        elif any(w in nm_lower for w in ("power", "energy", "solar", "renewables")):
+            industry = "Power & Energy"
+        elif any(w in nm_lower for w in ("retail", "fashion", "consumer")):
+            industry = "Consumer Retail"
+
+    if headquarters == "Not available":
+        headquarters = "India"
 
     return {
         "summary": summary,
@@ -1083,6 +1150,7 @@ def fetch_company_profile(ticker: str) -> dict[str, str]:
         "headquarters": headquarters,
         "employees": employees_str,
     }
+
 
 
 def _render_about_company_card(ticker: str | None) -> None:
