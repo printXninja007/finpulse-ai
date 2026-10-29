@@ -766,6 +766,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       font-size: 0.88rem;
       line-height: 1.45;
       color: var(--fp-gray);
+      word-break: break-word;
     }
 
     /* LIVE NEWS FEED - EXACT STREAMLIT SPEC */
@@ -1261,6 +1262,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       searchInput.value = name;
       clearBtn.style.display = "flex";
       hideDropdown();
+      getOrCreateStock(ticker, name);
       renderAll();
     }
 
@@ -1287,13 +1289,16 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
     function getOrCreateStock(ticker, name) {
       if (!ticker) return null;
-      if (appData.stocks[ticker]) {
-        return appData.stocks[ticker];
+      const existing = appData.stocks[ticker];
+      const compName = name || (existing && existing.company) || (allCompanies.find(c => c.ticker === ticker) || {}).name || ticker.replace('.NS', '');
+
+      if (existing && existing.timeframes && existing.company && existing.signal && existing.profile && existing.articles) {
+        return existing;
       }
 
       // Check curated profiles
-      const p = curatedProfiles[ticker] || curatedProfiles[ticker.replace('.NS', '')] || {
-        summary: `${name} is an active publicly traded corporation listed on the National Stock Exchange of India (NSE: ${ticker.replace('.NS', '')}). The company operates across core commercial and enterprise markets.`,
+      const p = (existing && existing.profile) || curatedProfiles[ticker] || curatedProfiles[ticker.replace('.NS', '')] || {
+        summary: `${compName} is an active publicly traded corporation listed on the National Stock Exchange of India (NSE: ${ticker.replace('.NS', '')}). The company operates across core commercial and enterprise markets.`,
         industry: "Diversified Operations & Services",
         founded: "1994",
         headquarters: "Mumbai, Maharashtra, India",
@@ -1302,10 +1307,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
       // Realistic pseudo-random deterministic numbers from ticker string
       const hash = Math.abs(ticker.split('').reduce((acc, char) => acc * 31 + char.charCodeAt(0), 11));
-      const price = (hash % 2400) + 95.5;
-      const changePct = ((hash % 420) / 100) - 1.6;
+      const price = (existing && existing.price) ? existing.price : ((hash % 2400) + 95.5);
+      const changePct = (existing && existing.change_pct != null) ? existing.change_pct : (((hash % 420) / 100) - 1.6);
       const mcapVal = ((hash % 160) + 15) / 10;
-      const mcap = `₹${mcapVal.toFixed(2)} Lakh Cr`;
+      const mcap = (existing && existing.market_cap) || `₹${mcapVal.toFixed(2)} Lakh Cr`;
 
       const isBull = (hash % 10) > 3;
       const sig = isBull ? "Bullish" : "Neutral";
@@ -1315,36 +1320,70 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       const rsi = isBull ? (hash % 14) + 53 : 49;
       const vol = isBull ? ((hash % 7) + 11) / 10 : 0.9;
 
+      // Deterministic varied realistic returns per stock
+      const ret1Y = isBull ? Number(((hash % 450) / 10 + 6.2).toFixed(1)) : Number((-((hash % 280) / 10 + 1.5)).toFixed(1));
+      const ret3Y = isBull ? Number(((hash % 850) / 10 + 28.5).toFixed(1)) : Number(((hash % 350) / 10 + 3.0).toFixed(1));
+      const ret5Y = isBull ? Number(((hash % 1600) / 10 + 65.0).toFixed(1)) : Number(((hash % 600) / 10 + 18.0).toFixed(1));
+      const retALL = isBull ? Number(((hash % 4000) / 10 + 195.0).toFixed(1)) : Number(((hash % 1500) / 10 + 52.0).toFixed(1));
+
       const now = new Date();
       const timeframes = {};
       
-      [
-        { tf: "1Y", days: 247, ret: isBull ? 21.4 : -3.8, nRet: -12.0 },
-        { tf: "3Y", days: 370, ret: isBull ? 54.2 : 16.5, nRet: 19.8 },
-        { tf: "5Y", days: 400, ret: isBull ? 118.0 : 42.0, nRet: 29.8 },
-        { tf: "ALL", days: 500, ret: isBull ? 392.0 : 105.0, nRet: 342.3 }
-      ].forEach(tSpec => {
+      const tfSpecs = [
+        { tf: "1Y", days: 247, ret: ret1Y, nRet: -12.0 },
+        { tf: "3Y", days: 370, ret: ret3Y, nRet: 19.8 },
+        { tf: "5Y", days: 410, ret: ret5Y, nRet: 29.8 },
+        { tf: "ALL", days: 500, ret: retALL, nRet: 342.3 }
+      ];
+
+      tfSpecs.forEach(tSpec => {
         const dates = [];
         const sRets = [];
         const nRets = [];
         const sCloses = [];
         const nCloses = [];
-        const stepDays = tSpec.tf === "1Y" ? 1.4 : tSpec.tf === "3Y" ? 3 : tSpec.tf === "5Y" ? 4.5 : 12;
 
-        for (let i = 0; i < tSpec.days; i++) {
-          const d = new Date(now.getTime() - (tSpec.days - 1 - i) * stepDays * 86400000);
-          dates.push(d.toISOString().slice(0, 10));
-          const prog = i / (tSpec.days - 1);
-          const wobble = Math.sin(i / 10) * 3;
-          const sr = Number((prog * tSpec.ret + wobble).toFixed(2));
-          const nr = Number((prog * tSpec.nRet + Math.cos(i / 12) * 2).toFixed(2));
-          sRets.push(sr);
-          nRets.push(nr);
-          sCloses.push(Number((price * (1 + sr / 100)).toFixed(2)));
-          nCloses.push(Number((24500 * (1 + nr / 100)).toFixed(1)));
+        // Build weekday trading calendar backwards
+        let dCursor = new Date(now);
+        const dayStrings = [];
+        while (dayStrings.length < tSpec.days) {
+          const dayOfWeek = dCursor.getDay();
+          if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+            dayStrings.unshift(dCursor.toISOString().slice(0, 10));
+          }
+          dCursor.setDate(dCursor.getDate() - 1);
         }
 
-        const startDt = new Date(now.getTime() - (tSpec.days - 1) * stepDays * 86400000);
+        const baseStockPrice = price / (1 + tSpec.ret / 100);
+        const baseNiftyPrice = 24500 / (1 + tSpec.nRet / 100);
+
+        for (let i = 0; i < tSpec.days; i++) {
+          dates.push(dayStrings[i]);
+          const prog = i / (tSpec.days - 1);
+          // Realistic deterministic price drift with wavy market harmonics
+          const wave1 = Math.sin((i / tSpec.days) * Math.PI * 4 + (hash % 7)) * 4.2;
+          const wave2 = Math.cos((i / tSpec.days) * Math.PI * 8 + (hash % 11)) * 2.1;
+          const noise = ((hash * (i + 13)) % 100 - 50) / 50 * 1.2;
+          
+          let sr = prog * tSpec.ret + wave1 * (1 - prog * 0.3) + wave2 + noise;
+          if (i === 0) sr = 0.0;
+          if (i === tSpec.days - 1) sr = tSpec.ret;
+          sr = Number(sr.toFixed(2));
+
+          const nWave1 = Math.sin((i / tSpec.days) * Math.PI * 3.5 + 2) * 3.0;
+          const nWave2 = Math.cos((i / tSpec.days) * Math.PI * 7 + 1) * 1.5;
+          let nr = prog * tSpec.nRet + nWave1 * (1 - prog * 0.4) + nWave2;
+          if (i === 0) nr = 0.0;
+          if (i === tSpec.days - 1) nr = tSpec.nRet;
+          nr = Number(nr.toFixed(2));
+
+          sRets.push(sr);
+          nRets.push(nr);
+          sCloses.push(Number((baseStockPrice * (1 + sr / 100)).toFixed(2)));
+          nCloses.push(Number((baseNiftyPrice * (1 + nr / 100)).toFixed(1)));
+        }
+
+        const startDt = new Date(dayStrings[0]);
         const startStr = startDt.toLocaleDateString("en-GB", { day: '2-digit', month: 'short', year: 'numeric' });
 
         timeframes[tSpec.tf] = {
@@ -1362,14 +1401,14 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
       const articles = [
         {
-          headline: `${name} accelerates operational capacity additions ahead of FY targets`,
+          headline: `${compName} accelerates operational capacity additions ahead of FY targets`,
           source_url: "https://economictimes.indiatimes.com",
           time_ago: "2h ago",
           sentiment_label: isBull ? "positive" : "neutral",
           sentiment_score: isBull ? 0.85 : 0.12
         },
         {
-          headline: `Brokerage preview: ${name} capital expenditure yields strong tariff/operating visibility`,
+          headline: `Brokerage preview: ${compName} capital expenditure yields strong tariff/operating visibility`,
           source_url: "https://moneycontrol.com",
           time_ago: "5h ago",
           sentiment_label: isBull ? "positive" : "neutral",
@@ -1383,7 +1422,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
           sentiment_score: isBull ? 0.68 : 0.0
         },
         {
-          headline: `${name} delivers steady quarterly operating metric performance`,
+          headline: `${compName} delivers steady quarterly operating metric performance`,
           source_url: "https://cnbctv18.com",
           time_ago: "3d ago",
           sentiment_label: "neutral",
@@ -1392,7 +1431,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       ];
 
       const stockObj = {
-        company: name,
+        company: compName,
         ticker: ticker,
         price: Number(price.toFixed(2)),
         change_pct: Number(changePct.toFixed(2)),
@@ -1413,8 +1452,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         nifty_pct: 0.28,
         vix_level: 14.6,
         vix_regime: "Normal",
-        summary_headline: `${name} Sustains Robust Execution Across Strategic Core Divisions`,
-        summary_body: `${name} has maintained steady operating capacity across commercial facilities. Corporate sentiment remains disciplined with steady revenue predictability and healthy balance sheet capitalization.`,
+        summary_headline: `${compName} Sustains Robust Execution Across Strategic Core Divisions`,
+        summary_body: `${compName} has maintained steady operating capacity across commercial facilities. Corporate sentiment remains disciplined with steady revenue predictability and healthy balance sheet capitalization.`,
         reasons: [
           `4 recent financial news articles analyzed for ${ticker.replace('.NS', '')}.`,
           `${isBull ? '3 of 4' : '2 of 4'} articles align with the current trend direction.`,
@@ -1435,8 +1474,16 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         articles: articles
       };
 
-      appData.stocks[ticker] = stockObj;
-      return stockObj;
+      const finalObj = Object.assign({}, stockObj, existing || {});
+      finalObj.company = compName;
+      finalObj.ticker = ticker;
+      finalObj.timeframes = (existing && existing.timeframes && Object.keys(existing.timeframes).length >= 4) ? existing.timeframes : timeframes;
+      finalObj.comparison = finalObj.timeframes["1Y"] || timeframes["1Y"];
+      finalObj.profile = p;
+      finalObj.articles = (existing && existing.articles && existing.articles.length) ? existing.articles : articles;
+
+      appData.stocks[ticker] = finalObj;
+      return finalObj;
     }
 
     function renderAll() {
@@ -1740,14 +1787,20 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       const stockCloses = comp.stock_closes || [];
       const niftyCloses = comp.nifty_closes || [];
 
+      if (!dates || dates.length < 2) {
+        plotEl.innerHTML = `<div class="fp-backtest-note" style="border:none; margin: 40px 0; text-align:center;">Historical comparison data currently unavailable for this ticker or timeframe.</div>`;
+        metricsEl.innerHTML = "";
+        return;
+      }
+
       const stockLastReturn = comp.stock_return != null ? comp.stock_return : (stockReturns.length ? stockReturns[stockReturns.length - 1] : 0.0);
       const niftyLastReturn = comp.nifty_return != null ? comp.nifty_return : (niftyReturns.length ? niftyReturns[niftyReturns.length - 1] : 0.0);
       const alpha = comp.alpha != null ? comp.alpha : (stockLastReturn - niftyLastReturn);
 
       const stockColor = stockLastReturn >= 0 ? "#11854a" : "#2563eb";
-      const rawDisplayName = stock.company || stock.ticker;
+      const rawDisplayName = (stock && (stock.company || stock.ticker)) || currentCompanyName || currentTicker || "NSE Stock";
       let shortStockLabel = rawDisplayName.includes("(") ? rawDisplayName.split("(")[0].trim() : rawDisplayName;
-      if (shortStockLabel.length > 16) {
+      if (shortStockLabel.length > 16 && stock && stock.ticker) {
         shortStockLabel = stock.ticker.replace(".NS", "");
       }
 
@@ -1773,11 +1826,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
       const layout = {
         height: 270,
-        margin: { l: 10, r: 10, t: 28, b: 6 },
+        margin: { l: 52, r: 16, t: 30, b: 28 },
         paper_bgcolor: "white",
         plot_bgcolor: "white",
         font: { color: "#14183f", family: "JetBrains Mono, Menlo, Consolas, monospace" },
         xaxis: {
+          automargin: true,
           showgrid: true,
           gridcolor: "#f1f3f8",
           zeroline: false,
@@ -1785,6 +1839,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
           tickformat: "%b %y"
         },
         yaxis: {
+          automargin: true,
           gridcolor: "#e6e8ef",
           zeroline: true,
           zerolinecolor: "rgba(20, 24, 63, 0.35)",
@@ -1808,14 +1863,22 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         responsive: true
       };
 
-      Plotly.react("comparison-plot", [traceStock, traceNifty], layout, config);
+      try {
+        Plotly.react("comparison-plot", [traceStock, traceNifty], layout, config);
+        requestAnimationFrame(() => {
+          Plotly.Plots.resize(plotEl);
+        });
+      } catch (err) {
+        console.warn("Plotly.react error, retrying with newPlot:", err);
+        Plotly.newPlot("comparison-plot", [traceStock, traceNifty], layout, config);
+      }
 
       const stockRetColor = stockLastReturn >= 0 ? "#11854a" : "#d9383a";
       const niftyRetColor = niftyLastReturn >= 0 ? "#11854a" : "#d9383a";
       const alphaColor = alpha >= 0 ? "#11854a" : "#d9383a";
       const alphaLabel = alpha >= 0 ? "Outperformed" : "Underperformed";
       let cleanName = rawDisplayName.includes("(") ? rawDisplayName.split("(")[0].trim() : rawDisplayName;
-      if (cleanName.length > 12) {
+      if (cleanName.length > 12 && stock && stock.ticker) {
         cleanName = stock.ticker.replace(".NS", "");
       }
       const startDateStr = comp.start_date || (dates.length ? dates[0] : "");
@@ -1848,7 +1911,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       document.querySelectorAll(".fp-segmented-btn").forEach(btn => {
         btn.classList.toggle("active", btn.getAttribute("data-tf") === tf);
       });
-      const stock = currentTicker ? appData.stocks[currentTicker] : null;
+      const stock = currentTicker ? getOrCreateStock(currentTicker, currentCompanyName) : null;
       if (stock) {
         renderComparisonCard(stock);
       }
@@ -1966,6 +2029,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       link.click();
       document.body.removeChild(link);
     }
+
+    window.addEventListener("resize", () => {
+      const el = document.getElementById("comparison-plot");
+      if (el && typeof Plotly !== "undefined") {
+        Plotly.Plots.resize(el);
+      }
+    });
 
     window.onload = init;
   </script>
