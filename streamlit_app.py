@@ -1393,17 +1393,7 @@ def render_controls() -> tuple[str | None, str | None]:
         active_ticker = NSE_COMPANIES.get(active_company) if active_company else None
 
         market_snapshot = fetch_market_snapshot(active_ticker)
-        mcap_col, price_col = st.columns([1, 1])
-        with mcap_col:
-            mcap_html = (
-                '<div class="fp-metric-card">'
-                '<div class="fp-metric-card-title">Market Cap</div>'
-                f'<div class="fp-metric-card-value">{escape(str(market_snapshot["market_cap"]))}</div>'
-                f'<div class="fp-metric-card-sub">{escape(str(market_snapshot["market_cap_category"]))}</div>'
-                '</div>'
-            )
-            st.markdown(mcap_html, unsafe_allow_html=True)
-
+        price_col, mcap_col = st.columns([1, 1])
         with price_col:
             price_html = (
                 '<div class="fp-metric-card">'
@@ -1413,6 +1403,16 @@ def render_controls() -> tuple[str | None, str | None]:
                 '</div>'
             )
             st.markdown(price_html, unsafe_allow_html=True)
+
+        with mcap_col:
+            mcap_html = (
+                '<div class="fp-metric-card">'
+                '<div class="fp-metric-card-title">Market Cap</div>'
+                f'<div class="fp-metric-card-value">{escape(str(market_snapshot["market_cap"]))}</div>'
+                f'<div class="fp-metric-card-sub">{escape(str(market_snapshot["market_cap_category"]))}</div>'
+                '</div>'
+            )
+            st.markdown(mcap_html, unsafe_allow_html=True)
 
         st.markdown(
             '<div class="fp-screener-label">Filter by Weekly News Sentiment (News Only)</div>',
