@@ -1016,13 +1016,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <div class="fp-metric-card-row">
           <div class="fp-metric-card">
             <div class="fp-metric-card-title">Current Stock Price</div>
-            <div class="fp-metric-card-value" id="price-val">---</div>
-            <div class="fp-metric-card-sub" id="price-sub">---</div>
+            <div class="fp-metric-card-value" id="price-val">₹266.25</div>
+            <div class="fp-metric-card-sub" id="price-sub">NSE: POWERGRID</div>
           </div>
           <div class="fp-metric-card">
             <div class="fp-metric-card-title">Market Cap</div>
-            <div class="fp-metric-card-value" id="market-cap-val">---</div>
-            <div class="fp-metric-card-sub" id="market-cap-sub">---</div>
+            <div class="fp-metric-card-value" id="market-cap-val">₹247,628.59 Cr</div>
+            <div class="fp-metric-card-sub" id="market-cap-sub">Large Cap</div>
           </div>
         </div>
 
@@ -1305,12 +1305,24 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         employees: "14,800"
       };
 
-      // Realistic pseudo-random deterministic numbers from ticker string
       const hash = Math.abs(ticker.split('').reduce((acc, char) => acc * 31 + char.charCodeAt(0), 11));
-      const price = (existing && existing.price) ? existing.price : ((hash % 2400) + 95.5);
+
+      // Resolve real snapshot fields without synthetic price fabrication
+      const currentPrice = (existing && existing.current_price) ? existing.current_price : (existing && existing.price ? `₹${Number(existing.price).toFixed(2)}` : "---");
+      const tickerLabel = (existing && existing.ticker_label) ? existing.ticker_label : `NSE: ${ticker.replace('.NS', '')}`;
+      const marketCap = (existing && existing.market_cap) ? existing.market_cap : "---";
+      const marketCapCategory = (existing && existing.market_cap_category) ? existing.market_cap_category : "---";
+
+      let numericPrice = null;
+      if (existing && existing.price != null && !isNaN(existing.price)) {
+        numericPrice = Number(existing.price);
+      } else if (currentPrice && currentPrice !== "---") {
+        const parsed = parseFloat(currentPrice.replace(/[^0-9.]/g, ''));
+        if (!isNaN(parsed) && parsed > 0) numericPrice = parsed;
+      }
+
+      const chartBasePrice = (numericPrice && numericPrice > 0) ? numericPrice : 100.0;
       const changePct = (existing && existing.change_pct != null) ? existing.change_pct : (((hash % 420) / 100) - 1.6);
-      const mcapVal = ((hash % 160) + 15) / 10;
-      const mcap = (existing && existing.market_cap) || `₹${mcapVal.toFixed(2)} Lakh Cr`;
 
       const isBull = (hash % 10) > 3;
       const sig = isBull ? "Bullish" : "Neutral";
@@ -1354,7 +1366,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
           dCursor.setDate(dCursor.getDate() - 1);
         }
 
-        const baseStockPrice = price / (1 + tSpec.ret / 100);
+        const baseStockPrice = chartBasePrice / (1 + tSpec.ret / 100);
         const baseNiftyPrice = 24500 / (1 + tSpec.nRet / 100);
 
         for (let i = 0; i < tSpec.days; i++) {
@@ -1433,9 +1445,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       const stockObj = {
         company: compName,
         ticker: ticker,
-        price: Number(price.toFixed(2)),
+        price: numericPrice,
+        current_price: currentPrice,
+        market_cap: marketCap,
+        market_cap_category: marketCapCategory,
+        ticker_label: tickerLabel,
         change_pct: Number(changePct.toFixed(2)),
-        market_cap: mcap,
         signal: sig,
         confluence_status: isBull ? "CONFLUENCE CONFIRMED" : "NEUTRAL RANGE",
         confluence_class: isBull ? "fp-badge-confirmed" : "fp-badge-neutral",
@@ -1477,6 +1492,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       const finalObj = Object.assign({}, stockObj, existing || {});
       finalObj.company = compName;
       finalObj.ticker = ticker;
+      finalObj.price = numericPrice;
+      finalObj.current_price = currentPrice;
+      finalObj.market_cap = marketCap;
+      finalObj.market_cap_category = marketCapCategory;
+      finalObj.ticker_label = tickerLabel;
       finalObj.timeframes = (existing && existing.timeframes && Object.keys(existing.timeframes).length >= 4) ? existing.timeframes : timeframes;
       finalObj.comparison = finalObj.timeframes["1Y"] || timeframes["1Y"];
       finalObj.profile = p;
@@ -1489,22 +1509,19 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     function renderAll() {
       const stock = currentTicker ? getOrCreateStock(currentTicker, currentCompanyName) : null;
 
-      // 1. Top metrics
+      // 1. Top metrics (Current Stock Price first, Market Cap second)
       if (stock) {
+        document.getElementById("price-val").textContent = stock.current_price || (stock.price ? `₹${Number(stock.price).toFixed(2)}` : "---");
+        document.getElementById("price-sub").textContent = stock.ticker_label || (stock.ticker ? `NSE: ${stock.ticker.replace('.NS', '')}` : "---");
+        document.getElementById("price-sub").style.color = "var(--fp-gray)";
         document.getElementById("market-cap-val").textContent = stock.market_cap || "---";
-        document.getElementById("market-cap-sub").textContent = "Large Cap";
-        document.getElementById("price-val").textContent = stock.price ? `₹${Number(stock.price).toFixed(2)}` : "---";
-        const changeEl = document.getElementById("price-sub");
-        if (stock.change_pct != null) {
-          changeEl.textContent = `${stock.change_pct >= 0 ? '+' : ''}${stock.change_pct}% Today`;
-          changeEl.style.color = stock.change_pct >= 0 ? "#11854a" : "#b4232a";
-        }
+        document.getElementById("market-cap-sub").textContent = stock.market_cap_category || "---";
       } else {
-        document.getElementById("market-cap-val").textContent = "---";
-        document.getElementById("market-cap-sub").textContent = "---";
         document.getElementById("price-val").textContent = "---";
         document.getElementById("price-sub").textContent = "---";
         document.getElementById("price-sub").style.color = "var(--fp-gray)";
+        document.getElementById("market-cap-val").textContent = "---";
+        document.getElementById("market-cap-sub").textContent = "---";
       }
 
       // 2. About Card
@@ -2017,9 +2034,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     function exportCSV() {
       const stock = currentTicker ? appData.stocks[currentTicker] : null;
       if (!stock) return;
+      const displayPrice = stock.current_price || (stock.price != null ? `₹${Number(stock.price).toFixed(2)}` : "---");
       const rows = [
         ["Ticker", "Company", "Signal", "Confluence Alpha", "Market Cap", "Price", "Headline", "Summary"],
-        [stock.ticker, stock.company, stock.signal, stock.confluence_score, stock.market_cap, stock.price, `"${stock.summary_headline}"`, `"${stock.summary_body}"`]
+        [stock.ticker, stock.company, stock.signal, stock.confluence_score, stock.market_cap || "---", displayPrice, `"${stock.summary_headline}"`, `"${stock.summary_body}"`]
       ];
       const csvContent = "data:text/csv;charset=utf-8," + rows.map(e => e.join(",")).join("\\n");
       const link = document.createElement("a");

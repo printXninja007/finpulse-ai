@@ -4,9 +4,9 @@
     "POWERGRID.NS": {
       "company": "Power Grid Corporation of India",
       "ticker": "POWERGRID.NS",
-      "price": 260.65,
+      "price": 266.25,
       "change_pct": 0.42,
-      "market_cap": "\u20b92.42 Lakh Cr",
+      "market_cap": "\u20b9247,628.59 Cr",
       "signal": "Bullish",
       "confluence_status": "CONFLUENCE CONFIRMED",
       "confluence_class": "fp-badge-confirmed",
@@ -9514,14 +9514,17 @@
             22936.8
           ]
         }
-      }
+      },
+      "current_price": "\u20b9266.25",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: POWERGRID"
     },
     "NTPC.NS": {
-      "company": "NTPC Limited",
+      "company": "NTPC",
       "ticker": "NTPC.NS",
-      "price": 310.7,
+      "price": 316.8,
       "change_pct": 0.35,
-      "market_cap": "\u20b93.01 Lakh Cr",
+      "market_cap": "\u20b9307,190.38 Cr",
       "signal": "Bullish",
       "confluence_status": "CONFLUENCE CONFIRMED",
       "confluence_class": "fp-badge-confirmed",
@@ -19039,14 +19042,17 @@
             22936.8
           ]
         }
-      }
+      },
+      "current_price": "\u20b9316.80",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NTPC"
     },
     "RELIANCE.NS": {
-      "company": "Reliance Industries Limited",
+      "company": "Reliance Industries",
       "ticker": "RELIANCE.NS",
-      "price": 2740.15,
+      "price": 1160.0,
       "change_pct": -0.15,
-      "market_cap": "\u20b918.54 Lakh Cr",
+      "market_cap": "\u20b91,569,766.82 Cr",
       "signal": "Neutral",
       "confluence_status": "NEUTRAL RANGE",
       "confluence_class": "fp-badge-neutral",
@@ -28557,14 +28563,17 @@
             22936.8
           ]
         }
-      }
+      },
+      "current_price": "\u20b91,160.00",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: RELIANCE"
     },
     "TCS.NS": {
-      "company": "Tata Consultancy Services",
+      "company": "Tata Consultancy Services (TCS)",
       "ticker": "TCS.NS",
-      "price": 4120.5,
+      "price": 2516.2,
       "change_pct": 1.15,
-      "market_cap": "\u20b914.91 Lakh Cr",
+      "market_cap": "\u20b9910,383.12 Cr",
       "signal": "Bullish",
       "confluence_status": "CONFLUENCE CONFIRMED",
       "confluence_class": "fp-badge-confirmed",
@@ -38082,14 +38091,17 @@
             22936.8
           ]
         }
-      }
+      },
+      "current_price": "\u20b92,516.20",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TCS"
     },
     "HDFCBANK.NS": {
-      "company": "HDFC Bank Limited",
+      "company": "HDFC Bank",
       "ticker": "HDFCBANK.NS",
-      "price": 1785.4,
+      "price": 694.9,
       "change_pct": -0.45,
-      "market_cap": "\u20b913.58 Lakh Cr",
+      "market_cap": "\u20b91,072,065.15 Cr",
       "signal": "Neutral",
       "confluence_status": "DIVERGENCE DETECTED",
       "confluence_class": "fp-badge-divergence",
@@ -47606,14 +47618,17 @@
             22936.8
           ]
         }
-      }
+      },
+      "current_price": "\u20b9694.90",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HDFCBANK"
     },
     "NMDC.NS": {
-      "company": "NMDC Limited",
+      "company": "NMDC",
       "ticker": "NMDC.NS",
-      "price": 67.05,
+      "price": 67.28,
       "change_pct": -0.8,
-      "market_cap": "\u20b958,900 Cr",
+      "market_cap": "\u20b959,151.35 Cr",
       "signal": "Neutral",
       "confluence_status": "NEUTRAL RANGE",
       "confluence_class": "fp-badge-neutral",
@@ -57055,7 +57070,10 @@
             22936.8
           ]
         }
-      }
+      },
+      "current_price": "\u20b967.28",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NMDC"
     },
     "INFY.NS": {
       "timeframes": {
@@ -66445,10 +66463,10 @@
           22698.8
         ]
       },
-      "price": 1123.15,
+      "price": 1174.2,
       "change_pct": -3.43,
       "ticker": "INFY.NS",
-      "company": "INFY",
+      "company": "Infosys",
       "profile": {
         "summary": "Infosys Limited is an Indian multinational information technology company that provides business consulting, information technology and outsourcing services. Founded in Pune and headquartered in Bengaluru, Infosys is the second-largest Indian IT company by revenue.",
         "industry": "Information Technology Services",
@@ -66472,7 +66490,7 @@
       "nifty_pct": 0.28,
       "vix_level": 14.6,
       "vix_regime": "Normal",
-      "market_cap": "\u20b917.90 Lakh Cr",
+      "market_cap": "\u20b9475,595.17 Cr",
       "summary_headline": "INFY Sustains Robust Execution Across Strategic Core Divisions",
       "summary_body": "INFY has maintained steady operating capacity across commercial facilities. Corporate sentiment remains disciplined with steady revenue predictability and healthy balance sheet capitalization.",
       "reasons": [
@@ -66518,7 +66536,10 @@
           "sentiment_label": "neutral",
           "sentiment_score": 0.1
         }
-      ]
+      ],
+      "current_price": "\u20b91,174.20",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: INFY"
     },
     "SBIN.NS": {
       "timeframes": {
@@ -75908,10 +75929,10 @@
           22698.8
         ]
       },
-      "price": 956.8,
+      "price": 967.6,
       "change_pct": 1.24,
       "ticker": "SBIN.NS",
-      "company": "SBIN",
+      "company": "State Bank of India (SBI)",
       "profile": {
         "summary": "State Bank of India (SBI) is an Indian multinational public sector bank and financial services statutory body headquartered in Mumbai. It is the 48th largest bank in the world by total assets and controls over a quarter of India's total banking market share.",
         "industry": "Public Sector Banking",
@@ -75935,7 +75956,7 @@
       "nifty_pct": 0.28,
       "vix_level": 14.6,
       "vix_regime": "Normal",
-      "market_cap": "\u20b913.00 Lakh Cr",
+      "market_cap": "\u20b9893,168.96 Cr",
       "summary_headline": "SBIN Sustains Robust Execution Across Strategic Core Divisions",
       "summary_body": "SBIN has maintained steady operating capacity across commercial facilities. Corporate sentiment remains disciplined with steady revenue predictability and healthy balance sheet capitalization.",
       "reasons": [
@@ -75981,7 +76002,10 @@
           "sentiment_label": "neutral",
           "sentiment_score": 0.1
         }
-      ]
+      ],
+      "current_price": "\u20b9967.60",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SBIN"
     },
     "ITC.NS": {
       "timeframes": {
@@ -85371,7 +85395,7 @@
           22698.8
         ]
       },
-      "price": 259.5,
+      "price": 264.05,
       "change_pct": -0.19,
       "ticker": "ITC.NS",
       "company": "ITC",
@@ -85398,7 +85422,7 @@
       "nifty_pct": 0.28,
       "vix_level": 14.6,
       "vix_regime": "Normal",
-      "market_cap": "\u20b99.90 Lakh Cr",
+      "market_cap": "\u20b9330,967.81 Cr",
       "summary_headline": "ITC Sustains Robust Execution Across Strategic Core Divisions",
       "summary_body": "ITC has maintained steady operating capacity across commercial facilities. Corporate sentiment remains disciplined with steady revenue predictability and healthy balance sheet capitalization.",
       "reasons": [
@@ -85444,7 +85468,10 @@
           "sentiment_label": "neutral",
           "sentiment_score": 0.1
         }
-      ]
+      ],
+      "current_price": "\u20b9264.05",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ITC"
     },
     "LT.NS": {
       "timeframes": {
@@ -94834,10 +94861,10 @@
           22698.8
         ]
       },
-      "price": 3801.3,
+      "price": 3867.2,
       "change_pct": 3.72,
       "ticker": "LT.NS",
-      "company": "LT",
+      "company": "Larsen & Toubro",
       "profile": {
         "summary": "Larsen & Toubro Limited (L&T) is an Indian multinational conglomerate company, with business interests in engineering, construction, manufacturing, technology, information technology and financial services, headquartered in Mumbai.",
         "industry": "Engineering & Construction",
@@ -94861,7 +94888,7 @@
       "nifty_pct": 0.28,
       "vix_level": 14.6,
       "vix_regime": "Normal",
-      "market_cap": "\u20b917.40 Lakh Cr",
+      "market_cap": "\u20b9532,083.11 Cr",
       "summary_headline": "LT Sustains Robust Execution Across Strategic Core Divisions",
       "summary_body": "LT has maintained steady operating capacity across commercial facilities. Corporate sentiment remains disciplined with steady revenue predictability and healthy balance sheet capitalization.",
       "reasons": [
@@ -94907,7 +94934,10 @@
           "sentiment_label": "neutral",
           "sentiment_score": 0.1
         }
-      ]
+      ],
+      "current_price": "\u20b93,867.20",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: LT"
     },
     "ICICIBANK.NS": {
       "timeframes": {
@@ -104297,10 +104327,10 @@
           22698.8
         ]
       },
-      "price": 1377.6,
+      "price": 1404.5,
       "change_pct": -0.67,
       "ticker": "ICICIBANK.NS",
-      "company": "ICICIBANK",
+      "company": "ICICI Bank",
       "profile": {
         "summary": "ICICI Bank Limited is a leading Indian multinational bank and financial services company. It offers a wide range of banking products and financial services for corporate and retail customers through a variety of delivery channels and specialised subsidiaries.",
         "industry": "Private Sector Banking",
@@ -104324,7 +104354,7 @@
       "nifty_pct": 0.28,
       "vix_level": 14.6,
       "vix_regime": "Normal",
-      "market_cap": "\u20b910.80 Lakh Cr",
+      "market_cap": "\u20b91,008,521.34 Cr",
       "summary_headline": "ICICIBANK Sustains Robust Execution Across Strategic Core Divisions",
       "summary_body": "ICICIBANK has maintained steady operating capacity across commercial facilities. Corporate sentiment remains disciplined with steady revenue predictability and healthy balance sheet capitalization.",
       "reasons": [
@@ -104370,7 +104400,10 @@
           "sentiment_label": "neutral",
           "sentiment_score": 0.1
         }
-      ]
+      ],
+      "current_price": "\u20b91,404.50",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ICICIBANK"
     },
     "BHARTIARTL.NS": {
       "timeframes": {
@@ -113760,10 +113793,10 @@
           22698.8
         ]
       },
-      "price": 1948.1,
+      "price": 1981.0,
       "change_pct": -1.55,
       "ticker": "BHARTIARTL.NS",
-      "company": "BHARTIARTL",
+      "company": "Bharti Airtel",
       "profile": {
         "summary": "Bharti Airtel Limited is an Indian multinational telecommunications services company based in New Delhi. It operates in 18 countries across South Asia and Africa, providing 4G, 5G, mobile broadband, fixed-line telephone, and digital television services.",
         "industry": "Telecommunications Services",
@@ -113787,7 +113820,7 @@
       "nifty_pct": 0.28,
       "vix_level": 14.6,
       "vix_regime": "Normal",
-      "market_cap": "\u20b94.40 Lakh Cr",
+      "market_cap": "\u20b91,235,878.20 Cr",
       "summary_headline": "BHARTIARTL Sustains Robust Execution Across Strategic Core Divisions",
       "summary_body": "BHARTIARTL has maintained steady operating capacity across commercial facilities. Corporate sentiment remains disciplined with steady revenue predictability and healthy balance sheet capitalization.",
       "reasons": [
@@ -113833,7 +113866,10 @@
           "sentiment_label": "neutral",
           "sentiment_score": 0.1
         }
-      ]
+      ],
+      "current_price": "\u20b91,981.00",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BHARTIARTL"
     },
     "KOTAKBANK.NS": {
       "timeframes": {
@@ -123223,10 +123259,10 @@
           22698.8
         ]
       },
-      "price": 440.0,
+      "price": 460.6,
       "change_pct": -0.56,
       "ticker": "KOTAKBANK.NS",
-      "company": "KOTAKBANK",
+      "company": "Kotak Mahindra Bank",
       "profile": {
         "summary": "Kotak Mahindra Bank Limited is an Indian banking and financial services company headquartered in Mumbai. It offers personal finance, investment banking, life insurance, and wealth management across commercial and retail customers.",
         "industry": "Private Sector Banking",
@@ -123250,7 +123286,7 @@
       "nifty_pct": 0.28,
       "vix_level": 14.6,
       "vix_regime": "Normal",
-      "market_cap": "\u20b916.90 Lakh Cr",
+      "market_cap": "\u20b9458,199.45 Cr",
       "summary_headline": "KOTAKBANK Sustains Robust Execution Across Strategic Core Divisions",
       "summary_body": "KOTAKBANK has maintained steady operating capacity across commercial facilities. Corporate sentiment remains disciplined with steady revenue predictability and healthy balance sheet capitalization.",
       "reasons": [
@@ -123296,7 +123332,10 @@
           "sentiment_label": "neutral",
           "sentiment_score": 0.1
         }
-      ]
+      ],
+      "current_price": "\u20b9460.60",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: KOTAKBANK"
     },
     "HINDUNILVR.NS": {
       "timeframes": {
@@ -132686,10 +132725,10 @@
           22698.8
         ]
       },
-      "price": 1815.8,
+      "price": 1846.2,
       "change_pct": -0.12,
       "ticker": "HINDUNILVR.NS",
-      "company": "HINDUNILVR",
+      "company": "Hindustan Unilever",
       "profile": {
         "summary": "Hindustan Unilever Limited (HUL) is an Indian consumer goods company headquartered in Mumbai. It is a subsidiary of the British company Unilever. Its products include foods, beverages, cleaning agents, personal care products, water purifiers, and other fast-moving consumer goods.",
         "industry": "Fast Moving Consumer Goods (FMCG)",
@@ -132713,7 +132752,7 @@
       "nifty_pct": 0.28,
       "vix_level": 14.6,
       "vix_regime": "Normal",
-      "market_cap": "\u20b915.60 Lakh Cr",
+      "market_cap": "\u20b9433,781.53 Cr",
       "summary_headline": "HINDUNILVR Sustains Robust Execution Across Strategic Core Divisions",
       "summary_body": "HINDUNILVR has maintained steady operating capacity across commercial facilities. Corporate sentiment remains disciplined with steady revenue predictability and healthy balance sheet capitalization.",
       "reasons": [
@@ -132759,7 +132798,10 @@
           "sentiment_label": "neutral",
           "sentiment_score": 0.1
         }
-      ]
+      ],
+      "current_price": "\u20b91,846.20",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HINDUNILVR"
     },
     "AXISBANK.NS": {
       "timeframes": {
@@ -142149,10 +142191,10 @@
           22698.8
         ]
       },
-      "price": 1220.0,
+      "price": 1227.4,
       "change_pct": 1.19,
       "ticker": "AXISBANK.NS",
-      "company": "AXISBANK",
+      "company": "Axis Bank",
       "profile": {
         "summary": "Axis Bank Limited is an Indian multinational banking and financial services company headquartered in Mumbai. It is India's third largest private sector bank by assets, offering a comprehensive suite of financial services across retail, corporate, and SME banking.",
         "industry": "Private Sector Banking",
@@ -142176,7 +142218,7 @@
       "nifty_pct": 0.28,
       "vix_level": 14.6,
       "vix_regime": "Normal",
-      "market_cap": "\u20b915.00 Lakh Cr",
+      "market_cap": "\u20b9382,222.02 Cr",
       "summary_headline": "AXISBANK Sustains Robust Execution Across Strategic Core Divisions",
       "summary_body": "AXISBANK has maintained steady operating capacity across commercial facilities. Corporate sentiment remains disciplined with steady revenue predictability and healthy balance sheet capitalization.",
       "reasons": [
@@ -142222,7 +142264,4608 @@
           "sentiment_label": "neutral",
           "sentiment_score": 0.1
         }
-      ]
+      ],
+      "current_price": "\u20b91,227.40",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: AXISBANK"
+    },
+    "3MINDIA.NS": {
+      "company": "3M India",
+      "ticker": "3MINDIA.NS",
+      "current_price": "\u20b929,120.00",
+      "market_cap": "\u20b932,803.88 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: 3MINDIA",
+      "price": 29120.0
+    },
+    "AFFLE.NS": {
+      "company": "Affle India",
+      "ticker": "AFFLE.NS",
+      "current_price": "\u20b91,353.80",
+      "market_cap": "\u20b919,448.82 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: AFFLE",
+      "price": 1353.8
+    },
+    "ADANIPOWER.NS": {
+      "company": "Adani Power",
+      "ticker": "ADANIPOWER.NS",
+      "current_price": "\u20b9191.56",
+      "market_cap": "\u20b9369,417.62 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ADANIPOWER",
+      "price": 191.56
+    },
+    "ABB.NS": {
+      "company": "ABB India",
+      "ticker": "ABB.NS",
+      "current_price": "\u20b96,445.50",
+      "market_cap": "\u20b9136,585.54 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ABB",
+      "price": 6445.5
+    },
+    "ABBOTINDIA.NS": {
+      "company": "Abbott India",
+      "ticker": "ABBOTINDIA.NS",
+      "current_price": "\u20b925,990.00",
+      "market_cap": "\u20b955,226.94 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ABBOTINDIA",
+      "price": 25990.0
+    },
+    "AAVAS.NS": {
+      "company": "AAVAS Financiers",
+      "ticker": "AAVAS.NS",
+      "current_price": "\u20b91,085.00",
+      "market_cap": "\u20b98,603.60 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: AAVAS",
+      "price": 1085.0
+    },
+    "ADANIENSOL.NS": {
+      "company": "Adani Energy Solutions",
+      "ticker": "ADANIENSOL.NS",
+      "current_price": "\u20b91,351.60",
+      "market_cap": "\u20b9165,294.53 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ADANIENSOL",
+      "price": 1351.6
+    },
+    "AEGISLOG.NS": {
+      "company": "Aegis Logistics",
+      "ticker": "AEGISLOG.NS",
+      "current_price": "\u20b91,149.00",
+      "market_cap": "\u20b940,329.90 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: AEGISLOG",
+      "price": 1149.0
+    },
+    "AIAENG.NS": {
+      "company": "AIA Engineering",
+      "ticker": "AIAENG.NS",
+      "current_price": "\u20b93,609.20",
+      "market_cap": "\u20b933,681.19 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: AIAENG",
+      "price": 3609.2
+    },
+    "ABFRL.NS": {
+      "company": "Aditya Birla Fashion & Retail",
+      "ticker": "ABFRL.NS",
+      "current_price": "\u20b939.09",
+      "market_cap": "\u20b94,756.38 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: ABFRL",
+      "price": 39.09
+    },
+    "ACC.NS": {
+      "company": "ACC",
+      "ticker": "ACC.NS",
+      "current_price": "\u20b91,140.00",
+      "market_cap": "\u20b921,407.75 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ACC",
+      "price": 1140.0
+    },
+    "ADANIGREEN.NS": {
+      "company": "Adani Green Energy",
+      "ticker": "ADANIGREEN.NS",
+      "current_price": "\u20b91,313.20",
+      "market_cap": "\u20b9216,307.16 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ADANIGREEN",
+      "price": 1313.2
+    },
+    "ABCAPITAL.NS": {
+      "company": "Aditya Birla Capital",
+      "ticker": "ABCAPITAL.NS",
+      "current_price": "\u20b9359.70",
+      "market_cap": "\u20b998,484.45 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ABCAPITAL",
+      "price": 359.7
+    },
+    "AWL.NS": {
+      "company": "Adani Wilmar",
+      "ticker": "AWL.NS",
+      "current_price": "\u20b9160.77",
+      "market_cap": "\u20b920,768.55 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: AWL",
+      "price": 160.77
+    },
+    "ADANIPORTS.NS": {
+      "company": "Adani Ports & SEZ",
+      "ticker": "ADANIPORTS.NS",
+      "current_price": "\u20b91,846.70",
+      "market_cap": "\u20b9425,472.11 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ADANIPORTS",
+      "price": 1846.7
+    },
+    "AARTIIND.NS": {
+      "company": "Aarti Industries",
+      "ticker": "AARTIIND.NS",
+      "current_price": "\u20b9437.35",
+      "market_cap": "\u20b915,864.49 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: AARTIIND",
+      "price": 437.35
+    },
+    "ABSLAMC.NS": {
+      "company": "Aditya Birla Sun Life AMC",
+      "ticker": "ABSLAMC.NS",
+      "current_price": "\u20b9819.65",
+      "market_cap": "\u20b923,718.63 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ABSLAMC",
+      "price": 819.65
+    },
+    "AETHER.NS": {
+      "company": "Aether Industries",
+      "ticker": "AETHER.NS",
+      "current_price": "\u20b91,528.30",
+      "market_cap": "\u20b920,283.47 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: AETHER",
+      "price": 1528.3
+    },
+    "AARTIDRUGS.NS": {
+      "company": "Aarti Drugs",
+      "ticker": "AARTIDRUGS.NS",
+      "current_price": "\u20b9434.50",
+      "market_cap": "\u20b93,965.68 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: AARTIDRUGS",
+      "price": 434.5
+    },
+    "ACE.NS": {
+      "company": "Action Construction Equipment",
+      "ticker": "ACE.NS",
+      "current_price": "\u20b91,010.40",
+      "market_cap": "\u20b912,027.42 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ACE",
+      "price": 1010.4
+    },
+    "ADANIENT.NS": {
+      "company": "Adani Enterprises",
+      "ticker": "ADANIENT.NS",
+      "current_price": "\u20b92,579.40",
+      "market_cap": "\u20b9349,179.19 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ADANIENT",
+      "price": 2579.4
+    },
+    "ATGL.NS": {
+      "company": "Adani Total Gas",
+      "ticker": "ATGL.NS",
+      "current_price": "\u20b9536.15",
+      "market_cap": "\u20b958,966.32 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ATGL",
+      "price": 536.15
+    },
+    "AARTIPHARM.NS": {
+      "company": "Aarti Pharmalabs",
+      "ticker": "AARTIPHARM.NS",
+      "current_price": "\u20b9890.40",
+      "market_cap": "\u20b98,075.49 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: AARTIPHARM",
+      "price": 890.4
+    },
+    "AADHARHFC.NS": {
+      "company": "Aadhar Housing Finance",
+      "ticker": "AADHARHFC.NS",
+      "current_price": "\u20b9429.30",
+      "market_cap": "\u20b918,820.22 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: AADHARHFC",
+      "price": 429.3
+    },
+    "AJANTPHARM.NS": {
+      "company": "Ajanta Pharma",
+      "ticker": "AJANTPHARM.NS",
+      "current_price": "\u20b93,512.50",
+      "market_cap": "\u20b943,891.86 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: AJANTPHARM",
+      "price": 3512.5
+    },
+    "ALKYLAMINE.NS": {
+      "company": "Alkyl Amines Chemicals",
+      "ticker": "ALKYLAMINE.NS",
+      "current_price": "\u20b91,595.90",
+      "market_cap": "\u20b98,162.75 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ALKYLAMINE",
+      "price": 1595.9
+    },
+    "ALOKINDS.NS": {
+      "company": "Alok Industries",
+      "ticker": "ALOKINDS.NS",
+      "current_price": "\u20b98.19",
+      "market_cap": "\u20b94,066.53 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: ALOKINDS",
+      "price": 8.19
+    },
+    "APLLTD.NS": {
+      "company": "Alembic Pharmaceuticals",
+      "ticker": "APLLTD.NS",
+      "current_price": "\u20b9795.00",
+      "market_cap": "\u20b915,626.77 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: APLLTD",
+      "price": 795.0
+    },
+    "AMBUJACEM.NS": {
+      "company": "Ambuja Cements",
+      "ticker": "AMBUJACEM.NS",
+      "current_price": "\u20b9352.35",
+      "market_cap": "\u20b987,552.53 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: AMBUJACEM",
+      "price": 352.35
+    },
+    "ABDL.NS": {
+      "company": "Allied Blenders and Distillers",
+      "ticker": "ABDL.NS",
+      "current_price": "\u20b9688.05",
+      "market_cap": "\u20b919,245.46 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ABDL",
+      "price": 688.05
+    },
+    "AMBER.NS": {
+      "company": "Amber Enterprises India",
+      "ticker": "AMBER.NS",
+      "current_price": "\u20b95,944.00",
+      "market_cap": "\u20b920,963.16 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: AMBER",
+      "price": 5944.0
+    },
+    "ALKEM.NS": {
+      "company": "Alkem Laboratories",
+      "ticker": "ALKEM.NS",
+      "current_price": "\u20b95,120.00",
+      "market_cap": "\u20b961,217.28 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ALKEM",
+      "price": 5120.0
+    },
+    "ARE&M.NS": {
+      "company": "Amara Raja Energy & Mobility",
+      "ticker": "ARE&M.NS",
+      "current_price": "\u20b9691.50",
+      "market_cap": "\u20b912,656.20 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ARE&M",
+      "price": 691.5
+    },
+    "APOLLOHOSP.NS": {
+      "company": "Apollo Hospitals Enterprise",
+      "ticker": "APOLLOHOSP.NS",
+      "current_price": "\u20b98,305.00",
+      "market_cap": "\u20b9119,413.16 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: APOLLOHOSP",
+      "price": 8305.0
+    },
+    "APOLLOTYRE.NS": {
+      "company": "Apollo Tyres",
+      "ticker": "APOLLOTYRE.NS",
+      "current_price": "\u20b9383.45",
+      "market_cap": "\u20b924,256.33 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: APOLLOTYRE",
+      "price": 383.45
+    },
+    "APLAPOLLO.NS": {
+      "company": "APL Apollo Tubes",
+      "ticker": "APLAPOLLO.NS",
+      "current_price": "\u20b92,186.00",
+      "market_cap": "\u20b960,696.13 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: APLAPOLLO",
+      "price": 2186.0
+    },
+    "ANANDRATHI.NS": {
+      "company": "Anand Rathi Wealth",
+      "ticker": "ANANDRATHI.NS",
+      "current_price": "\u20b92,275.90",
+      "market_cap": "\u20b937,789.33 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ANANDRATHI",
+      "price": 2275.9
+    },
+    "ANGELONE.NS": {
+      "company": "Angel One",
+      "ticker": "ANGELONE.NS",
+      "current_price": "\u20b9288.25",
+      "market_cap": "\u20b926,363.19 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ANGELONE",
+      "price": 288.25
+    },
+    "ASAHIINDIA.NS": {
+      "company": "Asahi India Glass",
+      "ticker": "ASAHIINDIA.NS",
+      "current_price": "\u20b9914.35",
+      "market_cap": "\u20b923,309.27 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ASAHIINDIA",
+      "price": 914.35
+    },
+    "ASHOKLEY.NS": {
+      "company": "Ashok Leyland",
+      "ticker": "ASHOKLEY.NS",
+      "current_price": "\u20b9146.48",
+      "market_cap": "\u20b986,040.22 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ASHOKLEY",
+      "price": 146.48
+    },
+    "APTUS.NS": {
+      "company": "Aptous Value Housing Finance",
+      "ticker": "APTUS.NS",
+      "current_price": "\u20b9197.09",
+      "market_cap": "\u20b99,870.86 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: APTUS",
+      "price": 197.09
+    },
+    "ACI.NS": {
+      "company": "Archean Chemical Industries",
+      "ticker": "ACI.NS",
+      "current_price": "\u20b9441.00",
+      "market_cap": "\u20b95,444.52 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ACI",
+      "price": 441.0
+    },
+    "ARVSMART.NS": {
+      "company": "Arvind SmartSpaces",
+      "ticker": "ARVSMART.NS",
+      "current_price": "\u20b9569.60",
+      "market_cap": "\u20b92,615.43 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: ARVSMART",
+      "price": 569.6
+    },
+    "ASHOKA.NS": {
+      "company": "Ashoka Buildcon",
+      "ticker": "ASHOKA.NS",
+      "current_price": "\u20b996.52",
+      "market_cap": "\u20b92,709.54 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: ASHOKA",
+      "price": 96.52
+    },
+    "ARVINDFASN.NS": {
+      "company": "Arvind Fashions",
+      "ticker": "ARVINDFASN.NS",
+      "current_price": "\u20b9350.80",
+      "market_cap": "\u20b94,691.23 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: ARVINDFASN",
+      "price": 350.8
+    },
+    "ASIANPAINT.NS": {
+      "company": "Asian Paints",
+      "ticker": "ASIANPAINT.NS",
+      "current_price": "\u20b92,308.70",
+      "market_cap": "\u20b9221,165.70 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ASIANPAINT",
+      "price": 2308.7
+    },
+    "ASTERDM.NS": {
+      "company": "Aster DM Healthcare",
+      "ticker": "ASTERDM.NS",
+      "current_price": "\u20b9683.50",
+      "market_cap": "\u20b959,510.53 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ASTERDM",
+      "price": 683.5
+    },
+    "ASTRAL.NS": {
+      "company": "Astral",
+      "ticker": "ASTRAL.NS",
+      "current_price": "\u20b91,349.40",
+      "market_cap": "\u20b936,251.65 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ASTRAL",
+      "price": 1349.4
+    },
+    "ASTRAZEN.NS": {
+      "company": "AstraZeneca Pharma India",
+      "ticker": "ASTRAZEN.NS",
+      "current_price": "\u20b96,313.50",
+      "market_cap": "\u20b915,783.75 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ASTRAZEN",
+      "price": 6313.5
+    },
+    "ASTRAMICRO.NS": {
+      "company": "Astra Microwave Products",
+      "ticker": "ASTRAMICRO.NS",
+      "current_price": "\u20b91,534.80",
+      "market_cap": "\u20b914,572.16 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ASTRAMICRO",
+      "price": 1534.8
+    },
+    "AUBANK.NS": {
+      "company": "AU Small Finance Bank",
+      "ticker": "AUBANK.NS",
+      "current_price": "\u20b9869.50",
+      "market_cap": "\u20b965,161.71 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: AUBANK",
+      "price": 869.5
+    },
+    "DMART.NS": {
+      "company": "Avenue Supermarts (DMart)",
+      "ticker": "DMART.NS",
+      "current_price": "\u20b93,177.60",
+      "market_cap": "\u20b9207,277.88 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: DMART",
+      "price": 3177.6
+    },
+    "AVONMORE.NS": {
+      "company": "Avonmore Capital",
+      "ticker": "AVONMORE.NS",
+      "current_price": "\u20b913.01",
+      "market_cap": "\u20b9367.12 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: AVONMORE",
+      "price": 13.01
+    },
+    "ATUL.NS": {
+      "company": "Atul",
+      "ticker": "ATUL.NS",
+      "current_price": "\u20b95,017.00",
+      "market_cap": "\u20b914,770.93 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ATUL",
+      "price": 5017.0
+    },
+    "AVANTIFEED.NS": {
+      "company": "Avanti Feeds",
+      "ticker": "AVANTIFEED.NS",
+      "current_price": "\u20b9660.35",
+      "market_cap": "\u20b98,996.98 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: AVANTIFEED",
+      "price": 660.35
+    },
+    "AWFIS.NS": {
+      "company": "Awfis Space Solutions",
+      "ticker": "AWFIS.NS",
+      "current_price": "\u20b9238.12",
+      "market_cap": "\u20b91,704.06 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: AWFIS",
+      "price": 238.12
+    },
+    "BAJAJ-AUTO.NS": {
+      "company": "Bajaj Auto",
+      "ticker": "BAJAJ-AUTO.NS",
+      "current_price": "\u20b910,516.00",
+      "market_cap": "\u20b9288,983.72 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BAJAJ-AUTO",
+      "price": 10516.0
+    },
+    "AUROPHARMA.NS": {
+      "company": "Aurobindo Pharma",
+      "ticker": "AUROPHARMA.NS",
+      "current_price": "\u20b91,681.00",
+      "market_cap": "\u20b996,721.03 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: AUROPHARMA",
+      "price": 1681.0
+    },
+    "BAJAJCON.NS": {
+      "company": "Bajaj Consumer Care",
+      "ticker": "BAJAJCON.NS",
+      "current_price": "\u20b9375.75",
+      "market_cap": "\u20b94,907.98 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: BAJAJCON",
+      "price": 375.75
+    },
+    "BAJFINANCE.NS": {
+      "company": "Bajaj Finance",
+      "ticker": "BAJFINANCE.NS",
+      "current_price": "\u20b9941.25",
+      "market_cap": "\u20b9585,824.94 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BAJFINANCE",
+      "price": 941.25
+    },
+    "BAJAJFINSV.NS": {
+      "company": "Bajaj Finserv",
+      "ticker": "BAJAJFINSV.NS",
+      "current_price": "\u20b91,673.70",
+      "market_cap": "\u20b9267,832.94 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BAJAJFINSV",
+      "price": 1673.7
+    },
+    "BAJAJHFL.NS": {
+      "company": "Bajaj Housing Finance",
+      "ticker": "BAJAJHFL.NS",
+      "current_price": "\u20b978.03",
+      "market_cap": "\u20b964,991.19 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BAJAJHFL",
+      "price": 78.03
+    },
+    "BAJAJHLDNG.NS": {
+      "company": "Bajaj Holdings & Investment",
+      "ticker": "BAJAJHLDNG.NS",
+      "current_price": "\u20b910,236.00",
+      "market_cap": "\u20b9113,920.04 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BAJAJHLDNG",
+      "price": 10236.0
+    },
+    "BALAMINES.NS": {
+      "company": "Balaji Amines",
+      "ticker": "BALAMINES.NS",
+      "current_price": "\u20b91,781.00",
+      "market_cap": "\u20b95,770.62 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: BALAMINES",
+      "price": 1781.0
+    },
+    "BANKINDIA.NS": {
+      "company": "Bank of India",
+      "ticker": "BANKINDIA.NS",
+      "current_price": "\u20b9134.90",
+      "market_cap": "\u20b961,415.48 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BANKINDIA",
+      "price": 134.9
+    },
+    "BATAINDIA.NS": {
+      "company": "Bata India",
+      "ticker": "BATAINDIA.NS",
+      "current_price": "\u20b9632.40",
+      "market_cap": "\u20b98,128.08 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: BATAINDIA",
+      "price": 632.4
+    },
+    "MAHABANK.NS": {
+      "company": "Bank of Maharashtra",
+      "ticker": "MAHABANK.NS",
+      "current_price": "\u20b981.25",
+      "market_cap": "\u20b962,493.88 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MAHABANK",
+      "price": 81.25
+    },
+    "BDL.NS": {
+      "company": "Bharat Dynamics",
+      "ticker": "BDL.NS",
+      "current_price": "\u20b9994.50",
+      "market_cap": "\u20b936,454.64 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BDL",
+      "price": 994.5
+    },
+    "BAYERCROP.NS": {
+      "company": "Bayer CropScience",
+      "ticker": "BAYERCROP.NS",
+      "current_price": "\u20b93,258.90",
+      "market_cap": "\u20b914,646.18 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: BAYERCROP",
+      "price": 3258.9
+    },
+    "BEML.NS": {
+      "company": "BEML",
+      "ticker": "BEML.NS",
+      "current_price": "\u20b91,990.00",
+      "market_cap": "\u20b916,574.51 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: BEML",
+      "price": 1990.0
+    },
+    "BANKBARODA.NS": {
+      "company": "Bank of Baroda",
+      "ticker": "BANKBARODA.NS",
+      "current_price": "\u20b9242.15",
+      "market_cap": "\u20b9125,224.54 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BANKBARODA",
+      "price": 242.15
+    },
+    "BALRAMCHIN.NS": {
+      "company": "Balrampur Chini Mills",
+      "ticker": "BALRAMCHIN.NS",
+      "current_price": "\u20b9614.55",
+      "market_cap": "\u20b913,006.44 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: BALRAMCHIN",
+      "price": 614.55
+    },
+    "BALKRISIND.NS": {
+      "company": "Balkrishna Industries",
+      "ticker": "BALKRISIND.NS",
+      "current_price": "\u20b92,080.40",
+      "market_cap": "\u20b940,217.71 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BALKRISIND",
+      "price": 2080.4
+    },
+    "BANDHANBNK.NS": {
+      "company": "Bandhan Bank",
+      "ticker": "BANDHANBNK.NS",
+      "current_price": "\u20b9156.72",
+      "market_cap": "\u20b925,249.98 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BANDHANBNK",
+      "price": 156.72
+    },
+    "BHARATFORG.NS": {
+      "company": "Bharat Forge",
+      "ticker": "BHARATFORG.NS",
+      "current_price": "\u20b91,716.40",
+      "market_cap": "\u20b983,875.43 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BHARATFORG",
+      "price": 1716.4
+    },
+    "BPCL.NS": {
+      "company": "Bharat Petroleum Corporation (BPCL)",
+      "ticker": "BPCL.NS",
+      "current_price": "\u20b9285.85",
+      "market_cap": "\u20b9124,016.18 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BPCL",
+      "price": 285.85
+    },
+    "BIKAJI.NS": {
+      "company": "Bikaji Foods International",
+      "ticker": "BIKAJI.NS",
+      "current_price": "\u20b9452.85",
+      "market_cap": "\u20b911,354.60 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: BIKAJI",
+      "price": 452.85
+    },
+    "BHEL.NS": {
+      "company": "Bharat Heavy Electricals (BHEL)",
+      "ticker": "BHEL.NS",
+      "current_price": "\u20b9394.00",
+      "market_cap": "\u20b9137,193.30 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BHEL",
+      "price": 394.0
+    },
+    "BEL.NS": {
+      "company": "Bharat Electronics (BEL)",
+      "ticker": "BEL.NS",
+      "current_price": "\u20b9370.70",
+      "market_cap": "\u20b9270,973.51 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BEL",
+      "price": 370.7
+    },
+    "BERGEPAINT.NS": {
+      "company": "Berge Paints India",
+      "ticker": "BERGEPAINT.NS",
+      "current_price": "\u20b9463.90",
+      "market_cap": "\u20b954,090.87 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BERGEPAINT",
+      "price": 463.9
+    },
+    "BHARTIHEXA.NS": {
+      "company": "Bharti Hexacom",
+      "ticker": "BHARTIHEXA.NS",
+      "current_price": "\u20b91,650.40",
+      "market_cap": "\u20b982,520.00 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BHARTIHEXA",
+      "price": 1650.4
+    },
+    "BLUEDART.NS": {
+      "company": "Blue Dart Express",
+      "ticker": "BLUEDART.NS",
+      "current_price": "\u20b94,188.70",
+      "market_cap": "\u20b99,938.92 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: BLUEDART",
+      "price": 4188.7
+    },
+    "BSOFT.NS": {
+      "company": "Birlasoft",
+      "ticker": "BSOFT.NS",
+      "current_price": "\u20b9324.30",
+      "market_cap": "\u20b99,069.60 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: BSOFT",
+      "price": 324.3
+    },
+    "BLS.NS": {
+      "company": "BLS International Services",
+      "ticker": "BLS.NS",
+      "current_price": "\u20b9212.97",
+      "market_cap": "\u20b98,763.70 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: BLS",
+      "price": 212.97
+    },
+    "BIRLACORPN.NS": {
+      "company": "Birla Corporation",
+      "ticker": "BIRLACORPN.NS",
+      "current_price": "\u20b9778.80",
+      "market_cap": "\u20b95,997.18 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: BIRLACORPN",
+      "price": 778.8
+    },
+    "BIOCON.NS": {
+      "company": "Biocon",
+      "ticker": "BIOCON.NS",
+      "current_price": "\u20b9354.15",
+      "market_cap": "\u20b958,001.06 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BIOCON",
+      "price": 354.15
+    },
+    "BRIGADE.NS": {
+      "company": "Brigade Enterprises",
+      "ticker": "BRIGADE.NS",
+      "current_price": "\u20b9524.75",
+      "market_cap": "\u20b917,115.37 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: BRIGADE",
+      "price": 524.75
+    },
+    "BORORENEW.NS": {
+      "company": "Borosil Renewables",
+      "ticker": "BORORENEW.NS",
+      "current_price": "\u20b9383.85",
+      "market_cap": "\u20b95,649.65 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: BORORENEW",
+      "price": 383.85
+    },
+    "CANFINHOME.NS": {
+      "company": "Can Fin Homes",
+      "ticker": "CANFINHOME.NS",
+      "current_price": "\u20b9715.35",
+      "market_cap": "\u20b99,525.21 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CANFINHOME",
+      "price": 715.35
+    },
+    "BLUESTARCO.NS": {
+      "company": "Blue Star",
+      "ticker": "BLUESTARCO.NS",
+      "current_price": "\u20b91,626.00",
+      "market_cap": "\u20b933,429.36 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BLUESTARCO",
+      "price": 1626.0
+    },
+    "CAMPUS.NS": {
+      "company": "Campus Activewear",
+      "ticker": "CAMPUS.NS",
+      "current_price": "\u20b9190.00",
+      "market_cap": "\u20b95,807.91 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CAMPUS",
+      "price": 190.0
+    },
+    "CANBK.NS": {
+      "company": "Canara Bank",
+      "ticker": "CANBK.NS",
+      "current_price": "\u20b9119.30",
+      "market_cap": "\u20b9108,212.87 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CANBK",
+      "price": 119.3
+    },
+    "BRITANNIA.NS": {
+      "company": "Britannia Industries",
+      "ticker": "BRITANNIA.NS",
+      "current_price": "\u20b94,596.80",
+      "market_cap": "\u20b9110,722.32 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BRITANNIA",
+      "price": 4596.8
+    },
+    "BOSCHLTD.NS": {
+      "company": "Bosch",
+      "ticker": "BOSCHLTD.NS",
+      "current_price": "\u20b947,440.00",
+      "market_cap": "\u20b9139,929.49 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BOSCHLTD",
+      "price": 47440.0
+    },
+    "CAPLIPOINT.NS": {
+      "company": "Caplin Point Laboratories",
+      "ticker": "CAPLIPOINT.NS",
+      "current_price": "\u20b92,384.50",
+      "market_cap": "\u20b918,124.99 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CAPLIPOINT",
+      "price": 2384.5
+    },
+    "BSE.NS": {
+      "company": "BSE",
+      "ticker": "BSE.NS",
+      "current_price": "\u20b93,503.20",
+      "market_cap": "\u20b9142,275.14 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: BSE",
+      "price": 3503.2
+    },
+    "CASTROLIND.NS": {
+      "company": "Castrol India",
+      "ticker": "CASTROLIND.NS",
+      "current_price": "\u20b9188.40",
+      "market_cap": "\u20b918,635.06 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CASTROLIND",
+      "price": 188.4
+    },
+    "CDSL.NS": {
+      "company": "CDSL",
+      "ticker": "CDSL.NS",
+      "current_price": "\u20b91,269.70",
+      "market_cap": "\u20b926,536.73 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CDSL",
+      "price": 1269.7
+    },
+    "CARBORUNIV.NS": {
+      "company": "Carborundum Universal",
+      "ticker": "CARBORUNIV.NS",
+      "current_price": "\u20b91,060.60",
+      "market_cap": "\u20b920,205.50 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CARBORUNIV",
+      "price": 1060.6
+    },
+    "CEATLTD.NS": {
+      "company": "Ceat",
+      "ticker": "CEATLTD.NS",
+      "current_price": "\u20b93,123.30",
+      "market_cap": "\u20b912,590.60 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CEATLTD",
+      "price": 3123.3
+    },
+    "CELLO.NS": {
+      "company": "Cello World",
+      "ticker": "CELLO.NS",
+      "current_price": "\u20b9333.00",
+      "market_cap": "\u20b97,510.42 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CELLO",
+      "price": 333.0
+    },
+    "CCL.NS": {
+      "company": "CCL Products (India)",
+      "ticker": "CCL.NS",
+      "current_price": "\u20b9926.50",
+      "market_cap": "\u20b912,354.34 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CCL",
+      "price": 926.5
+    },
+    "ANUPAM.NS": {
+      "company": "Anupam Rasayan India",
+      "ticker": "ANUPAM.NS",
+      "current_price": "\u20b91.60",
+      "market_cap": "\u20b930.36 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: ANUPAM",
+      "price": 1.6
+    },
+    "CARTRADE.NS": {
+      "company": "CarTrade Tech",
+      "ticker": "CARTRADE.NS",
+      "current_price": "\u20b92,281.40",
+      "market_cap": "\u20b911,091.23 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CARTRADE",
+      "price": 2281.4
+    },
+    "CGCL.NS": {
+      "company": "Capri Global Capital",
+      "ticker": "CGCL.NS",
+      "current_price": "\u20b9231.72",
+      "market_cap": "\u20b922,295.03 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CGCL",
+      "price": 231.72
+    },
+    "CERA.NS": {
+      "company": "Cera Sanitaryware",
+      "ticker": "CERA.NS",
+      "current_price": "\u20b94,426.00",
+      "market_cap": "\u20b95,707.32 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CERA",
+      "price": 4426.0
+    },
+    "CESC.NS": {
+      "company": "CESC",
+      "ticker": "CESC.NS",
+      "current_price": "\u20b9125.23",
+      "market_cap": "\u20b916,600.12 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CESC",
+      "price": 125.23
+    },
+    "CGPOWER.NS": {
+      "company": "CG Power and Industrial Solutions",
+      "ticker": "CGPOWER.NS",
+      "current_price": "\u20b9805.80",
+      "market_cap": "\u20b9126,951.70 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CGPOWER",
+      "price": 805.8
+    },
+    "CENTRALBK.NS": {
+      "company": "Central Bank of India",
+      "ticker": "CENTRALBK.NS",
+      "current_price": "\u20b928.86",
+      "market_cap": "\u20b926,122.34 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CENTRALBK",
+      "price": 28.86
+    },
+    "CENTURYPLY.NS": {
+      "company": "Century Plyboards",
+      "ticker": "CENTURYPLY.NS",
+      "current_price": "\u20b9628.50",
+      "market_cap": "\u20b913,963.57 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CENTURYPLY",
+      "price": 628.5
+    },
+    "CUB.NS": {
+      "company": "City Union Bank",
+      "ticker": "CUB.NS",
+      "current_price": "\u20b9218.33",
+      "market_cap": "\u20b921,631.86 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CUB",
+      "price": 218.33
+    },
+    "COLPAL.NS": {
+      "company": "Colgate-Palmolive (India)",
+      "ticker": "COLPAL.NS",
+      "current_price": "\u20b91,586.20",
+      "market_cap": "\u20b943,142.36 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: COLPAL",
+      "price": 1586.2
+    },
+    "COALINDIA.NS": {
+      "company": "Coal India",
+      "ticker": "COALINDIA.NS",
+      "current_price": "\u20b9386.50",
+      "market_cap": "\u20b9238,189.46 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: COALINDIA",
+      "price": 386.5
+    },
+    "CHOLAHLDNG.NS": {
+      "company": "Cholamandalam Financial Holdings",
+      "ticker": "CHOLAHLDNG.NS",
+      "current_price": "\u20b91,347.90",
+      "market_cap": "\u20b925,310.52 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CHOLAHLDNG",
+      "price": 1347.9
+    },
+    "CAMS.NS": {
+      "company": "Computer Age Management Services (CAMS)",
+      "ticker": "CAMS.NS",
+      "current_price": "\u20b9661.95",
+      "market_cap": "\u20b916,450.50 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CAMS",
+      "price": 661.95
+    },
+    "CLEAN.NS": {
+      "company": "Clean Science and Technology",
+      "ticker": "CLEAN.NS",
+      "current_price": "\u20b9747.20",
+      "market_cap": "\u20b97,941.55 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CLEAN",
+      "price": 747.2
+    },
+    "CIPLA.NS": {
+      "company": "Cipla",
+      "ticker": "CIPLA.NS",
+      "current_price": "\u20b91,369.70",
+      "market_cap": "\u20b9110,654.04 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CIPLA",
+      "price": 1369.7
+    },
+    "CHENNPETRO.NS": {
+      "company": "Chennai Petroleum Corporation",
+      "ticker": "CHENNPETRO.NS",
+      "current_price": "\u20b91,519.70",
+      "market_cap": "\u20b922,630.06 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CHENNPETRO",
+      "price": 1519.7
+    },
+    "CIEINDIA.NS": {
+      "company": "CIE Automotive India",
+      "ticker": "CIEINDIA.NS",
+      "current_price": "\u20b9355.60",
+      "market_cap": "\u20b913,490.13 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CIEINDIA",
+      "price": 355.6
+    },
+    "COCHINSHIP.NS": {
+      "company": "Cochin Shipyard",
+      "ticker": "COCHINSHIP.NS",
+      "current_price": "\u20b91,130.70",
+      "market_cap": "\u20b929,746.54 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: COCHINSHIP",
+      "price": 1130.7
+    },
+    "COFORGE.NS": {
+      "company": "Coforge",
+      "ticker": "COFORGE.NS",
+      "current_price": "\u20b92,053.20",
+      "market_cap": "\u20b990,964.69 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: COFORGE",
+      "price": 2053.2
+    },
+    "CHAMBLFERT.NS": {
+      "company": "Chambal Fertilisers",
+      "ticker": "CHAMBLFERT.NS",
+      "current_price": "\u20b9359.55",
+      "market_cap": "\u20b914,405.45 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CHAMBLFERT",
+      "price": 359.55
+    },
+    "CHOLAFIN.NS": {
+      "company": "Cholamandalam Investment and Finance",
+      "ticker": "CHOLAFIN.NS",
+      "current_price": "\u20b91,614.10",
+      "market_cap": "\u20b9138,410.81 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CHOLAFIN",
+      "price": 1614.1
+    },
+    "CROMPTON.NS": {
+      "company": "Crompton Greaves Consumer Electricals",
+      "ticker": "CROMPTON.NS",
+      "current_price": "\u20b9194.14",
+      "market_cap": "\u20b912,500.96 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CROMPTON",
+      "price": 194.14
+    },
+    "CREDITACC.NS": {
+      "company": "CreditAccess Grameen",
+      "ticker": "CREDITACC.NS",
+      "current_price": "\u20b91,037.90",
+      "market_cap": "\u20b916,635.35 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CREDITACC",
+      "price": 1037.9
+    },
+    "CONCOR.NS": {
+      "company": "Container Corporation of India (CONCOR)",
+      "ticker": "CONCOR.NS",
+      "current_price": "\u20b9419.10",
+      "market_cap": "\u20b931,919.41 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CONCOR",
+      "price": 419.1
+    },
+    "COROMANDEL.NS": {
+      "company": "Coromandel International",
+      "ticker": "COROMANDEL.NS",
+      "current_price": "\u20b91,672.90",
+      "market_cap": "\u20b949,278.86 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: COROMANDEL",
+      "price": 1672.9
+    },
+    "CRAFTSMAN.NS": {
+      "company": "Craftsman Automation",
+      "ticker": "CRAFTSMAN.NS",
+      "current_price": "\u20b910,660.00",
+      "market_cap": "\u20b927,880.62 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CRAFTSMAN",
+      "price": 10660.0
+    },
+    "CUMMINSIND.NS": {
+      "company": "Cummins India",
+      "ticker": "CUMMINSIND.NS",
+      "current_price": "\u20b94,400.10",
+      "market_cap": "\u20b9121,970.78 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CUMMINSIND",
+      "price": 4400.1
+    },
+    "DATAPATTNS.NS": {
+      "company": "Data Patterns (India)",
+      "ticker": "DATAPATTNS.NS",
+      "current_price": "\u20b93,905.40",
+      "market_cap": "\u20b921,863.98 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: DATAPATTNS",
+      "price": 3905.4
+    },
+    "DABUR.NS": {
+      "company": "Dabur India",
+      "ticker": "DABUR.NS",
+      "current_price": "\u20b9366.95",
+      "market_cap": "\u20b965,095.36 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: DABUR",
+      "price": 366.95
+    },
+    "DCMSHRIRAM.NS": {
+      "company": "DCM Shriram",
+      "ticker": "DCMSHRIRAM.NS",
+      "current_price": "\u20b9875.80",
+      "market_cap": "\u20b913,564.24 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: DCMSHRIRAM",
+      "price": 875.8
+    },
+    "DCBBANK.NS": {
+      "company": "DCB Bank",
+      "ticker": "DCBBANK.NS",
+      "current_price": "\u20b9196.52",
+      "market_cap": "\u20b96,331.67 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: DCBBANK",
+      "price": 196.52
+    },
+    "DALBHARAT.NS": {
+      "company": "Dalmia Bharat",
+      "ticker": "DALBHARAT.NS",
+      "current_price": "\u20b91,340.10",
+      "market_cap": "\u20b925,157.54 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: DALBHARAT",
+      "price": 1340.1
+    },
+    "CYIENTDLM.NS": {
+      "company": "Cyient DLM",
+      "ticker": "CYIENTDLM.NS",
+      "current_price": "\u20b9766.55",
+      "market_cap": "\u20b96,085.13 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CYIENTDLM",
+      "price": 766.55
+    },
+    "CYIENT.NS": {
+      "company": "Cyient",
+      "ticker": "CYIENT.NS",
+      "current_price": "\u20b91,140.80",
+      "market_cap": "\u20b911,893.39 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: CYIENT",
+      "price": 1140.8
+    },
+    "DELHIVERY.NS": {
+      "company": "Delhivery",
+      "ticker": "DELHIVERY.NS",
+      "current_price": "\u20b9397.40",
+      "market_cap": "\u20b929,786.02 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: DELHIVERY",
+      "price": 397.4
+    },
+    "DIVISLAB.NS": {
+      "company": "Divi's Laboratories",
+      "ticker": "DIVISLAB.NS",
+      "current_price": "\u20b99,832.00",
+      "market_cap": "\u20b9261,008.71 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: DIVISLAB",
+      "price": 9832.0
+    },
+    "CRISIL.NS": {
+      "company": "Crisil",
+      "ticker": "CRISIL.NS",
+      "current_price": "\u20b94,545.00",
+      "market_cap": "\u20b933,237.59 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: CRISIL",
+      "price": 4545.0
+    },
+    "DEEPAKFERT.NS": {
+      "company": "Deepak Fertilisers",
+      "ticker": "DEEPAKFERT.NS",
+      "current_price": "\u20b91,133.10",
+      "market_cap": "\u20b914,318.45 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: DEEPAKFERT",
+      "price": 1133.1
+    },
+    "DEEPAKNTR.NS": {
+      "company": "Deepak Nitrite",
+      "ticker": "DEEPAKNTR.NS",
+      "current_price": "\u20b91,527.00",
+      "market_cap": "\u20b920,827.22 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: DEEPAKNTR",
+      "price": 1527.0
+    },
+    "DIXON.NS": {
+      "company": "Dixon Technologies (India)",
+      "ticker": "DIXON.NS",
+      "current_price": "\u20b911,109.00",
+      "market_cap": "\u20b967,954.40 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: DIXON",
+      "price": 11109.0
+    },
+    "DLF.NS": {
+      "company": "DLF",
+      "ticker": "DLF.NS",
+      "current_price": "\u20b9693.30",
+      "market_cap": "\u20b9171,613.36 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: DLF",
+      "price": 693.3
+    },
+    "DEVYANI.NS": {
+      "company": "Devyani International",
+      "ticker": "DEVYANI.NS",
+      "current_price": "\u20b9120.44",
+      "market_cap": "\u20b914,849.53 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: DEVYANI",
+      "price": 120.44
+    },
+    "DELTACORP.NS": {
+      "company": "Delta Corp",
+      "ticker": "DELTACORP.NS",
+      "current_price": "\u20b974.68",
+      "market_cap": "\u20b91,999.71 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: DELTACORP",
+      "price": 74.68
+    },
+    "EASEMYTRIP.NS": {
+      "company": "Easy Trip Planners (EaseMyTrip)",
+      "ticker": "EASEMYTRIP.NS",
+      "current_price": "\u20b95.83",
+      "market_cap": "\u20b92,323.05 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: EASEMYTRIP",
+      "price": 5.83
+    },
+    "DOMS.NS": {
+      "company": "DOMS Industries",
+      "ticker": "DOMS.NS",
+      "current_price": "\u20b91,816.20",
+      "market_cap": "\u20b911,022.22 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: DOMS",
+      "price": 1816.2
+    },
+    "EIDPARRY.NS": {
+      "company": "E.I.D. Parry (India)",
+      "ticker": "EIDPARRY.NS",
+      "current_price": "\u20b9610.80",
+      "market_cap": "\u20b910,869.53 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: EIDPARRY",
+      "price": 610.8
+    },
+    "LALPATHLAB.NS": {
+      "company": "Dr. Lal PathLabs",
+      "ticker": "LALPATHLAB.NS",
+      "current_price": "\u20b91,945.00",
+      "market_cap": "\u20b932,522.49 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: LALPATHLAB",
+      "price": 1945.0
+    },
+    "ELECON.NS": {
+      "company": "Elecon Engineering",
+      "ticker": "ELECON.NS",
+      "current_price": "\u20b9423.80",
+      "market_cap": "\u20b99,510.07 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ELECON",
+      "price": 423.8
+    },
+    "EICHERMOT.NS": {
+      "company": "Eicher Motors",
+      "ticker": "EICHERMOT.NS",
+      "current_price": "\u20b97,337.00",
+      "market_cap": "\u20b9201,416.57 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: EICHERMOT",
+      "price": 7337.0
+    },
+    "ENGINERSIN.NS": {
+      "company": "Engineers India",
+      "ticker": "ENGINERSIN.NS",
+      "current_price": "\u20b9256.10",
+      "market_cap": "\u20b914,393.91 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ENGINERSIN",
+      "price": 256.1
+    },
+    "DRREDDY.NS": {
+      "company": "Dr. Reddy's Laboratories",
+      "ticker": "DRREDDY.NS",
+      "current_price": "\u20b91,358.00",
+      "market_cap": "\u20b9113,131.28 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: DRREDDY",
+      "price": 1358.0
+    },
+    "ELGIEQUIP.NS": {
+      "company": "Elgi Equipments",
+      "ticker": "ELGIEQUIP.NS",
+      "current_price": "\u20b9507.75",
+      "market_cap": "\u20b916,014.09 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ELGIEQUIP",
+      "price": 507.75
+    },
+    "EMAMILTD.NS": {
+      "company": "Emami",
+      "ticker": "EMAMILTD.NS",
+      "current_price": "\u20b9360.90",
+      "market_cap": "\u20b915,489.83 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: EMAMILTD",
+      "price": 360.9
+    },
+    "EMCURE.NS": {
+      "company": "Emcure Pharmaceuticals",
+      "ticker": "EMCURE.NS",
+      "current_price": "\u20b91,857.00",
+      "market_cap": "\u20b935,240.65 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: EMCURE",
+      "price": 1857.0
+    },
+    "EXIDEIND.NS": {
+      "company": "Exide Industries",
+      "ticker": "EXIDEIND.NS",
+      "current_price": "\u20b9338.70",
+      "market_cap": "\u20b928,789.50 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: EXIDEIND",
+      "price": 338.7
+    },
+    "FINCABLES.NS": {
+      "company": "Finolex Cables",
+      "ticker": "FINCABLES.NS",
+      "current_price": "\u20b91,140.30",
+      "market_cap": "\u20b917,439.67 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: FINCABLES",
+      "price": 1140.3
+    },
+    "FINPIPE.NS": {
+      "company": "Finolex Industries",
+      "ticker": "FINPIPE.NS",
+      "current_price": "\u20b9138.51",
+      "market_cap": "\u20b98,564.27 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: FINPIPE",
+      "price": 138.51
+    },
+    "FACT.NS": {
+      "company": "Fact (Fertilisers and Chemicals Travancore)",
+      "ticker": "FACT.NS",
+      "current_price": "\u20b9676.75",
+      "market_cap": "\u20b943,790.60 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: FACT",
+      "price": 676.75
+    },
+    "FEDERALBNK.NS": {
+      "company": "Federal Bank",
+      "ticker": "FEDERALBNK.NS",
+      "current_price": "\u20b9345.30",
+      "market_cap": "\u20b985,302.64 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: FEDERALBNK",
+      "price": 345.3
+    },
+    "ERIS.NS": {
+      "company": "Eris Lifesciences",
+      "ticker": "ERIS.NS",
+      "current_price": "\u20b91,169.40",
+      "market_cap": "\u20b916,224.09 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ERIS",
+      "price": 1169.4
+    },
+    "ENDURANCE.NS": {
+      "company": "Endurance Technologies",
+      "ticker": "ENDURANCE.NS",
+      "current_price": "\u20b92,280.00",
+      "market_cap": "\u20b932,071.13 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ENDURANCE",
+      "price": 2280.0
+    },
+    "ESCORTS.NS": {
+      "company": "Escorts Kubota",
+      "ticker": "ESCORTS.NS",
+      "current_price": "\u20b92,578.20",
+      "market_cap": "\u20b928,371.01 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ESCORTS",
+      "price": 2578.2
+    },
+    "FDC.NS": {
+      "company": "FDC",
+      "ticker": "FDC.NS",
+      "current_price": "\u20b9379.00",
+      "market_cap": "\u20b96,170.50 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: FDC",
+      "price": 379.0
+    },
+    "EDELWEISS.NS": {
+      "company": "EDELWEISS Financial Services",
+      "ticker": "EDELWEISS.NS",
+      "current_price": "\u20b9121.72",
+      "market_cap": "\u20b911,521.30 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: EDELWEISS",
+      "price": 121.72
+    },
+    "EQUITASBNK.NS": {
+      "company": "Equitas Small Finance Bank",
+      "ticker": "EQUITASBNK.NS",
+      "current_price": "\u20b950.56",
+      "market_cap": "\u20b95,784.73 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: EQUITASBNK",
+      "price": 50.56
+    },
+    "NYKAA.NS": {
+      "company": "FSN E-Commerce Ventures (Nykaa)",
+      "ticker": "NYKAA.NS",
+      "current_price": "\u20b9349.95",
+      "market_cap": "\u20b9100,283.87 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NYKAA",
+      "price": 349.95
+    },
+    "FSL.NS": {
+      "company": "Firstsource Solutions",
+      "ticker": "FSL.NS",
+      "current_price": "\u20b9305.50",
+      "market_cap": "\u20b921,137.08 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: FSL",
+      "price": 305.5
+    },
+    "AKZOINDIA.NS": {
+      "company": "Akzo Nobel India",
+      "ticker": "AKZOINDIA.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: AKZOINDIA"
+    },
+    "GABRIEL.NS": {
+      "company": "Gabriel India",
+      "ticker": "GABRIEL.NS",
+      "current_price": "\u20b91,435.30",
+      "market_cap": "\u20b927,505.26 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GABRIEL",
+      "price": 1435.3
+    },
+    "GICRE.NS": {
+      "company": "General Insurance Corporation of India (GIC Re)",
+      "ticker": "GICRE.NS",
+      "current_price": "\u20b9316.00",
+      "market_cap": "\u20b955,439.04 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GICRE",
+      "price": 316.0
+    },
+    "FIVESTAR.NS": {
+      "company": "Five-Star Business Finance",
+      "ticker": "FIVESTAR.NS",
+      "current_price": "\u20b9403.95",
+      "market_cap": "\u20b911,924.55 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: FIVESTAR",
+      "price": 403.95
+    },
+    "FORTIS.NS": {
+      "company": "Fortis Healthcare",
+      "ticker": "FORTIS.NS",
+      "current_price": "\u20b9764.45",
+      "market_cap": "\u20b957,712.78 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: FORTIS",
+      "price": 764.45
+    },
+    "GATEWAY.NS": {
+      "company": "Gateway Distriparks",
+      "ticker": "GATEWAY.NS",
+      "current_price": "\u20b942.73",
+      "market_cap": "\u20b92,134.98 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: GATEWAY",
+      "price": 42.73
+    },
+    "GLENMARK.NS": {
+      "company": "Glenmark Pharmaceuticals",
+      "ticker": "GLENMARK.NS",
+      "current_price": "\u20b92,315.10",
+      "market_cap": "\u20b965,337.84 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GLENMARK",
+      "price": 2315.1
+    },
+    "GLOBUSSPR.NS": {
+      "company": "Globus Spirits",
+      "ticker": "GLOBUSSPR.NS",
+      "current_price": "\u20b9722.50",
+      "market_cap": "\u20b92,273.08 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: GLOBUSSPR",
+      "price": 722.5
+    },
+    "MEDANTA.NS": {
+      "company": "Global Health (Medanta)",
+      "ticker": "MEDANTA.NS",
+      "current_price": "\u20b91,286.10",
+      "market_cap": "\u20b934,538.49 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MEDANTA",
+      "price": 1286.1
+    },
+    "GAIL.NS": {
+      "company": "GAIL (India)",
+      "ticker": "GAIL.NS",
+      "current_price": "\u20b9169.05",
+      "market_cap": "\u20b9111,151.72 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GAIL",
+      "price": 169.05
+    },
+    "GLAXO.NS": {
+      "company": "GlaxoSmithKline Pharmaceuticals",
+      "ticker": "GLAXO.NS",
+      "current_price": "\u20b92,521.90",
+      "market_cap": "\u20b942,722.51 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GLAXO",
+      "price": 2521.9
+    },
+    "GLAND.NS": {
+      "company": "Gland Pharma",
+      "ticker": "GLAND.NS",
+      "current_price": "\u20b93,089.50",
+      "market_cap": "\u20b950,980.10 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GLAND",
+      "price": 3089.5
+    },
+    "GALAXYSURF.NS": {
+      "company": "Galaxy Surfactants",
+      "ticker": "GALAXYSURF.NS",
+      "current_price": "\u20b92,117.00",
+      "market_cap": "\u20b97,505.77 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: GALAXYSURF",
+      "price": 2117.0
+    },
+    "GODREJPROP.NS": {
+      "company": "Godrej Properties",
+      "ticker": "GODREJPROP.NS",
+      "current_price": "\u20b91,601.40",
+      "market_cap": "\u20b948,238.41 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GODREJPROP",
+      "price": 1601.4
+    },
+    "GODFRYPHLP.NS": {
+      "company": "Godfrey Phillips India",
+      "ticker": "GODFRYPHLP.NS",
+      "current_price": "\u20b91,694.00",
+      "market_cap": "\u20b926,421.98 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GODFRYPHLP",
+      "price": 1694.0
+    },
+    "GODREJCP.NS": {
+      "company": "Godrej Consumer Products",
+      "ticker": "GODREJCP.NS",
+      "current_price": "\u20b9809.15",
+      "market_cap": "\u20b982,813.44 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GODREJCP",
+      "price": 809.15
+    },
+    "GOKEX.NS": {
+      "company": "Gokaldas Exports",
+      "ticker": "GOKEX.NS",
+      "current_price": "\u20b9630.55",
+      "market_cap": "\u20b94,620.52 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: GOKEX",
+      "price": 630.55
+    },
+    "GODREJAGRO.NS": {
+      "company": "Godrej Agrovet",
+      "ticker": "GODREJAGRO.NS",
+      "current_price": "\u20b9569.30",
+      "market_cap": "\u20b910,953.98 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: GODREJAGRO",
+      "price": 569.3
+    },
+    "GODREJIND.NS": {
+      "company": "Godrej Industries",
+      "ticker": "GODREJIND.NS",
+      "current_price": "\u20b9917.70",
+      "market_cap": "\u20b930,912.82 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GODREJIND",
+      "price": 917.7
+    },
+    "GPIL.NS": {
+      "company": "Godawari Power & Ispat",
+      "ticker": "GPIL.NS",
+      "current_price": "\u20b9190.90",
+      "market_cap": "\u20b912,427.80 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: GPIL",
+      "price": 190.9
+    },
+    "GESHIP.NS": {
+      "company": "Great Eastern Shipping Company",
+      "ticker": "GESHIP.NS",
+      "current_price": "\u20b91,582.10",
+      "market_cap": "\u20b921,684.22 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GESHIP",
+      "price": 1582.1
+    },
+    "GRASIM.NS": {
+      "company": "Grasim Industries",
+      "ticker": "GRASIM.NS",
+      "current_price": "\u20b92,961.00",
+      "market_cap": "\u20b9200,841.47 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GRASIM",
+      "price": 2961.0
+    },
+    "GRAVITA.NS": {
+      "company": "Gravita India",
+      "ticker": "GRAVITA.NS",
+      "current_price": "\u20b91,417.00",
+      "market_cap": "\u20b910,322.94 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: GRAVITA",
+      "price": 1417.0
+    },
+    "GRANULES.NS": {
+      "company": "Granules India",
+      "ticker": "GRANULES.NS",
+      "current_price": "\u20b9851.60",
+      "market_cap": "\u20b923,229.93 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GRANULES",
+      "price": 851.6
+    },
+    "GRAPHITE.NS": {
+      "company": "Graphite India",
+      "ticker": "GRAPHITE.NS",
+      "current_price": "\u20b9733.25",
+      "market_cap": "\u20b914,325.92 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: GRAPHITE",
+      "price": 733.25
+    },
+    "GREAVESCOT.NS": {
+      "company": "Greaves Cotton",
+      "ticker": "GREAVESCOT.NS",
+      "current_price": "\u20b9205.82",
+      "market_cap": "\u20b94,794.61 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: GREAVESCOT",
+      "price": 205.82
+    },
+    "GRINDWELL.NS": {
+      "company": "Grindwell Norton",
+      "ticker": "GRINDWELL.NS",
+      "current_price": "\u20b91,889.00",
+      "market_cap": "\u20b920,915.01 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: GRINDWELL",
+      "price": 1889.0
+    },
+    "FLUOROCHEM.NS": {
+      "company": "Gujarat Fluorochemicals",
+      "ticker": "FLUOROCHEM.NS",
+      "current_price": "\u20b94,206.50",
+      "market_cap": "\u20b946,208.40 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: FLUOROCHEM",
+      "price": 4206.5
+    },
+    "GRINFRA.NS": {
+      "company": "GR Infraprojects",
+      "ticker": "GRINFRA.NS",
+      "current_price": "\u20b9763.05",
+      "market_cap": "\u20b97,383.31 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: GRINFRA",
+      "price": 763.05
+    },
+    "GUJALKALI.NS": {
+      "company": "Gujarat Alkalies and Chemicals",
+      "ticker": "GUJALKALI.NS",
+      "current_price": "\u20b9541.30",
+      "market_cap": "\u20b93,975.14 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: GUJALKALI",
+      "price": 541.3
+    },
+    "HDFCAMC.NS": {
+      "company": "HDFC AMC",
+      "ticker": "HDFCAMC.NS",
+      "current_price": "\u20b92,305.70",
+      "market_cap": "\u20b998,931.45 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HDFCAMC",
+      "price": 2305.7
+    },
+    "GSPL.NS": {
+      "company": "Gujarat State Petronet (GSPL)",
+      "ticker": "GSPL.NS",
+      "current_price": "\u20b9277.00",
+      "market_cap": "\u20b915,628.66 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: GSPL",
+      "price": 277.0
+    },
+    "HAPPYFORGE.NS": {
+      "company": "Happy Forgings",
+      "ticker": "HAPPYFORGE.NS",
+      "current_price": "\u20b91,759.70",
+      "market_cap": "\u20b916,611.77 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: HAPPYFORGE",
+      "price": 1759.7
+    },
+    "GNFC.NS": {
+      "company": "Gujarat Narmada Valley Fertilisers (GNFC)",
+      "ticker": "GNFC.NS",
+      "current_price": "\u20b9502.55",
+      "market_cap": "\u20b97,384.50 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: GNFC",
+      "price": 502.55
+    },
+    "HCLTECH.NS": {
+      "company": "HCL Technologies",
+      "ticker": "HCLTECH.NS",
+      "current_price": "\u20b91,445.50",
+      "market_cap": "\u20b9391,242.71 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HCLTECH",
+      "price": 1445.5
+    },
+    "GULFOILLUB.NS": {
+      "company": "Gulf Oil Lubricants India",
+      "ticker": "GULFOILLUB.NS",
+      "current_price": "\u20b91,038.40",
+      "market_cap": "\u20b95,145.85 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: GULFOILLUB",
+      "price": 1038.4
+    },
+    "GMDCLTD.NS": {
+      "company": "Gujarat Mineral Development Corporation (GMDC)",
+      "ticker": "GMDCLTD.NS",
+      "current_price": "\u20b9425.70",
+      "market_cap": "\u20b913,537.26 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: GMDCLTD",
+      "price": 425.7
+    },
+    "GSFC.NS": {
+      "company": "Gujarat State Fertilizers & Chemicals (GSFC)",
+      "ticker": "GSFC.NS",
+      "current_price": "\u20b9134.00",
+      "market_cap": "\u20b95,339.60 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: GSFC",
+      "price": 134.0
+    },
+    "HATSUN.NS": {
+      "company": "Hatsun Agro Product",
+      "ticker": "HATSUN.NS",
+      "current_price": "\u20b91,000.20",
+      "market_cap": "\u20b922,279.28 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HATSUN",
+      "price": 1000.2
+    },
+    "HAVELLS.NS": {
+      "company": "Havells India",
+      "ticker": "HAVELLS.NS",
+      "current_price": "\u20b91,014.10",
+      "market_cap": "\u20b963,641.03 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HAVELLS",
+      "price": 1014.1
+    },
+    "GPPL.NS": {
+      "company": "Gujarat Pipavav Port",
+      "ticker": "GPPL.NS",
+      "current_price": "\u20b9159.24",
+      "market_cap": "\u20b97,701.26 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: GPPL",
+      "price": 159.24
+    },
+    "HEMIPROP.NS": {
+      "company": "Hemisphere Properties India",
+      "ticker": "HEMIPROP.NS",
+      "current_price": "\u20b9106.00",
+      "market_cap": "\u20b93,022.32 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: HEMIPROP",
+      "price": 106.0
+    },
+    "HEG.NS": {
+      "company": "HEG",
+      "ticker": "HEG.NS",
+      "current_price": "\u20b9248.50",
+      "market_cap": "\u20b94,795.49 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: HEG",
+      "price": 248.5
+    },
+    "HEROMOTOCO.NS": {
+      "company": "Hero MotoCorp",
+      "ticker": "HEROMOTOCO.NS",
+      "current_price": "\u20b95,179.50",
+      "market_cap": "\u20b9103,673.82 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HEROMOTOCO",
+      "price": 5179.5
+    },
+    "HDFCLIFE.NS": {
+      "company": "HDFC Life Insurance",
+      "ticker": "HDFCLIFE.NS",
+      "current_price": "\u20b9519.65",
+      "market_cap": "\u20b9112,870.54 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HDFCLIFE",
+      "price": 519.65
+    },
+    "HEIDELBERG.NS": {
+      "company": "HeidelbergCement India",
+      "ticker": "HEIDELBERG.NS",
+      "current_price": "\u20b9119.97",
+      "market_cap": "\u20b92,718.90 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: HEIDELBERG",
+      "price": 119.97
+    },
+    "HCG.NS": {
+      "company": "Healthcare Global Enterprises (HCG)",
+      "ticker": "HCG.NS",
+      "current_price": "\u20b9586.95",
+      "market_cap": "\u20b98,757.32 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: HCG",
+      "price": 586.95
+    },
+    "HFCL.NS": {
+      "company": "HFCL",
+      "ticker": "HFCL.NS",
+      "current_price": "\u20b9231.29",
+      "market_cap": "\u20b935,393.47 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HFCL",
+      "price": 231.29
+    },
+    "CENTURYTEX.NS": {
+      "company": "Century Textiles & Industries",
+      "ticker": "CENTURYTEX.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: CENTURYTEX"
+    },
+    "HAL.NS": {
+      "company": "Hindustan Aeronautics (HAL)",
+      "ticker": "HAL.NS",
+      "current_price": "\u20b94,839.20",
+      "market_cap": "\u20b9323,633.60 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HAL",
+      "price": 4839.2
+    },
+    "HINDPETRO.NS": {
+      "company": "Hindustan Petroleum Corporation (HPCL)",
+      "ticker": "HINDPETRO.NS",
+      "current_price": "\u20b9340.60",
+      "market_cap": "\u20b972,473.63 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HINDPETRO",
+      "price": 340.6
+    },
+    "HINDALCO.NS": {
+      "company": "Hindalco Industries",
+      "ticker": "HINDALCO.NS",
+      "current_price": "\u20b9890.35",
+      "market_cap": "\u20b9199,112.34 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HINDALCO",
+      "price": 890.35
+    },
+    "HGINFRA.NS": {
+      "company": "H.G. Infra Engineering",
+      "ticker": "HGINFRA.NS",
+      "current_price": "\u20b9379.75",
+      "market_cap": "\u20b92,474.87 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: HGINFRA",
+      "price": 379.75
+    },
+    "HINDCOPPER.NS": {
+      "company": "Hindustan Copper",
+      "ticker": "HINDCOPPER.NS",
+      "current_price": "\u20b9403.10",
+      "market_cap": "\u20b938,980.74 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HINDCOPPER",
+      "price": 403.1
+    },
+    "HYUNDAI.NS": {
+      "company": "Hyundai Motor India",
+      "ticker": "HYUNDAI.NS",
+      "current_price": "\u20b91,900.50",
+      "market_cap": "\u20b9154,423.43 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HYUNDAI",
+      "price": 1900.5
+    },
+    "ICICIGI.NS": {
+      "company": "ICICI Lombard General Insurance",
+      "ticker": "ICICIGI.NS",
+      "current_price": "\u20b91,557.60",
+      "market_cap": "\u20b977,825.69 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ICICIGI",
+      "price": 1557.6
+    },
+    "HINDZINC.NS": {
+      "company": "Hindustan Zinc",
+      "ticker": "HINDZINC.NS",
+      "current_price": "\u20b9508.65",
+      "market_cap": "\u20b9214,920.84 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HINDZINC",
+      "price": 508.65
+    },
+    "IFCI.NS": {
+      "company": "IFCI",
+      "ticker": "IFCI.NS",
+      "current_price": "\u20b955.45",
+      "market_cap": "\u20b914,939.97 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: IFCI",
+      "price": 55.45
+    },
+    "IIFL.NS": {
+      "company": "IIFL Finance",
+      "ticker": "IIFL.NS",
+      "current_price": "\u20b9547.10",
+      "market_cap": "\u20b923,350.88 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: IIFL",
+      "price": 547.1
+    },
+    "IDBI.NS": {
+      "company": "IDBI Bank",
+      "ticker": "IDBI.NS",
+      "current_price": "\u20b980.52",
+      "market_cap": "\u20b986,578.34 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: IDBI",
+      "price": 80.52
+    },
+    "IDFCFIRSTB.NS": {
+      "company": "IDFC First Bank",
+      "ticker": "IDFCFIRSTB.NS",
+      "current_price": "\u20b972.45",
+      "market_cap": "\u20b962,476.59 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: IDFCFIRSTB",
+      "price": 72.45
+    },
+    "IDEA.NS": {
+      "company": "Vodafone Idea",
+      "ticker": "IDEA.NS",
+      "current_price": "\u20b911.91",
+      "market_cap": "\u20b9129,036.56 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: IDEA",
+      "price": 11.91
+    },
+    "ICICIPRULI.NS": {
+      "company": "ICICI Prudential Life Insurance",
+      "ticker": "ICICIPRULI.NS",
+      "current_price": "\u20b9431.00",
+      "market_cap": "\u20b962,528.71 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ICICIPRULI",
+      "price": 431.0
+    },
+    "IEX.NS": {
+      "company": "IEX (Indian Energy Exchange)",
+      "ticker": "IEX.NS",
+      "current_price": "\u20b9102.10",
+      "market_cap": "\u20b99,079.76 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: IEX",
+      "price": 102.1
+    },
+    "HUDCO.NS": {
+      "company": "Housing & Urban Development Corporation (HUDCO)",
+      "ticker": "HUDCO.NS",
+      "current_price": "\u20b9143.99",
+      "market_cap": "\u20b928,825.36 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: HUDCO",
+      "price": 143.99
+    },
+    "POWERINDIA.NS": {
+      "company": "Hitachi Energy India",
+      "ticker": "POWERINDIA.NS",
+      "current_price": "\u20b927,540.00",
+      "market_cap": "\u20b9122,752.30 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: POWERINDIA",
+      "price": 27540.0
+    },
+    "HOMEFIRST.NS": {
+      "company": "Home First Finance Company",
+      "ticker": "HOMEFIRST.NS",
+      "current_price": "\u20b91,078.50",
+      "market_cap": "\u20b911,278.27 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: HOMEFIRST",
+      "price": 1078.5
+    },
+    "HONASA.NS": {
+      "company": "Honasa Consumer (Mamaearth)",
+      "ticker": "HONASA.NS",
+      "current_price": "\u20b9437.00",
+      "market_cap": "\u20b914,247.26 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: HONASA",
+      "price": 437.0
+    },
+    "INDIAMART.NS": {
+      "company": "IndiaMART InterMESH",
+      "ticker": "INDIAMART.NS",
+      "current_price": "\u20b91,511.50",
+      "market_cap": "\u20b99,089.89 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: INDIAMART",
+      "price": 1511.5
+    },
+    "INDIACEM.NS": {
+      "company": "India Cements",
+      "ticker": "INDIACEM.NS",
+      "current_price": "\u20b9308.10",
+      "market_cap": "\u20b914,321.92 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: INDIACEM",
+      "price": 308.1
+    },
+    "INDIANB.NS": {
+      "company": "Indian Bank",
+      "ticker": "INDIANB.NS",
+      "current_price": "\u20b9875.35",
+      "market_cap": "\u20b9117,906.49 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: INDIANB",
+      "price": 875.35
+    },
+    "INDHOTEL.NS": {
+      "company": "Indian Hotels Company (IHCL)",
+      "ticker": "INDHOTEL.NS",
+      "current_price": "\u20b9819.55",
+      "market_cap": "\u20b9116,657.38 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: INDHOTEL",
+      "price": 819.55
+    },
+    "IOC.NS": {
+      "company": "Indian Oil Corporation (IOC)",
+      "ticker": "IOC.NS",
+      "current_price": "\u20b9128.78",
+      "market_cap": "\u20b9181,853.30 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: IOC",
+      "price": 128.78
+    },
+    "IOB.NS": {
+      "company": "Indian Overseas Bank",
+      "ticker": "IOB.NS",
+      "current_price": "\u20b928.87",
+      "market_cap": "\u20b955,593.78 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: IOB",
+      "price": 28.87
+    },
+    "IRFC.NS": {
+      "company": "Indian Railway Finance Corporation (IRFC)",
+      "ticker": "IRFC.NS",
+      "current_price": "\u20b974.12",
+      "market_cap": "\u20b996,863.77 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: IRFC",
+      "price": 74.12
+    },
+    "IRCTC.NS": {
+      "company": "Indian Railway Catering & Tourism (IRCTC)",
+      "ticker": "IRCTC.NS",
+      "current_price": "\u20b9439.50",
+      "market_cap": "\u20b935,160.00 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: IRCTC",
+      "price": 439.5
+    },
+    "INDOCO.NS": {
+      "company": "Indoco Remedies",
+      "ticker": "INDOCO.NS",
+      "current_price": "\u20b9207.50",
+      "market_cap": "\u20b91,912.91 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: INDOCO",
+      "price": 207.5
+    },
+    "IGL.NS": {
+      "company": "Indraprastha Gas (IGL)",
+      "ticker": "IGL.NS",
+      "current_price": "\u20b9139.78",
+      "market_cap": "\u20b919,569.22 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: IGL",
+      "price": 139.78
+    },
+    "INDUSINDBK.NS": {
+      "company": "IndusInd Bank",
+      "ticker": "INDUSINDBK.NS",
+      "current_price": "\u20b9851.60",
+      "market_cap": "\u20b966,351.96 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: INDUSINDBK",
+      "price": 851.6
+    },
+    "INDUSTOWER.NS": {
+      "company": "Indus Towers",
+      "ticker": "INDUSTOWER.NS",
+      "current_price": "\u20b9384.90",
+      "market_cap": "\u20b9101,535.70 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: INDUSTOWER",
+      "price": 384.9
+    },
+    "INOXWIND.NS": {
+      "company": "Inox Wind",
+      "ticker": "INOXWIND.NS",
+      "current_price": "\u20b956.57",
+      "market_cap": "\u20b99,776.64 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: INOXWIND",
+      "price": 56.57
+    },
+    "NAUKRI.NS": {
+      "company": "Naukri (Info Edge)",
+      "ticker": "NAUKRI.NS",
+      "current_price": "\u20b91,176.90",
+      "market_cap": "\u20b976,263.94 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NAUKRI",
+      "price": 1176.9
+    },
+    "INTELLECT.NS": {
+      "company": "Intellect Design Arena",
+      "ticker": "INTELLECT.NS",
+      "current_price": "\u20b9592.55",
+      "market_cap": "\u20b98,333.38 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: INTELLECT",
+      "price": 592.55
+    },
+    "INDIGO.NS": {
+      "company": "InterGlobe Aviation (IndiGo)",
+      "ticker": "INDIGO.NS",
+      "current_price": "\u20b94,843.30",
+      "market_cap": "\u20b9187,274.22 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: INDIGO",
+      "price": 4843.3
+    },
+    "IPCALAB.NS": {
+      "company": "IPCA Laboratories",
+      "ticker": "IPCALAB.NS",
+      "current_price": "\u20b91,929.70",
+      "market_cap": "\u20b948,957.30 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: IPCALAB",
+      "price": 1929.7
+    },
+    "IRCON.NS": {
+      "company": "IRCON International",
+      "ticker": "IRCON.NS",
+      "current_price": "\u20b997.70",
+      "market_cap": "\u20b99,188.84 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: IRCON",
+      "price": 97.7
+    },
+    "IRB.NS": {
+      "company": "IRB Infrastructure Developers",
+      "ticker": "IRB.NS",
+      "current_price": "\u20b915.87",
+      "market_cap": "\u20b919,167.79 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: IRB",
+      "price": 15.87
+    },
+    "ITI.NS": {
+      "company": "ITI",
+      "ticker": "ITI.NS",
+      "current_price": "\u20b9217.30",
+      "market_cap": "\u20b920,922.77 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ITI",
+      "price": 217.3
+    },
+    "JKLAKSHMI.NS": {
+      "company": "J.K. Lakshmi Cement",
+      "ticker": "JKLAKSHMI.NS",
+      "current_price": "\u20b9455.55",
+      "market_cap": "\u20b95,655.40 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: JKLAKSHMI",
+      "price": 455.55
+    },
+    "JKCEMENT.NS": {
+      "company": "J.K. Cement",
+      "ticker": "JKCEMENT.NS",
+      "current_price": "\u20b94,839.50",
+      "market_cap": "\u20b937,393.97 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: JKCEMENT",
+      "price": 4839.5
+    },
+    "JBCHEPHARM.NS": {
+      "company": "J.B. Chemicals & Pharmaceuticals",
+      "ticker": "JBCHEPHARM.NS",
+      "current_price": "\u20b92,416.10",
+      "market_cap": "\u20b938,792.59 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: JBCHEPHARM",
+      "price": 2416.1
+    },
+    "JKTYRE.NS": {
+      "company": "J.K. Tyre & Industries",
+      "ticker": "JKTYRE.NS",
+      "current_price": "\u20b9306.20",
+      "market_cap": "\u20b98,827.42 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: JKTYRE",
+      "price": 306.2
+    },
+    "JAIBALAJI.NS": {
+      "company": "Jai Balaji Industries",
+      "ticker": "JAIBALAJI.NS",
+      "current_price": "\u20b962.58",
+      "market_cap": "\u20b95,708.87 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: JAIBALAJI",
+      "price": 62.58
+    },
+    "JSWENERGY.NS": {
+      "company": "JSW Energy",
+      "ticker": "JSWENERGY.NS",
+      "current_price": "\u20b9507.40",
+      "market_cap": "\u20b993,007.02 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: JSWENERGY",
+      "price": 507.4
+    },
+    "JINDALSAW.NS": {
+      "company": "Jindal SAW",
+      "ticker": "JINDALSAW.NS",
+      "current_price": "\u20b9231.85",
+      "market_cap": "\u20b914,789.02 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: JINDALSAW",
+      "price": 231.85
+    },
+    "GLS.NS": {
+      "company": "Glenmark Life Sciences",
+      "ticker": "GLS.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: GLS"
+    },
+    "JINDALSTEL.NS": {
+      "company": "Jindal Steel & Power",
+      "ticker": "JINDALSTEL.NS",
+      "current_price": "\u20b91,060.10",
+      "market_cap": "\u20b9107,915.25 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: JINDALSTEL",
+      "price": 1060.1
+    },
+    "JIOFIN.NS": {
+      "company": "Jio Financial Services",
+      "ticker": "JIOFIN.NS",
+      "current_price": "\u20b9206.45",
+      "market_cap": "\u20b9136,321.85 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: JIOFIN",
+      "price": 206.45
+    },
+    "JSWSTEEL.NS": {
+      "company": "JSW Steel",
+      "ticker": "JSWSTEEL.NS",
+      "current_price": "\u20b91,261.20",
+      "market_cap": "\u20b9307,856.15 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: JSWSTEEL",
+      "price": 1261.2
+    },
+    "JSWINFRA.NS": {
+      "company": "JSW Infrastructure",
+      "ticker": "JSWINFRA.NS",
+      "current_price": "\u20b9321.75",
+      "market_cap": "\u20b974,842.74 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: JSWINFRA",
+      "price": 321.75
+    },
+    "JINDALPOLY.NS": {
+      "company": "Jindal Poly Films",
+      "ticker": "JINDALPOLY.NS",
+      "current_price": "\u20b9661.55",
+      "market_cap": "\u20b92,896.69 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: JINDALPOLY",
+      "price": 661.55
+    },
+    "JUBLINGREA.NS": {
+      "company": "Jubilant Ingrevia",
+      "ticker": "JUBLINGREA.NS",
+      "current_price": "\u20b9550.20",
+      "market_cap": "\u20b98,677.56 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: JUBLINGREA",
+      "price": 550.2
+    },
+    "JLHL.NS": {
+      "company": "Jupiter Life Line Hospitals",
+      "ticker": "JLHL.NS",
+      "current_price": "\u20b9257.40",
+      "market_cap": "\u20b98,438.35 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: JLHL",
+      "price": 257.4
+    },
+    "JUBLFOOD.NS": {
+      "company": "Jubilant FoodWorks",
+      "ticker": "JUBLFOOD.NS",
+      "current_price": "\u20b9426.15",
+      "market_cap": "\u20b928,026.80 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: JUBLFOOD",
+      "price": 426.15
+    },
+    "JKPAPER.NS": {
+      "company": "JK Paper",
+      "ticker": "JKPAPER.NS",
+      "current_price": "\u20b9376.20",
+      "market_cap": "\u20b96,821.21 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: JKPAPER",
+      "price": 376.2
+    },
+    "JMFINANCIL.NS": {
+      "company": "JM Financial",
+      "ticker": "JMFINANCIL.NS",
+      "current_price": "\u20b9109.37",
+      "market_cap": "\u20b910,466.76 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: JMFINANCIL",
+      "price": 109.37
+    },
+    "JUBLPHARMA.NS": {
+      "company": "Jubilant Pharmova",
+      "ticker": "JUBLPHARMA.NS",
+      "current_price": "\u20b9941.30",
+      "market_cap": "\u20b914,911.00 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: JUBLPHARMA",
+      "price": 941.3
+    },
+    "GUJGASLTD.NS": {
+      "company": "Gujarat Gas",
+      "ticker": "GUJGASLTD.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: GUJGASLTD"
+    },
+    "JUSTDIAL.NS": {
+      "company": "Just Dial",
+      "ticker": "JUSTDIAL.NS",
+      "current_price": "\u20b9667.60",
+      "market_cap": "\u20b95,677.87 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: JUSTDIAL",
+      "price": 667.6
+    },
+    "JWL.NS": {
+      "company": "Jupiter Wagons",
+      "ticker": "JWL.NS",
+      "current_price": "\u20b9185.49",
+      "market_cap": "\u20b97,927.29 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: JWL",
+      "price": 185.49
+    },
+    "KAYNES.NS": {
+      "company": "Kaynes Technology India",
+      "ticker": "KAYNES.NS",
+      "current_price": "\u20b93,171.00",
+      "market_cap": "\u20b921,316.25 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: KAYNES",
+      "price": 3171.0
+    },
+    "KIMS.NS": {
+      "company": "KIMS (Krishna Institute of Medical Sciences)",
+      "ticker": "KIMS.NS",
+      "current_price": "\u20b9706.00",
+      "market_cap": "\u20b929,652.46 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: KIMS",
+      "price": 706.0
+    },
+    "KEI.NS": {
+      "company": "KEI Industries",
+      "ticker": "KEI.NS",
+      "current_price": "\u20b93,774.00",
+      "market_cap": "\u20b936,096.65 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: KEI",
+      "price": 3774.0
+    },
+    "KPRMILL.NS": {
+      "company": "K.P.R. Mill",
+      "ticker": "KPRMILL.NS",
+      "current_price": "\u20b91,091.00",
+      "market_cap": "\u20b937,369.21 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: KPRMILL",
+      "price": 1091.0
+    },
+    "KEC.NS": {
+      "company": "KEC International",
+      "ticker": "KEC.NS",
+      "current_price": "\u20b9337.55",
+      "market_cap": "\u20b98,985.58 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: KEC",
+      "price": 337.55
+    },
+    "JYOTHYLAB.NS": {
+      "company": "Jyothy Labs",
+      "ticker": "JYOTHYLAB.NS",
+      "current_price": "\u20b9173.10",
+      "market_cap": "\u20b96,356.85 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: JYOTHYLAB",
+      "price": 173.1
+    },
+    "KAJARIACER.NS": {
+      "company": "Kajaria Ceramics",
+      "ticker": "KAJARIACER.NS",
+      "current_price": "\u20b91,119.80",
+      "market_cap": "\u20b917,600.02 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: KAJARIACER",
+      "price": 1119.8
+    },
+    "KALYANKJIL.NS": {
+      "company": "Kalyan Jewellers India",
+      "ticker": "KALYANKJIL.NS",
+      "current_price": "\u20b9503.30",
+      "market_cap": "\u20b951,978.35 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: KALYANKJIL",
+      "price": 503.3
+    },
+    "KANSAINER.NS": {
+      "company": "Kansai Nerolac Paints",
+      "ticker": "KANSAINER.NS",
+      "current_price": "\u20b9176.90",
+      "market_cap": "\u20b914,309.04 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: KANSAINER",
+      "price": 176.9
+    },
+    "KPIL.NS": {
+      "company": "Kalpataru Projects International",
+      "ticker": "KPIL.NS",
+      "current_price": "\u20b91,328.80",
+      "market_cap": "\u20b922,692.26 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: KPIL",
+      "price": 1328.8
+    },
+    "KIRLOSENG.NS": {
+      "company": "Kirloskar Oil Engines",
+      "ticker": "KIRLOSENG.NS",
+      "current_price": "\u20b91,819.10",
+      "market_cap": "\u20b926,471.52 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: KIRLOSENG",
+      "price": 1819.1
+    },
+    "KFINTECH.NS": {
+      "company": "KFin Technologies",
+      "ticker": "KFINTECH.NS",
+      "current_price": "\u20b9847.00",
+      "market_cap": "\u20b914,642.26 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: KFINTECH",
+      "price": 847.0
+    },
+    "HBLPOWER.NS": {
+      "company": "HBL Power Systems",
+      "ticker": "HBLPOWER.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: HBLPOWER"
+    },
+    "KPITTECH.NS": {
+      "company": "KPIT Technologies",
+      "ticker": "KPITTECH.NS",
+      "current_price": "\u20b9538.25",
+      "market_cap": "\u20b914,652.63 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: KPITTECH",
+      "price": 538.25
+    },
+    "KNRCON.NS": {
+      "company": "KNR Constructions",
+      "ticker": "KNRCON.NS",
+      "current_price": "\u20b999.01",
+      "market_cap": "\u20b92,784.50 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: KNRCON",
+      "price": 99.01
+    },
+    "KRBL.NS": {
+      "company": "KRBL",
+      "ticker": "KRBL.NS",
+      "current_price": "\u20b9349.90",
+      "market_cap": "\u20b98,008.86 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: KRBL",
+      "price": 349.9
+    },
+    "LTF.NS": {
+      "company": "L&T Finance Holdings",
+      "ticker": "LTF.NS",
+      "current_price": "\u20b9246.30",
+      "market_cap": "\u20b961,682.55 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: LTF",
+      "price": 246.3
+    },
+    "LTTS.NS": {
+      "company": "L&T Technology Services",
+      "ticker": "LTTS.NS",
+      "current_price": "\u20b94,274.40",
+      "market_cap": "\u20b945,348.70 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: LTTS",
+      "price": 4274.4
+    },
+    "LINDEINDIA.NS": {
+      "company": "Linde India",
+      "ticker": "LINDEINDIA.NS",
+      "current_price": "\u20b95,562.00",
+      "market_cap": "\u20b947,435.08 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: LINDEINDIA",
+      "price": 5562.0
+    },
+    "LATENTVIEW.NS": {
+      "company": "Latent View Analytics",
+      "ticker": "LATENTVIEW.NS",
+      "current_price": "\u20b9214.52",
+      "market_cap": "\u20b94,442.35 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: LATENTVIEW",
+      "price": 214.52
+    },
+    "LICHSGFIN.NS": {
+      "company": "LIC Housing Finance",
+      "ticker": "LICHSGFIN.NS",
+      "current_price": "\u20b9503.00",
+      "market_cap": "\u20b927,668.17 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: LICHSGFIN",
+      "price": 503.0
+    },
+    "MGL.NS": {
+      "company": "Mahanagar Gas (MGL)",
+      "ticker": "MGL.NS",
+      "current_price": "\u20b91,047.70",
+      "market_cap": "\u20b910,348.95 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: MGL",
+      "price": 1047.7
+    },
+    "LAURUSLABS.NS": {
+      "company": "Laurus Labs",
+      "ticker": "LAURUSLABS.NS",
+      "current_price": "\u20b92,357.00",
+      "market_cap": "\u20b9127,351.59 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: LAURUSLABS",
+      "price": 2357.0
+    },
+    "LODHA.NS": {
+      "company": "Macrotech Developers (Lodha)",
+      "ticker": "LODHA.NS",
+      "current_price": "\u20b91,046.70",
+      "market_cap": "\u20b9104,611.58 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: LODHA",
+      "price": 1046.7
+    },
+    "LEMONTREE.NS": {
+      "company": "Lemontree Hotels",
+      "ticker": "LEMONTREE.NS",
+      "current_price": "\u20b9110.76",
+      "market_cap": "\u20b98,770.50 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: LEMONTREE",
+      "price": 110.76
+    },
+    "LICI.NS": {
+      "company": "Life Insurance Corporation of India (LIC)",
+      "ticker": "LICI.NS",
+      "current_price": "\u20b9388.20",
+      "market_cap": "\u20b9491,072.83 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: LICI",
+      "price": 388.2
+    },
+    "LUPIN.NS": {
+      "company": "Lupin",
+      "ticker": "LUPIN.NS",
+      "current_price": "\u20b92,021.40",
+      "market_cap": "\u20b992,436.60 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: LUPIN",
+      "price": 2021.4
+    },
+    "LUXIND.NS": {
+      "company": "Lux Industries",
+      "ticker": "LUXIND.NS",
+      "current_price": "\u20b91,111.00",
+      "market_cap": "\u20b93,340.96 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: LUXIND",
+      "price": 1111.0
+    },
+    "MAHSEAMLES.NS": {
+      "company": "Maharashtra Seamless",
+      "ticker": "MAHSEAMLES.NS",
+      "current_price": "\u20b9539.85",
+      "market_cap": "\u20b97,233.95 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: MAHSEAMLES",
+      "price": 539.85
+    },
+    "M&MFIN.NS": {
+      "company": "Mahindra & Mahindra Financial Services",
+      "ticker": "M&MFIN.NS",
+      "current_price": "\u20b9259.80",
+      "market_cap": "\u20b936,102.44 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: M&MFIN",
+      "price": 259.8
+    },
+    "MANAPPURAM.NS": {
+      "company": "Manappuram Finance",
+      "ticker": "MANAPPURAM.NS",
+      "current_price": "\u20b9294.50",
+      "market_cap": "\u20b927,663.45 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MANAPPURAM",
+      "price": 294.5
+    },
+    "MAHLIFE.NS": {
+      "company": "Mahindra Lifespace Developers",
+      "ticker": "MAHLIFE.NS",
+      "current_price": "\u20b9303.95",
+      "market_cap": "\u20b96,492.89 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: MAHLIFE",
+      "price": 303.95
+    },
+    "MARUTI.NS": {
+      "company": "Maruti Suzuki India",
+      "ticker": "MARUTI.NS",
+      "current_price": "\u20b911,413.00",
+      "market_cap": "\u20b9358,827.64 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MARUTI",
+      "price": 11413.0
+    },
+    "IIFLSEC.NS": {
+      "company": "IIFL Securities",
+      "ticker": "IIFLSEC.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: IIFLSEC"
+    },
+    "MHRIL.NS": {
+      "company": "Mahindra Holidays & Resorts",
+      "ticker": "MHRIL.NS",
+      "current_price": "\u20b9179.15",
+      "market_cap": "\u20b93,613.04 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: MHRIL",
+      "price": 179.15
+    },
+    "MARKSANS.NS": {
+      "company": "Marksans Pharma",
+      "ticker": "MARKSANS.NS",
+      "current_price": "\u20b9311.50",
+      "market_cap": "\u20b914,116.05 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: MARKSANS",
+      "price": 311.5
+    },
+    "MFSL.NS": {
+      "company": "Max Financial Services",
+      "ticker": "MFSL.NS",
+      "current_price": "\u20b91,181.00",
+      "market_cap": "\u20b940,758.06 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MFSL",
+      "price": 1181.0
+    },
+    "MEDPLUS.NS": {
+      "company": "Medplus Health Services",
+      "ticker": "MEDPLUS.NS",
+      "current_price": "\u20b9581.65",
+      "market_cap": "\u20b96,988.88 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: MEDPLUS",
+      "price": 581.65
+    },
+    "MAXHEALTH.NS": {
+      "company": "Max Healthcare Institute",
+      "ticker": "MAXHEALTH.NS",
+      "current_price": "\u20b9863.00",
+      "market_cap": "\u20b983,996.68 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MAXHEALTH",
+      "price": 863.0
+    },
+    "METROBRAND.NS": {
+      "company": "Metro Brands",
+      "ticker": "METROBRAND.NS",
+      "current_price": "\u20b9821.90",
+      "market_cap": "\u20b922,404.40 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: METROBRAND",
+      "price": 821.9
+    },
+    "MANKIND.NS": {
+      "company": "Mankind Pharma",
+      "ticker": "MANKIND.NS",
+      "current_price": "\u20b92,518.10",
+      "market_cap": "\u20b9104,008.89 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MANKIND",
+      "price": 2518.1
+    },
+    "MARICO.NS": {
+      "company": "Marico",
+      "ticker": "MARICO.NS",
+      "current_price": "\u20b9798.55",
+      "market_cap": "\u20b9103,526.01 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MARICO",
+      "price": 798.55
+    },
+    "MAZDOCK.NS": {
+      "company": "Mazagon Dock Shipbuilders",
+      "ticker": "MAZDOCK.NS",
+      "current_price": "\u20b91,715.60",
+      "market_cap": "\u20b969,203.87 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MAZDOCK",
+      "price": 1715.6
+    },
+    "MSUMI.NS": {
+      "company": "Motherson Sumi Wiring India",
+      "ticker": "MSUMI.NS",
+      "current_price": "\u20b934.68",
+      "market_cap": "\u20b922,998.60 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MSUMI",
+      "price": 34.68
+    },
+    "MMTC.NS": {
+      "company": "MMTC",
+      "ticker": "MMTC.NS",
+      "current_price": "\u20b951.01",
+      "market_cap": "\u20b97,651.50 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: MMTC",
+      "price": 51.01
+    },
+    "MOIL.NS": {
+      "company": "MOIL",
+      "ticker": "MOIL.NS",
+      "current_price": "\u20b9214.69",
+      "market_cap": "\u20b94,368.62 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: MOIL",
+      "price": 214.69
+    },
+    "METROPOLIS.NS": {
+      "company": "Metropolis Healthcare",
+      "ticker": "METROPOLIS.NS",
+      "current_price": "\u20b9550.80",
+      "market_cap": "\u20b911,427.08 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: METROPOLIS",
+      "price": 550.8
+    },
+    "MINDSPACE.NS": {
+      "company": "Mindspace Business Parks REIT",
+      "ticker": "MINDSPACE.NS",
+      "current_price": "\u20b9345.06",
+      "market_cap": "\u20b922,842.75 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MINDSPACE",
+      "price": 345.06
+    },
+    "MINDACORP.NS": {
+      "company": "Minda Corporation",
+      "ticker": "MINDACORP.NS",
+      "current_price": "\u20b9640.45",
+      "market_cap": "\u20b915,073.69 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: MINDACORP",
+      "price": 640.45
+    },
+    "HAPPIESTMN.NS": {
+      "company": "Happiest Minds Technologies",
+      "ticker": "HAPPIESTMN.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: HAPPIESTMN"
+    },
+    "MIDHANI.NS": {
+      "company": "Mishra Dhatu Nigam (MIDHANI)",
+      "ticker": "MIDHANI.NS",
+      "current_price": "\u20b9364.85",
+      "market_cap": "\u20b96,835.10 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: MIDHANI",
+      "price": 364.85
+    },
+    "MOTILALOFS.NS": {
+      "company": "Motilal Oswal Financial Services",
+      "ticker": "MOTILALOFS.NS",
+      "current_price": "\u20b9942.00",
+      "market_cap": "\u20b956,800.45 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MOTILALOFS",
+      "price": 942.0
+    },
+    "MCX.NS": {
+      "company": "Multi Commodity Exchange of India (MCX)",
+      "ticker": "MCX.NS",
+      "current_price": "\u20b93,221.10",
+      "market_cap": "\u20b981,981.54 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MCX",
+      "price": 3221.1
+    },
+    "MPHASIS.NS": {
+      "company": "Mphasis",
+      "ticker": "MPHASIS.NS",
+      "current_price": "\u20b92,563.30",
+      "market_cap": "\u20b948,925.87 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MPHASIS",
+      "price": 2563.3
+    },
+    "MUTHOOTFIN.NS": {
+      "company": "Muthoot Finance",
+      "ticker": "MUTHOOTFIN.NS",
+      "current_price": "\u20b92,447.30",
+      "market_cap": "\u20b998,251.38 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MUTHOOTFIN",
+      "price": 2447.3
+    },
+    "NBCC.NS": {
+      "company": "NBCC (India)",
+      "ticker": "NBCC.NS",
+      "current_price": "\u20b971.45",
+      "market_cap": "\u20b919,291.50 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: NBCC",
+      "price": 71.45
+    },
+    "NAVINFLUOR.NS": {
+      "company": "Navin Fluorine International",
+      "ticker": "NAVINFLUOR.NS",
+      "current_price": "\u20b98,496.50",
+      "market_cap": "\u20b943,613.91 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NAVINFLUOR",
+      "price": 8496.5
+    },
+    "NAZARA.NS": {
+      "company": "Nazara Technologies",
+      "ticker": "NAZARA.NS",
+      "current_price": "\u20b9402.05",
+      "market_cap": "\u20b916,426.87 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: NAZARA",
+      "price": 402.05
+    },
+    "INDEGENE.NS": {
+      "company": "Indegene",
+      "ticker": "INDEGENE.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: INDEGENE"
+    },
+    "NATCOPHARM.NS": {
+      "company": "Natco Pharma",
+      "ticker": "NATCOPHARM.NS",
+      "current_price": "\u20b9786.40",
+      "market_cap": "\u20b914,469.76 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: NATCOPHARM",
+      "price": 786.4
+    },
+    "MRF.NS": {
+      "company": "MRF",
+      "ticker": "MRF.NS",
+      "current_price": "\u20b9117,095.00",
+      "market_cap": "\u20b949,661.66 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MRF",
+      "price": 117095.0
+    },
+    "NETWORK18.NS": {
+      "company": "Network18 Media & Investments",
+      "ticker": "NETWORK18.NS",
+      "current_price": "\u20b924.08",
+      "market_cap": "\u20b93,716.04 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: NETWORK18",
+      "price": 24.08
+    },
+    "NESTLEIND.NS": {
+      "company": "Nestle India",
+      "ticker": "NESTLEIND.NS",
+      "current_price": "\u20b91,174.80",
+      "market_cap": "\u20b9226,538.37 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NESTLEIND",
+      "price": 1174.8
+    },
+    "NATIONALUM.NS": {
+      "company": "National Aluminium Company (NALCO)",
+      "ticker": "NATIONALUM.NS",
+      "current_price": "\u20b9318.20",
+      "market_cap": "\u20b958,441.62 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NATIONALUM",
+      "price": 318.2
+    },
+    "NCC.NS": {
+      "company": "NCC",
+      "ticker": "NCC.NS",
+      "current_price": "\u20b9115.75",
+      "market_cap": "\u20b97,267.32 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: NCC",
+      "price": 115.75
+    },
+    "NIACL.NS": {
+      "company": "New India Assurance Company",
+      "ticker": "NIACL.NS",
+      "current_price": "\u20b9161.18",
+      "market_cap": "\u20b926,562.46 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NIACL",
+      "price": 161.18
+    },
+    "NEULANDLAB.NS": {
+      "company": "Neuland Laboratories",
+      "ticker": "NEULANDLAB.NS",
+      "current_price": "\u20b919,275.00",
+      "market_cap": "\u20b924,729.61 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NEULANDLAB",
+      "price": 19275.0
+    },
+    "ISEC.NS": {
+      "company": "ICICI Securities",
+      "ticker": "ISEC.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: ISEC"
+    },
+    "NHPC.NS": {
+      "company": "NHPC",
+      "ticker": "NHPC.NS",
+      "current_price": "\u20b977.53",
+      "market_cap": "\u20b977,879.15 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NHPC",
+      "price": 77.53
+    },
+    "NLCINDIA.NS": {
+      "company": "NLC India",
+      "ticker": "NLCINDIA.NS",
+      "current_price": "\u20b9230.30",
+      "market_cap": "\u20b931,934.24 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NLCINDIA",
+      "price": 230.3
+    },
+    "NTPCGREEN.NS": {
+      "company": "NTPC Green Energy",
+      "ticker": "NTPCGREEN.NS",
+      "current_price": "\u20b983.10",
+      "market_cap": "\u20b970,022.80 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NTPCGREEN",
+      "price": 83.1
+    },
+    "NSLNISP.NS": {
+      "company": "NMDC Steel",
+      "ticker": "NSLNISP.NS",
+      "current_price": "\u20b938.43",
+      "market_cap": "\u20b911,262.32 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: NSLNISP",
+      "price": 38.43
+    },
+    "NIVABUPA.NS": {
+      "company": "Niva Bupa Health Insurance",
+      "ticker": "NIVABUPA.NS",
+      "current_price": "\u20b972.50",
+      "market_cap": "\u20b913,409.92 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: NIVABUPA",
+      "price": 72.5
+    },
+    "ONGC.NS": {
+      "company": "Oil & Natural Gas Corporation (ONGC)",
+      "ticker": "ONGC.NS",
+      "current_price": "\u20b9226.03",
+      "market_cap": "\u20b9284,352.05 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ONGC",
+      "price": 226.03
+    },
+    "NUVOCO.NS": {
+      "company": "Nuvoco Vistas Corporation",
+      "ticker": "NUVOCO.NS",
+      "current_price": "\u20b9324.20",
+      "market_cap": "\u20b911,568.29 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: NUVOCO",
+      "price": 324.2
+    },
+    "OBEROIRLTY.NS": {
+      "company": "Oberoi Realty",
+      "ticker": "OBEROIRLTY.NS",
+      "current_price": "\u20b91,649.70",
+      "market_cap": "\u20b959,983.46 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: OBEROIRLTY",
+      "price": 1649.7
+    },
+    "NAM-INDIA.NS": {
+      "company": "Nippon Life India Asset Management",
+      "ticker": "NAM-INDIA.NS",
+      "current_price": "\u20b9910.30",
+      "market_cap": "\u20b958,275.82 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: NAM-INDIA",
+      "price": 910.3
+    },
+    "PAGEIND.NS": {
+      "company": "Page Industries",
+      "ticker": "PAGEIND.NS",
+      "current_price": "\u20b934,065.00",
+      "market_cap": "\u20b937,995.67 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PAGEIND",
+      "price": 34065.0
+    },
+    "OFSS.NS": {
+      "company": "Oracle Financial Services Software",
+      "ticker": "OFSS.NS",
+      "current_price": "\u20b99,901.00",
+      "market_cap": "\u20b986,239.71 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: OFSS",
+      "price": 9901.0
+    },
+    "OIL.NS": {
+      "company": "Oil India",
+      "ticker": "OIL.NS",
+      "current_price": "\u20b9450.00",
+      "market_cap": "\u20b973,197.35 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: OIL",
+      "price": 450.0
+    },
+    "PATANJALI.NS": {
+      "company": "Patanjali Foods",
+      "ticker": "PATANJALI.NS",
+      "current_price": "\u20b9371.15",
+      "market_cap": "\u20b940,385.15 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PATANJALI",
+      "price": 371.15
+    },
+    "PAYTM.NS": {
+      "company": "One97 Communications (Paytm)",
+      "ticker": "PAYTM.NS",
+      "current_price": "\u20b91,664.10",
+      "market_cap": "\u20b9106,531.90 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PAYTM",
+      "price": 1664.1
+    },
+    "OLAELEC.NS": {
+      "company": "Ola Electric Mobility",
+      "ticker": "OLAELEC.NS",
+      "current_price": "\u20b933.81",
+      "market_cap": "\u20b914,939.56 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: OLAELEC",
+      "price": 33.81
+    },
+    "PARADEEP.NS": {
+      "company": "Paradeep Phosphates",
+      "ticker": "PARADEEP.NS",
+      "current_price": "\u20b9125.31",
+      "market_cap": "\u20b913,013.70 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: PARADEEP",
+      "price": 125.31
+    },
+    "PERSISTENT.NS": {
+      "company": "Persistent Systems",
+      "ticker": "PERSISTENT.NS",
+      "current_price": "\u20b96,008.50",
+      "market_cap": "\u20b999,116.88 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PERSISTENT",
+      "price": 6008.5
+    },
+    "OLECTRA.NS": {
+      "company": "Olectra Greentech",
+      "ticker": "OLECTRA.NS",
+      "current_price": "\u20b9959.40",
+      "market_cap": "\u20b97,874.83 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: OLECTRA",
+      "price": 959.4
+    },
+    "PIIND.NS": {
+      "company": "PI Industries",
+      "ticker": "PIIND.NS",
+      "current_price": "\u20b92,088.00",
+      "market_cap": "\u20b931,676.24 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PIIND",
+      "price": 2088.0
+    },
+    "PHOENIXLTD.NS": {
+      "company": "Phoenix Mills",
+      "ticker": "PHOENIXLTD.NS",
+      "current_price": "\u20b91,959.20",
+      "market_cap": "\u20b970,079.05 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PHOENIXLTD",
+      "price": 1959.2
+    },
+    "POLICYBZR.NS": {
+      "company": "PB Fintech (Policybazaar)",
+      "ticker": "POLICYBZR.NS",
+      "current_price": "\u20b91,014.00",
+      "market_cap": "\u20b946,858.79 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: POLICYBZR",
+      "price": 1014.0
+    },
+    "PPLPHARMA.NS": {
+      "company": "Piramal Pharma",
+      "ticker": "PPLPHARMA.NS",
+      "current_price": "\u20b9235.36",
+      "market_cap": "\u20b931,210.72 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PPLPHARMA",
+      "price": 235.36
+    },
+    "PIDILITIND.NS": {
+      "company": "Pidilite Industries",
+      "ticker": "PIDILITIND.NS",
+      "current_price": "\u20b91,443.60",
+      "market_cap": "\u20b9147,036.45 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PIDILITIND",
+      "price": 1443.6
+    },
+    "PETRONET.NS": {
+      "company": "Petronet LNG",
+      "ticker": "PETRONET.NS",
+      "current_price": "\u20b9286.95",
+      "market_cap": "\u20b943,042.50 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PETRONET",
+      "price": 286.95
+    },
+    "PFC.NS": {
+      "company": "PFC (Power Finance Corporation)",
+      "ticker": "PFC.NS",
+      "current_price": "\u20b9317.60",
+      "market_cap": "\u20b9104,811.23 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PFC",
+      "price": 317.6
+    },
+    "PFIZER.NS": {
+      "company": "Pfizer",
+      "ticker": "PFIZER.NS",
+      "current_price": "\u20b93,694.80",
+      "market_cap": "\u20b916,902.87 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: PFIZER",
+      "price": 3694.8
+    },
+    "PRESTIGE.NS": {
+      "company": "Prestige Estates Projects",
+      "ticker": "PRESTIGE.NS",
+      "current_price": "\u20b91,454.60",
+      "market_cap": "\u20b962,654.02 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PRESTIGE",
+      "price": 1454.6
+    },
+    "PREMIERENE.NS": {
+      "company": "Premier Energies",
+      "ticker": "PREMIERENE.NS",
+      "current_price": "\u20b9854.15",
+      "market_cap": "\u20b938,569.70 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PREMIERENE",
+      "price": 854.15
+    },
+    "PGHH.NS": {
+      "company": "Procter & Gamble Hygiene and Health Care",
+      "ticker": "PGHH.NS",
+      "current_price": "\u20b96,917.50",
+      "market_cap": "\u20b922,454.71 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PGHH",
+      "price": 6917.5
+    },
+    "POLYCAB.NS": {
+      "company": "Polycab India",
+      "ticker": "POLYCAB.NS",
+      "current_price": "\u20b97,735.50",
+      "market_cap": "\u20b9116,571.26 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: POLYCAB",
+      "price": 7735.5
+    },
+    "PRAJIND.NS": {
+      "company": "Praj Industries",
+      "ticker": "PRAJIND.NS",
+      "current_price": "\u20b9245.25",
+      "market_cap": "\u20b94,508.02 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: PRAJIND",
+      "price": 245.25
+    },
+    "PNBHOUSING.NS": {
+      "company": "PNB Housing Finance",
+      "ticker": "PNBHOUSING.NS",
+      "current_price": "\u20b91,079.00",
+      "market_cap": "\u20b928,140.74 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PNBHOUSING",
+      "price": 1079.0
+    },
+    "POONAWALLA.NS": {
+      "company": "Poonawalla Fincorp",
+      "ticker": "POONAWALLA.NS",
+      "current_price": "\u20b9450.55",
+      "market_cap": "\u20b939,675.51 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: POONAWALLA",
+      "price": 450.55
+    },
+    "RADICO.NS": {
+      "company": "Radico Khaitan",
+      "ticker": "RADICO.NS",
+      "current_price": "\u20b94,197.20",
+      "market_cap": "\u20b956,237.89 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: RADICO",
+      "price": 4197.2
+    },
+    "KVB.NS": {
+      "company": "Karur Vysya Bank",
+      "ticker": "KVB.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: KVB"
+    },
+    "RAILTEL.NS": {
+      "company": "RailTel Corporation of India",
+      "ticker": "RAILTEL.NS",
+      "current_price": "\u20b9223.60",
+      "market_cap": "\u20b97,176.18 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: RAILTEL",
+      "price": 223.6
+    },
+    "PSB.NS": {
+      "company": "Punjab & Sind Bank",
+      "ticker": "PSB.NS",
+      "current_price": "\u20b918.76",
+      "market_cap": "\u20b913,311.32 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: PSB",
+      "price": 18.76
+    },
+    "PNB.NS": {
+      "company": "Punjab National Bank (PNB)",
+      "ticker": "PNB.NS",
+      "current_price": "\u20b9123.98",
+      "market_cap": "\u20b9142,443.53 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: PNB",
+      "price": 123.98
+    },
+    "PVRINOX.NS": {
+      "company": "PVR INOX",
+      "ticker": "PVRINOX.NS",
+      "current_price": "\u20b91,499.50",
+      "market_cap": "\u20b914,414.84 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: PVRINOX",
+      "price": 1499.5
+    },
+    "M&M.NS": {
+      "company": "Mahindra & Mahindra",
+      "ticker": "M&M.NS",
+      "current_price": "\u20b92,884.55",
+      "market_cap": "\u20b9346,282.39 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: M&M",
+      "price": 2884.55
+    },
+    "RATNAMANI.NS": {
+      "company": "Ratnamani Metals & Tubes",
+      "ticker": "RATNAMANI.NS",
+      "current_price": "\u20b92,320.30",
+      "market_cap": "\u20b916,263.45 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: RATNAMANI",
+      "price": 2320.3
+    },
+    "RATEGAIN.NS": {
+      "company": "RateGain Travel Technologies",
+      "ticker": "RATEGAIN.NS",
+      "current_price": "\u20b9796.15",
+      "market_cap": "\u20b99,432.94 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: RATEGAIN",
+      "price": 796.15
+    },
+    "RVNL.NS": {
+      "company": "Rail Vikas Nigam (RVNL)",
+      "ticker": "RVNL.NS",
+      "current_price": "\u20b9180.98",
+      "market_cap": "\u20b937,734.69 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: RVNL",
+      "price": 180.98
+    },
+    "RAJESHEXPO.NS": {
+      "company": "Rajesh Exports",
+      "ticker": "RAJESHEXPO.NS",
+      "current_price": "\u20b949.55",
+      "market_cap": "\u20b91,463.01 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: RAJESHEXPO",
+      "price": 49.55
+    },
+    "RAINBOW.NS": {
+      "company": "Rainbow Children's Medicare",
+      "ticker": "RAINBOW.NS",
+      "current_price": "\u20b91,221.60",
+      "market_cap": "\u20b912,358.20 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: RAINBOW",
+      "price": 1221.6
+    },
+    "RALLIS.NS": {
+      "company": "Rallis India",
+      "ticker": "RALLIS.NS",
+      "current_price": "\u20b9186.07",
+      "market_cap": "\u20b93,618.48 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: RALLIS",
+      "price": 186.07
+    },
+    "RKFORGE.NS": {
+      "company": "Ramkrishna Forgings",
+      "ticker": "RKFORGE.NS",
+      "current_price": "\u20b9669.50",
+      "market_cap": "\u20b912,381.25 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: RKFORGE",
+      "price": 669.5
+    },
+    "REDINGTON.NS": {
+      "company": "Redington",
+      "ticker": "REDINGTON.NS",
+      "current_price": "\u20b9337.80",
+      "market_cap": "\u20b926,408.34 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: REDINGTON",
+      "price": 337.8
+    },
+    "RELAXO.NS": {
+      "company": "Relaxo Footwears",
+      "ticker": "RELAXO.NS",
+      "current_price": "\u20b9275.00",
+      "market_cap": "\u20b96,845.81 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: RELAXO",
+      "price": 275.0
+    },
+    "RAYMOND.NS": {
+      "company": "Raymond",
+      "ticker": "RAYMOND.NS",
+      "current_price": "\u20b91,086.00",
+      "market_cap": "\u20b97,227.49 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: RAYMOND",
+      "price": 1086.0
+    },
+    "RBLBANK.NS": {
+      "company": "RBL Bank",
+      "ticker": "RBLBANK.NS",
+      "current_price": "\u20b9355.30",
+      "market_cap": "\u20b955,171.34 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: RBLBANK",
+      "price": 355.3
+    },
+    "RCF.NS": {
+      "company": "Rashtriya Chemicals & Fertilizers (RCF)",
+      "ticker": "RCF.NS",
+      "current_price": "\u20b994.18",
+      "market_cap": "\u20b95,195.80 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: RCF",
+      "price": 94.18
+    },
+    "RELINFRA.NS": {
+      "company": "Reliance Infrastructure",
+      "ticker": "RELINFRA.NS",
+      "current_price": "\u20b948.46",
+      "market_cap": "\u20b91,978.05 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: RELINFRA",
+      "price": 48.46
+    },
+    "RITES.NS": {
+      "company": "RITES",
+      "ticker": "RITES.NS",
+      "current_price": "\u20b9190.65",
+      "market_cap": "\u20b99,162.71 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: RITES",
+      "price": 190.65
+    },
+    "ROUTE.NS": {
+      "company": "Route Mobile",
+      "ticker": "ROUTE.NS",
+      "current_price": "\u20b9444.35",
+      "market_cap": "\u20b92,799.54 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: ROUTE",
+      "price": 444.35
+    },
+    "RRKABEL.NS": {
+      "company": "RR Kabel",
+      "ticker": "RRKABEL.NS",
+      "current_price": "\u20b92,082.50",
+      "market_cap": "\u20b923,554.22 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: RRKABEL",
+      "price": 2082.5
+    },
+    "RPOWER.NS": {
+      "company": "Reliance Power",
+      "ticker": "RPOWER.NS",
+      "current_price": "\u20b917.78",
+      "market_cap": "\u20b97,353.40 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: RPOWER",
+      "price": 17.78
+    },
+    "SAFARI.NS": {
+      "company": "Safari Industries (India)",
+      "ticker": "SAFARI.NS",
+      "current_price": "\u20b91,202.10",
+      "market_cap": "\u20b95,890.10 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SAFARI",
+      "price": 1202.1
+    },
+    "SAGILITY.NS": {
+      "company": "Sagility India",
+      "ticker": "SAGILITY.NS",
+      "current_price": "\u20b942.23",
+      "market_cap": "\u20b919,769.25 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SAGILITY",
+      "price": 42.23
+    },
+    "MOTHERSON.NS": {
+      "company": "Samvardhana Motherson International",
+      "ticker": "MOTHERSON.NS",
+      "current_price": "\u20b9157.20",
+      "market_cap": "\u20b9167,113.68 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: MOTHERSON",
+      "price": 157.2
+    },
+    "SANOFI.NS": {
+      "company": "Sanofi India",
+      "ticker": "SANOFI.NS",
+      "current_price": "\u20b93,241.40",
+      "market_cap": "\u20b97,465.15 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SANOFI",
+      "price": 3241.4
+    },
+    "SAPPHIRE.NS": {
+      "company": "Sapphire Foods India",
+      "ticker": "SAPPHIRE.NS",
+      "current_price": "\u20b9199.13",
+      "market_cap": "\u20b96,407.17 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SAPPHIRE",
+      "price": 199.13
+    },
+    "SAREGAMA.NS": {
+      "company": "Saregama India",
+      "ticker": "SAREGAMA.NS",
+      "current_price": "\u20b9543.15",
+      "market_cap": "\u20b910,426.28 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SAREGAMA",
+      "price": 543.15
+    },
+    "SCHNEIDER.NS": {
+      "company": "Schneider Electric Infrastructure",
+      "ticker": "SCHNEIDER.NS",
+      "current_price": "\u20b91,099.70",
+      "market_cap": "\u20b926,294.27 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SCHNEIDER",
+      "price": 1099.7
+    },
+    "SBFC.NS": {
+      "company": "SBFC Finance",
+      "ticker": "SBFC.NS",
+      "current_price": "\u20b984.87",
+      "market_cap": "\u20b99,430.78 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SBFC",
+      "price": 84.87
+    },
+    "SHOPERSTOP.NS": {
+      "company": "Shoppers Stop",
+      "ticker": "SHOPERSTOP.NS",
+      "current_price": "\u20b9361.65",
+      "market_cap": "\u20b93,985.72 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: SHOPERSTOP",
+      "price": 361.65
+    },
+    "SBICARD.NS": {
+      "company": "SBI Cards & Payment Services",
+      "ticker": "SBICARD.NS",
+      "current_price": "\u20b9536.15",
+      "market_cap": "\u20b951,022.38 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SBICARD",
+      "price": 536.15
+    },
+    "SHILPAMED.NS": {
+      "company": "Shilpa Medicare",
+      "ticker": "SHILPAMED.NS",
+      "current_price": "\u20b9941.60",
+      "market_cap": "\u20b918,415.98 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SHILPAMED",
+      "price": 941.6
+    },
+    "SBILIFE.NS": {
+      "company": "SBI Life Insurance",
+      "ticker": "SBILIFE.NS",
+      "current_price": "\u20b91,660.70",
+      "market_cap": "\u20b9166,636.16 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SBILIFE",
+      "price": 1660.7
+    },
+    "SENCO.NS": {
+      "company": "Senco Gold",
+      "ticker": "SENCO.NS",
+      "current_price": "\u20b9298.95",
+      "market_cap": "\u20b94,899.82 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: SENCO",
+      "price": 298.95
+    },
+    "SHREECEM.NS": {
+      "company": "Shree Cement",
+      "ticker": "SHREECEM.NS",
+      "current_price": "\u20b922,975.00",
+      "market_cap": "\u20b982,895.52 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SHREECEM",
+      "price": 22975.0
+    },
+    "SIEMENS.NS": {
+      "company": "Siemens",
+      "ticker": "SIEMENS.NS",
+      "current_price": "\u20b93,299.10",
+      "market_cap": "\u20b9117,487.72 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SIEMENS",
+      "price": 3299.1
+    },
+    "SHRIRAMFIN.NS": {
+      "company": "Shriram Finance",
+      "ticker": "SHRIRAMFIN.NS",
+      "current_price": "\u20b9830.50",
+      "market_cap": "\u20b9195,423.86 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SHRIRAMFIN",
+      "price": 830.5
+    },
+    "SOBHA.NS": {
+      "company": "Sobha",
+      "ticker": "SOBHA.NS",
+      "current_price": "\u20b91,132.10",
+      "market_cap": "\u20b912,109.42 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SOBHA",
+      "price": 1132.1
+    },
+    "SRF.NS": {
+      "company": "SRF",
+      "ticker": "SRF.NS",
+      "current_price": "\u20b92,351.00",
+      "market_cap": "\u20b969,720.62 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SRF",
+      "price": 2351.0
+    },
+    "SONATSOFTW.NS": {
+      "company": "Sonata Software",
+      "ticker": "SONATSOFTW.NS",
+      "current_price": "\u20b9227.20",
+      "market_cap": "\u20b96,288.77 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SONATSOFTW",
+      "price": 227.2
+    },
+    "SOUTHBANK.NS": {
+      "company": "South Indian Bank",
+      "ticker": "SOUTHBANK.NS",
+      "current_price": "\u20b956.09",
+      "market_cap": "\u20b914,697.02 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SOUTHBANK",
+      "price": 56.09
+    },
+    "SOLARINDS.NS": {
+      "company": "Solar Industries India",
+      "ticker": "SOLARINDS.NS",
+      "current_price": "\u20b918,975.00",
+      "market_cap": "\u20b9171,704.88 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SOLARINDS",
+      "price": 18975.0
+    },
+    "STARHEALTH.NS": {
+      "company": "Star Health and Allied Insurance",
+      "ticker": "STARHEALTH.NS",
+      "current_price": "\u20b9529.55",
+      "market_cap": "\u20b931,158.91 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: STARHEALTH",
+      "price": 529.55
+    },
+    "SONACOMS.NS": {
+      "company": "Sona BLW Precision Forgings",
+      "ticker": "SONACOMS.NS",
+      "current_price": "\u20b9880.35",
+      "market_cap": "\u20b955,037.49 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SONACOMS",
+      "price": 880.35
+    },
+    "SIGNATURE.NS": {
+      "company": "Signatureglobal (India)",
+      "ticker": "SIGNATURE.NS",
+      "current_price": "\u20b9707.10",
+      "market_cap": "\u20b99,947.91 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SIGNATURE",
+      "price": 707.1
+    },
+    "SUMICHEM.NS": {
+      "company": "Sumitomo Chemical India",
+      "ticker": "SUMICHEM.NS",
+      "current_price": "\u20b9320.25",
+      "market_cap": "\u20b915,985.14 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SUMICHEM",
+      "price": 320.25
+    },
+    "SPARC.NS": {
+      "company": "Sun Pharma Advanced Research (SPARC)",
+      "ticker": "SPARC.NS",
+      "current_price": "\u20b9177.85",
+      "market_cap": "\u20b95,771.62 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SPARC",
+      "price": 177.85
+    },
+    "SUBROS.NS": {
+      "company": "Subros",
+      "ticker": "SUBROS.NS",
+      "current_price": "\u20b9592.15",
+      "market_cap": "\u20b93,862.94 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: SUBROS",
+      "price": 592.15
+    },
+    "SWSOLAR.NS": {
+      "company": "Sterling and Wilson Renewable Energy",
+      "ticker": "SWSOLAR.NS",
+      "current_price": "\u20b9139.32",
+      "market_cap": "\u20b93,253.70 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: SWSOLAR",
+      "price": 139.32
+    },
+    "SUNPHARMA.NS": {
+      "company": "Sun Pharmaceutical Industries",
+      "ticker": "SUNPHARMA.NS",
+      "current_price": "\u20b91,800.30",
+      "market_cap": "\u20b9431,952.28 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SUNPHARMA",
+      "price": 1800.3
+    },
+    "SAIL.NS": {
+      "company": "Steel Authority of India (SAIL)",
+      "ticker": "SAIL.NS",
+      "current_price": "\u20b9161.89",
+      "market_cap": "\u20b966,869.07 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SAIL",
+      "price": 161.89
+    },
+    "STAR.NS": {
+      "company": "Strides Pharma Science",
+      "ticker": "STAR.NS",
+      "current_price": "\u20b9995.70",
+      "market_cap": "\u20b99,177.64 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: STAR",
+      "price": 995.7
+    },
+    "SUNDRMFAST.NS": {
+      "company": "Sundaram Fasteners",
+      "ticker": "SUNDRMFAST.NS",
+      "current_price": "\u20b91,037.60",
+      "market_cap": "\u20b921,802.92 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SUNDRMFAST",
+      "price": 1037.6
+    },
+    "SUNTECK.NS": {
+      "company": "Sunteck Realty",
+      "ticker": "SUNTECK.NS",
+      "current_price": "\u20b9276.85",
+      "market_cap": "\u20b94,065.32 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: SUNTECK",
+      "price": 276.85
+    },
+    "SUNTV.NS": {
+      "company": "Sun TV Network",
+      "ticker": "SUNTV.NS",
+      "current_price": "\u20b9609.00",
+      "market_cap": "\u20b923,999.75 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SUNTV",
+      "price": 609.0
+    },
+    "SUNDARMFIN.NS": {
+      "company": "Sundaram Finance",
+      "ticker": "SUNDARMFIN.NS",
+      "current_price": "\u20b93,925.60",
+      "market_cap": "\u20b943,267.01 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SUNDARMFIN",
+      "price": 3925.6
+    },
+    "SYNGENE.NS": {
+      "company": "Syngene International",
+      "ticker": "SYNGENE.NS",
+      "current_price": "\u20b9403.50",
+      "market_cap": "\u20b916,217.22 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SYNGENE",
+      "price": 403.5
+    },
+    "SUZLON.NS": {
+      "company": "Suzlon Energy",
+      "ticker": "SUZLON.NS",
+      "current_price": "\u20b933.75",
+      "market_cap": "\u20b946,394.18 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SUZLON",
+      "price": 33.75
+    },
+    "SWIGGY.NS": {
+      "company": "Swiggy",
+      "ticker": "SWIGGY.NS",
+      "current_price": "\u20b9176.65",
+      "market_cap": "\u20b946,332.67 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SWIGGY",
+      "price": 176.65
+    },
+    "SUPRAJIT.NS": {
+      "company": "Suprajit Engineering",
+      "ticker": "SUPRAJIT.NS",
+      "current_price": "\u20b9460.70",
+      "market_cap": "\u20b96,319.85 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: SUPRAJIT",
+      "price": 460.7
+    },
+    "SUPREMEIND.NS": {
+      "company": "Supreme Industries",
+      "ticker": "SUPREMEIND.NS",
+      "current_price": "\u20b93,177.50",
+      "market_cap": "\u20b940,380.24 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SUPREMEIND",
+      "price": 3177.5
+    },
+    "TATACONSUM.NS": {
+      "company": "Tata Consumer Products",
+      "ticker": "TATACONSUM.NS",
+      "current_price": "\u20b91,015.65",
+      "market_cap": "\u20b9100,518.68 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TATACONSUM",
+      "price": 1015.65
+    },
+    "TATACHEM.NS": {
+      "company": "Tata Chemicals",
+      "ticker": "TATACHEM.NS",
+      "current_price": "\u20b9596.70",
+      "market_cap": "\u20b915,201.31 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: TATACHEM",
+      "price": 596.7
+    },
+    "SYRMA.NS": {
+      "company": "Syrma SGS Technology",
+      "ticker": "SYRMA.NS",
+      "current_price": "\u20b91,663.60",
+      "market_cap": "\u20b932,045.09 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: SYRMA",
+      "price": 1663.6
+    },
+    "TATACOMM.NS": {
+      "company": "Tata Communications",
+      "ticker": "TATACOMM.NS",
+      "current_price": "\u20b91,686.20",
+      "market_cap": "\u20b948,071.14 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TATACOMM",
+      "price": 1686.2
+    },
+    "TANLA.NS": {
+      "company": "Tanla Platforms",
+      "ticker": "TANLA.NS",
+      "current_price": "\u20b9634.90",
+      "market_cap": "\u20b98,383.90 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: TANLA",
+      "price": 634.9
+    },
+    "TATAELXSI.NS": {
+      "company": "Tata Elxsi",
+      "ticker": "TATAELXSI.NS",
+      "current_price": "\u20b93,820.00",
+      "market_cap": "\u20b923,798.70 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TATAELXSI",
+      "price": 3820.0
+    },
+    "TMB.NS": {
+      "company": "Tamilnad Mercantile Bank",
+      "ticker": "TMB.NS",
+      "current_price": "\u20b9803.20",
+      "market_cap": "\u20b912,718.79 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: TMB",
+      "price": 803.2
+    },
+    "TATAINVEST.NS": {
+      "company": "Tata Investment Corporation",
+      "ticker": "TATAINVEST.NS",
+      "current_price": "\u20b9565.35",
+      "market_cap": "\u20b928,604.05 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TATAINVEST",
+      "price": 565.35
+    },
+    "TATAMOTORS.NS": {
+      "company": "Tata Motors",
+      "ticker": "TATAMOTORS.NS",
+      "current_price": "\u20b9398.15",
+      "market_cap": "\u20b9146,630.26 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TATAMOTORS",
+      "price": 398.15
+    },
+    "TMCV.NS": {
+      "company": "Tata Motors (Commercial Vehicles)",
+      "ticker": "TMCV.NS",
+      "current_price": "\u20b9398.15",
+      "market_cap": "\u20b9146,630.26 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TMCV",
+      "price": 398.15
+    },
+    "TMPV.NS": {
+      "company": "Tata Motors (Passenger Vehicles)",
+      "ticker": "TMPV.NS",
+      "current_price": "\u20b9265.80",
+      "market_cap": "\u20b997,893.93 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TMPV",
+      "price": 265.8
+    },
+    "TECHM.NS": {
+      "company": "Tech Mahindra",
+      "ticker": "TECHM.NS",
+      "current_price": "\u20b91,807.90",
+      "market_cap": "\u20b9177,211.27 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TECHM",
+      "price": 1807.9
+    },
+    "TEJASNET.NS": {
+      "company": "Tejas Networks",
+      "ticker": "TEJASNET.NS",
+      "current_price": "\u20b9406.60",
+      "market_cap": "\u20b97,233.80 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: TEJASNET",
+      "price": 406.6
+    },
+    "THERMAX.NS": {
+      "company": "Thermax",
+      "ticker": "THERMAX.NS",
+      "current_price": "\u20b93,142.50",
+      "market_cap": "\u20b935,399.84 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: THERMAX",
+      "price": 3142.5
+    },
+    "TTML.NS": {
+      "company": "Tata Teleservices (Maharashtra)",
+      "ticker": "TTML.NS",
+      "current_price": "\u20b935.17",
+      "market_cap": "\u20b96,875.48 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: TTML",
+      "price": 35.17
+    },
+    "TATAPOWER.NS": {
+      "company": "Tata Power Company",
+      "ticker": "TATAPOWER.NS",
+      "current_price": "\u20b9344.80",
+      "market_cap": "\u20b9110,175.31 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TATAPOWER",
+      "price": 344.8
+    },
+    "TBOTEK.NS": {
+      "company": "TBO Tek",
+      "ticker": "TBOTEK.NS",
+      "current_price": "\u20b91,526.40",
+      "market_cap": "\u20b916,336.58 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: TBOTEK",
+      "price": 1526.4
+    },
+    "TATATECH.NS": {
+      "company": "Tata Technologies",
+      "ticker": "TATATECH.NS",
+      "current_price": "\u20b9652.70",
+      "market_cap": "\u20b926,503.00 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TATATECH",
+      "price": 652.7
+    },
+    "TATASTEEL.NS": {
+      "company": "Tata Steel",
+      "ticker": "TATASTEEL.NS",
+      "current_price": "\u20b9168.08",
+      "market_cap": "\u20b9209,668.30 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TATASTEEL",
+      "price": 168.08
+    },
+    "TORNTPOWER.NS": {
+      "company": "Torrent Power",
+      "ticker": "TORNTPOWER.NS",
+      "current_price": "\u20b91,163.60",
+      "market_cap": "\u20b958,634.21 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TORNTPOWER",
+      "price": 1163.6
+    },
+    "TIMKEN.NS": {
+      "company": "Timken India",
+      "ticker": "TIMKEN.NS",
+      "current_price": "\u20b92,847.50",
+      "market_cap": "\u20b921,418.53 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TIMKEN",
+      "price": 2847.5
+    },
+    "TRENT.NS": {
+      "company": "Trent",
+      "ticker": "TRENT.NS",
+      "current_price": "\u20b93,038.70",
+      "market_cap": "\u20b9162,033.29 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TRENT",
+      "price": 3038.7
+    },
+    "TITAGARH.NS": {
+      "company": "Titagarh Rail Systems",
+      "ticker": "TITAGARH.NS",
+      "current_price": "\u20b9649.25",
+      "market_cap": "\u20b98,743.69 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: TITAGARH",
+      "price": 649.25
+    },
+    "TITAN.NS": {
+      "company": "Titan Company",
+      "ticker": "TITAN.NS",
+      "current_price": "\u20b94,455.80",
+      "market_cap": "\u20b9395,368.60 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TITAN",
+      "price": 4455.8
+    },
+    "TORNTPHARM.NS": {
+      "company": "Torrent Pharmaceuticals",
+      "ticker": "TORNTPHARM.NS",
+      "current_price": "\u20b94,645.00",
+      "market_cap": "\u20b9176,760.76 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TORNTPHARM",
+      "price": 4645.0
+    },
+    "UJJIVANSFB.NS": {
+      "company": "Ujjivan Small Finance Bank",
+      "ticker": "UJJIVANSFB.NS",
+      "current_price": "\u20b954.40",
+      "market_cap": "\u20b910,624.13 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: UJJIVANSFB",
+      "price": 54.4
+    },
+    "TVSMOTOR.NS": {
+      "company": "TVS Motor Company",
+      "ticker": "TVSMOTOR.NS",
+      "current_price": "\u20b94,243.30",
+      "market_cap": "\u20b9201,652.74 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TVSMOTOR",
+      "price": 4243.3
+    },
+    "TIINDIA.NS": {
+      "company": "Tube Investments of India",
+      "ticker": "TIINDIA.NS",
+      "current_price": "\u20b92,102.50",
+      "market_cap": "\u20b940,698.58 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: TIINDIA",
+      "price": 2102.5
+    },
+    "UCOBANK.NS": {
+      "company": "UCO Bank",
+      "ticker": "UCOBANK.NS",
+      "current_price": "\u20b922.01",
+      "market_cap": "\u20b927,599.57 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: UCOBANK",
+      "price": 22.01
+    },
+    "TRIDENT.NS": {
+      "company": "Trident",
+      "ticker": "TRIDENT.NS",
+      "current_price": "\u20b920.97",
+      "market_cap": "\u20b910,685.44 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: TRIDENT",
+      "price": 20.97
+    },
+    "TRITURBINE.NS": {
+      "company": "Triveni Turbine",
+      "ticker": "TRITURBINE.NS",
+      "current_price": "\u20b9461.10",
+      "market_cap": "\u20b914,663.41 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: TRITURBINE",
+      "price": 461.1
+    },
+    "ULTRACEMCO.NS": {
+      "company": "UltraTech Cement",
+      "ticker": "ULTRACEMCO.NS",
+      "current_price": "\u20b911,096.00",
+      "market_cap": "\u20b9326,294.10 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ULTRACEMCO",
+      "price": 11096.0
+    },
+    "PRICOL.NS": {
+      "company": "Pricol",
+      "ticker": "PRICOL.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: PRICOL"
+    },
+    "PEL.NS": {
+      "company": "Piramal Enterprises",
+      "ticker": "PEL.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: PEL"
+    },
+    "UNOMINDA.NS": {
+      "company": "Uno Minda",
+      "ticker": "UNOMINDA.NS",
+      "current_price": "\u20b91,080.60",
+      "market_cap": "\u20b962,401.11 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: UNOMINDA",
+      "price": 1080.6
+    },
+    "UNIONBANK.NS": {
+      "company": "Union Bank of India",
+      "ticker": "UNIONBANK.NS",
+      "current_price": "\u20b9187.47",
+      "market_cap": "\u20b9143,107.20 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: UNIONBANK",
+      "price": 187.47
+    },
+    "UPL.NS": {
+      "company": "UPL",
+      "ticker": "UPL.NS",
+      "current_price": "\u20b9523.15",
+      "market_cap": "\u20b944,221.04 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: UPL",
+      "price": 523.15
+    },
+    "MANYAVAR.NS": {
+      "company": "Vedant Fashions (Manyavar)",
+      "ticker": "MANYAVAR.NS",
+      "current_price": "\u20b9482.50",
+      "market_cap": "\u20b911,723.71 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: MANYAVAR",
+      "price": 482.5
+    },
+    "VEDL.NS": {
+      "company": "Vedanta",
+      "ticker": "VEDL.NS",
+      "current_price": "\u20b9238.05",
+      "market_cap": "\u20b992,953.80 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: VEDL",
+      "price": 238.05
+    },
+    "VIJAYA.NS": {
+      "company": "Vijaya Diagnostic Centre",
+      "ticker": "VIJAYA.NS",
+      "current_price": "\u20b91,459.70",
+      "market_cap": "\u20b915,034.58 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: VIJAYA",
+      "price": 1459.7
+    },
+    "VMART.NS": {
+      "company": "V-Mart Retail",
+      "ticker": "VMART.NS",
+      "current_price": "\u20b9730.65",
+      "market_cap": "\u20b95,814.18 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: VMART",
+      "price": 730.65
+    },
+    "VAIBHAVGBL.NS": {
+      "company": "Vaibhav Global",
+      "ticker": "VAIBHAVGBL.NS",
+      "current_price": "\u20b9158.82",
+      "market_cap": "\u20b92,663.45 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: VAIBHAVGBL",
+      "price": 158.82
+    },
+    "VGUARD.NS": {
+      "company": "V-Guard Industries",
+      "ticker": "VGUARD.NS",
+      "current_price": "\u20b9275.90",
+      "market_cap": "\u20b912,053.82 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: VGUARD",
+      "price": 275.9
+    },
+    "UTIAMC.NS": {
+      "company": "UTI Asset Management Company",
+      "ticker": "UTIAMC.NS",
+      "current_price": "\u20b9806.55",
+      "market_cap": "\u20b910,367.41 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: UTIAMC",
+      "price": 806.55
+    },
+    "VTL.NS": {
+      "company": "Vardhman Textiles",
+      "ticker": "VTL.NS",
+      "current_price": "\u20b9485.05",
+      "market_cap": "\u20b914,041.02 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: VTL",
+      "price": 485.05
+    },
+    "VBL.NS": {
+      "company": "Varun Beverages",
+      "ticker": "VBL.NS",
+      "current_price": "\u20b9402.15",
+      "market_cap": "\u20b9136,027.02 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: VBL",
+      "price": 402.15
+    },
+    "LTIM.NS": {
+      "company": "LTIMindtree",
+      "ticker": "LTIM.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: LTIM"
+    },
+    "VINATIORGA.NS": {
+      "company": "Vinati Organics",
+      "ticker": "VINATIORGA.NS",
+      "current_price": "\u20b9997.50",
+      "market_cap": "\u20b910,348.13 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: VINATIORGA",
+      "price": 997.5
+    },
+    "VIPIND.NS": {
+      "company": "VIP Industries",
+      "ticker": "VIPIND.NS",
+      "current_price": "\u20b9245.70",
+      "market_cap": "\u20b93,490.30 Cr",
+      "market_cap_category": "Small Cap",
+      "ticker_label": "NSE: VIPIND",
+      "price": 245.7
+    },
+    "VOLTAS.NS": {
+      "company": "Voltas",
+      "ticker": "VOLTAS.NS",
+      "current_price": "\u20b91,027.70",
+      "market_cap": "\u20b934,005.02 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: VOLTAS",
+      "price": 1027.7
+    },
+    "WELSPUNLIV.NS": {
+      "company": "Welspun Living",
+      "ticker": "WELSPUNLIV.NS",
+      "current_price": "\u20b9206.58",
+      "market_cap": "\u20b919,448.37 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: WELSPUNLIV",
+      "price": 206.58
+    },
+    "WAAREEENER.NS": {
+      "company": "Waaree Energies",
+      "ticker": "WAAREEENER.NS",
+      "current_price": "\u20b92,296.00",
+      "market_cap": "\u20b966,044.74 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: WAAREEENER",
+      "price": 2296.0
+    },
+    "WOCKPHARMA.NS": {
+      "company": "Wockhardt",
+      "ticker": "WOCKPHARMA.NS",
+      "current_price": "\u20b91,896.80",
+      "market_cap": "\u20b930,825.31 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: WOCKPHARMA",
+      "price": 1896.8
+    },
+    "WELCORP.NS": {
+      "company": "Welspun Corp",
+      "ticker": "WELCORP.NS",
+      "current_price": "\u20b92,381.00",
+      "market_cap": "\u20b962,814.28 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: WELCORP",
+      "price": 2381.0
+    },
+    "WESTLIFE.NS": {
+      "company": "Westlife Foodworld",
+      "ticker": "WESTLIFE.NS",
+      "current_price": "\u20b9608.60",
+      "market_cap": "\u20b99,446.43 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: WESTLIFE",
+      "price": 608.6
+    },
+    "WIPRO.NS": {
+      "company": "Wipro",
+      "ticker": "WIPRO.NS",
+      "current_price": "\u20b9195.61",
+      "market_cap": "\u20b9193,531.67 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: WIPRO",
+      "price": 195.61
+    },
+    "WHIRLPOOL.NS": {
+      "company": "Whirlpool of India",
+      "ticker": "WHIRLPOOL.NS",
+      "current_price": "\u20b9810.95",
+      "market_cap": "\u20b910,292.61 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: WHIRLPOOL",
+      "price": 810.95
+    },
+    "YESBANK.NS": {
+      "company": "Yes Bank",
+      "ticker": "YESBANK.NS",
+      "current_price": "\u20b915.25",
+      "market_cap": "\u20b947,870.46 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: YESBANK",
+      "price": 15.25
+    },
+    "YATHARTH.NS": {
+      "company": "Yatharth Hospital & Trauma Care",
+      "ticker": "YATHARTH.NS",
+      "current_price": "\u20b9936.90",
+      "market_cap": "\u20b99,027.44 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: YATHARTH",
+      "price": 936.9
+    },
+    "ZYDUSLIFE.NS": {
+      "company": "Zydus Lifesciences",
+      "ticker": "ZYDUSLIFE.NS",
+      "current_price": "\u20b91,244.10",
+      "market_cap": "\u20b9124,099.44 Cr",
+      "market_cap_category": "Large Cap",
+      "ticker_label": "NSE: ZYDUSLIFE",
+      "price": 1244.1
+    },
+    "ZENSARTECH.NS": {
+      "company": "Zensar Technologies",
+      "ticker": "ZENSARTECH.NS",
+      "current_price": "\u20b9543.40",
+      "market_cap": "\u20b912,333.12 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ZENSARTECH",
+      "price": 543.4
+    },
+    "ZYDUSWELL.NS": {
+      "company": "Zydus Wellness",
+      "ticker": "ZYDUSWELL.NS",
+      "current_price": "\u20b9463.25",
+      "market_cap": "\u20b914,738.79 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ZYDUSWELL",
+      "price": 463.25
+    },
+    "ZEEL.NS": {
+      "company": "Zee Entertainment Enterprises",
+      "ticker": "ZEEL.NS",
+      "current_price": "\u20b967.57",
+      "market_cap": "\u20b96,490.23 Cr",
+      "market_cap_category": "Mid Cap",
+      "ticker_label": "NSE: ZEEL",
+      "price": 67.57
+    },
+    "REC.NS": {
+      "company": "REC",
+      "ticker": "REC.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: REC"
+    },
+    "SHYAMMET.NS": {
+      "company": "Shyam Metalics and Energy",
+      "ticker": "SHYAMMET.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: SHYAMMET"
+    },
+    "SUVENPHAR.NS": {
+      "company": "Suven Pharmaceuticals",
+      "ticker": "SUVENPHAR.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: SUVENPHAR"
+    },
+    "SWANENERGY.NS": {
+      "company": "Swan Energy",
+      "ticker": "SWANENERGY.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: SWANENERGY"
+    },
+    "TIPSINDLTD.NS": {
+      "company": "Tips Industries",
+      "ticker": "TIPSINDLTD.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: TIPSINDLTD"
+    },
+    "ZOMATO.NS": {
+      "company": "Zomato",
+      "ticker": "ZOMATO.NS",
+      "current_price": "---",
+      "market_cap": "---",
+      "market_cap_category": "---",
+      "ticker_label": "NSE: ZOMATO"
     }
   },
   "weekly_rankings": {
