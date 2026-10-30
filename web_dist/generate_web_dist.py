@@ -1497,8 +1497,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       finalObj.market_cap = marketCap;
       finalObj.market_cap_category = marketCapCategory;
       finalObj.ticker_label = tickerLabel;
-      finalObj.timeframes = (existing && existing.timeframes && Object.keys(existing.timeframes).length >= 4) ? existing.timeframes : timeframes;
-      finalObj.comparison = finalObj.timeframes["1Y"] || timeframes["1Y"];
+      finalObj.timeframes = Object.assign({}, timeframes, (existing && existing.timeframes) || {});
+      finalObj.comparison = finalObj.timeframes["1Y"] || Object.values(finalObj.timeframes)[0] || timeframes["1Y"];
       finalObj.profile = p;
       finalObj.articles = (existing && existing.articles && existing.articles.length) ? existing.articles : articles;
 
